@@ -2,6 +2,75 @@
 
 <html lang="es"><head>
 
+<!-- === GAME + INTERNAL BUTTONS DOWN (EXCEPT MENU/REGLAS) === -->
+<style id="gameDownExceptMenuRules">
+  /* Baja el juego y TODOS los botones internos medio casillero,
+     respetando menú y reglas */
+  .shell{
+    transform: translateY(calc(var(--square) * -0.5));
+  }
+
+  /* Asegurar que menú y reglas queden fuera de este ajuste */
+  #btnMegaMenu,
+  #btnMenuMain,
+  #btnReglas{
+    transform: translateY(calc(var(--square) * -0.5)) translateX(-50%);
+  }
+</style>
+<!-- === END GAME + INTERNAL BUTTONS DOWN === -->
+
+
+<!-- === GLOBAL OFFSET DOWN EXCEPT MENU/REGLAS === -->
+<style id="globalDownExceptFloating">
+  /* Baja TODO (juego + base gris) medio casillero */
+  .frame{
+    margin-top: calc(var(--square) * -0.5);
+  }
+
+  .shell{
+    transform: translateY(calc(var(--square) * -1));
+  }
+
+  /* Mantener menú y reglas en su posición previa */
+  #btnMegaMenu,
+  #btnMenuMain,
+  #btnReglas{
+    transform: translateY(calc(var(--square) * -0.5)) translateX(-50%);
+  }
+</style>
+<!-- === END GLOBAL OFFSET DOWN EXCEPT MENU/REGLAS === -->
+
+
+<!-- === FLOATING BUTTONS OFFSET UP (MENU + REGLAS) === -->
+<style id="floatingButtonsUp">
+  /* Subir SOLO botones flotantes de menú y reglas medio casillero */
+  #btnMegaMenu,
+  #btnMenuMain,
+  #btnReglas{
+    transform: translateY(calc(var(--square) * -0.5)) translateX(-50%);
+  }
+</style>
+<!-- === END FLOATING BUTTONS OFFSET UP === -->
+
+
+<!-- === FRAME OFFSET UP (GREY BASE ONLY) === -->
+<style id="frameOffsetUp">
+  .frame{
+    margin-top: calc(var(--square) * -1);
+  }
+</style>
+<!-- === END FRAME OFFSET UP === -->
+
+
+<!-- === GLOBAL GAME OFFSET UP (WEB + MOBILE) === -->
+<style id="globalGameOffsetUp">
+  .shell{
+    transform: translateY(calc(var(--square) * -1.5));
+  }
+</style>
+<!-- === END GLOBAL GAME OFFSET UP === -->
+
+
 <!-- === MOBILE GAME OFFSET PATCH === -->
 <style id="mobileGameOffset">
 @media (max-width: 900px){
