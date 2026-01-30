@@ -23,9 +23,7 @@
   /* Asegurar que menú y reglas queden fuera de este ajuste */
   #btnMegaMenu,
   #btnMenuMain,
-  #btnReglas{
-    transform: translateY(calc(var(--square) * -0.5)) translateX(-50%);
-  }
+  #btnReglas{ position:absolute; left:calc(50% + 90px); top:0px; z-index:999; }
 </style>
 <!-- === END GAME + INTERNAL BUTTONS DOWN === -->
 
@@ -44,9 +42,7 @@
   /* Mantener menú y reglas en su posición previa */
   #btnMegaMenu,
   #btnMenuMain,
-  #btnReglas{
-    transform: translateY(calc(var(--square) * -0.5)) translateX(-50%);
-  }
+  #btnReglas{ position:absolute; left:calc(50% + 90px); top:0px; z-index:999; }
 </style>
 <!-- === END GLOBAL OFFSET DOWN EXCEPT MENU/REGLAS === -->
 
@@ -56,9 +52,7 @@
   /* Subir SOLO botones flotantes de menú y reglas medio casillero */
   #btnMegaMenu,
   #btnMenuMain,
-  #btnReglas{
-    transform: translateY(calc(var(--square) * -0.5)) translateX(-50%);
-  }
+  #btnReglas{ position:absolute; left:calc(50% + 90px); top:0px; z-index:999; }
 </style>
 <!-- === END FLOATING BUTTONS OFFSET UP === -->
 
@@ -193,22 +187,7 @@
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -334,9 +313,9 @@
   .btn.secondary{ background:#111; color:#fff; }
   .btn.secondary:hover{ background:#222; }
 
-  .mode-group{ position:absolute; left: 10px; top: 6px; display:flex; align-items:center; gap:8px; }
-  #btnMode{ position: static; }
-  .mode-indicator{ font-weight:800; opacity:.85; padding: 0 6px; position: static; }
+  .mode-group{ position:relative; left:0; top:0; }
+  #btnMode{ position:absolute; left:10px; top:10px; }
+  .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
   .dropdown{ position:absolute; top: calc(var(--mode-y) + 40px); left: var(--mode-x); display:none; flex-direction:column; gap:8px; margin-top:8px; padding:8px; z-index: 20; background: transparent; }
   .dropdown.open{ display:flex; }
   .dropdown .dd-item{ position: static; }
@@ -519,12 +498,7 @@
     
   }
 
-  .right-ctrls{
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    gap: calc(var(--square) * 0.5);
-  }
+  .right-ctrls{ position:relative; }
 
 /* override base background to ensure visible */
 
@@ -677,22 +651,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -734,22 +693,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -767,22 +711,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -823,22 +752,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -866,22 +780,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -919,22 +818,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -957,22 +841,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -997,22 +866,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1046,22 +900,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1085,22 +924,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1122,22 +946,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1193,22 +1002,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1248,22 +1042,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1283,22 +1062,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1317,22 +1081,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1364,22 +1113,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1402,22 +1136,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1554,16 +1273,7 @@ body, html{overflow:visible!important;}
 }
 
 /* === Indicador a la derecha del selector de Modo del tablero: estilizado como botón negro === */
-#modeIndicator, .mode-indicator{
-  display:inline-flex !important;
-  align-items:center; justify-content:center;
-  background:#000 !important;
-  color:#fff !important;
-  border:2px solid #fff !important;
-  border-radius:999px !important;
-  padding:6px 14px !important;
-  font-weight:900; line-height:1; min-height:36px;
-}
+#modeIndicator, .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
 
 /* === Contorno blanco alrededor del panel completo del menú === */
 #megaPanel{
@@ -1588,22 +1298,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1625,22 +1320,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1677,22 +1357,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1713,22 +1378,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1745,22 +1395,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1772,9 +1407,9 @@ body, html{overflow:visible!important;}
 <style id="aj-topbar-down-3mm">
   /* Bajar ~3mm los controles superiores (modo + indicador) sin afectar layout */
   :root{ --mode-y: calc(6px + 3mm); } /* mantiene alineado el dropdown del modo */
-  #topBar .mode-group{ top: calc(6px + 3mm) !important; }
+  #topBar .mode-group{ position:relative; left:0; top:0; }
   /* Si existen controles a la derecha, acompáñalos */
-  #topBar .right-ctrls{ transform: translateY(3mm); }
+  #topBar .right-ctrls{ position:relative; }
 
   #timeIndicator{ top: calc(6px + 3mm) !important; }
 
@@ -1783,22 +1418,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1825,22 +1445,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1871,22 +1476,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1907,22 +1497,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1944,22 +1519,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -1974,9 +1534,7 @@ body, html{overflow:visible!important;}
     --bar-trim: 0mm !important;
     transform: none !important;
   }
-  #topBar .right-ctrls{
-    transform: none !important;
-  }
+  #topBar .right-ctrls{ position:relative; }
 
   /* Normalizar la referencia a --bar-trim en elementos posicionados */
   #topBar #modeGroup,
@@ -1995,22 +1553,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2043,22 +1586,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2080,22 +1608,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2114,22 +1627,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2150,22 +1648,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2182,16 +1665,10 @@ body, html{overflow:visible!important;}
     position: absolute !important;
   }
   /* Indicador de modo (texto a la derecha del botón) */
-  #topBar .mode-indicator{
-    position: relative !important;
-    top: 3mm !important;
-  }
+  #topBar .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
   /* HUD de bot u otros bloques de la derecha/izquierda */
   #topBar .bot-hud,
-  #topBar .right-ctrls{
-    position: relative !important;
-    top: 3mm !important;
-  }
+  #topBar .right-ctrls{ position:relative; }
   /* Menú desplegable (si aparece anclado al topbar) */
   #topBar .dropdown{
     transform: translateY(3mm) !important;
@@ -2202,22 +1679,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2234,22 +1696,11 @@ body, html{overflow:visible!important;}
   #topBar #modeGroup,
   #topBar #timeIndicator,
   #topBar .bot-hud,
-  #topBar .right-ctrls{
-    position: absolute !important;
-    top: auto !important;
-    bottom: 0 !important;
-    transform: none !important;
-  }
+  #topBar .right-ctrls{ position:relative; }
 
   /* Botones e indicadores internos: sin desplazamientos verticales extra */
   #topBar .btn,
-  #topBar .mode-indicator{
-    position: relative !important;
-    top: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    transform: none !important;
-  }
+  #topBar .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
 
   /* El menú desplegable se mantiene sin corrimiento adicional */
   #topBar .dropdown{
@@ -2261,22 +1712,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2294,22 +1730,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2330,22 +1751,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2370,22 +1776,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2406,22 +1797,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2444,22 +1820,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2492,22 +1853,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2540,22 +1886,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2588,22 +1919,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2636,22 +1952,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2684,22 +1985,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2728,22 +2014,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2768,22 +2039,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2805,22 +2061,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2839,22 +2080,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2947,22 +2173,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -2995,22 +2206,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3055,22 +2251,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3095,22 +2276,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3133,22 +2299,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3167,22 +2318,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3206,22 +2342,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3248,22 +2369,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3290,22 +2396,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3325,22 +2416,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3376,22 +2452,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3409,22 +2470,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3517,22 +2563,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3601,22 +2632,7 @@ body, html{overflow:visible!important;}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3636,22 +2652,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3670,22 +2671,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3716,22 +2702,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3776,22 +2747,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3824,22 +2780,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3864,22 +2805,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3899,22 +2825,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3942,22 +2853,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -3986,22 +2882,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4043,22 +2924,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4093,22 +2959,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4126,22 +2977,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4160,22 +2996,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4203,22 +3024,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4254,22 +3060,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4314,22 +3105,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4350,22 +3126,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4386,22 +3147,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4422,22 +3168,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4458,22 +3189,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4494,22 +3210,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4527,22 +3228,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4560,22 +3246,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4593,31 +3264,14 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
     transform: translateX(-2mm) !important;
   }
   /* En caso de que algunos estilos reescriban el transform, también movemos su wrapper */
-  #topBar .mode-group{
-    transform: translateX(-2mm) !important;
-  }
+  #topBar .mode-group{ position:relative; left:0; top:0; }
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4651,9 +3305,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
     }
     /* Modo de juego (arriba a la izquierda) */
     #topBar #modeGroup,
-    #topBar .mode-group{
-      transform: translateX(-2mm) !important;
-    }
+    #topBar .mode-group{ position:relative; left:0; top:0; }
     /* ón (abajo a la izquierda) */
     
     
@@ -4664,22 +3316,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4714,22 +3351,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4756,22 +3378,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4795,22 +3402,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4850,22 +3442,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4905,22 +3482,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -4976,22 +3538,7 @@ body[data-theme="pizarra"]#regv2-panel *{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5014,22 +3561,7 @@ body[data-theme="pizarra"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5054,22 +3586,7 @@ body[data-theme="pizarra"] .tab-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5095,22 +3612,7 @@ body[data-theme="noche"] #regv2-panel .btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5138,22 +3640,7 @@ body[data-theme="noche"] #verDevToastClose{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5176,22 +3663,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5210,22 +3682,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5244,22 +3701,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5299,22 +3741,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5358,22 +3785,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5400,22 +3812,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5439,22 +3836,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5491,22 +3873,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5549,22 +3916,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5590,22 +3942,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5634,22 +3971,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5673,22 +3995,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5714,22 +4021,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5767,22 +4059,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5808,22 +4085,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5857,22 +4119,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5905,22 +4152,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5947,22 +4179,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -5986,22 +4203,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6028,22 +4230,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6065,22 +4252,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6135,22 +4307,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6173,22 +4330,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6211,22 +4353,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6249,22 +4376,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6287,22 +4399,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6325,22 +4422,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6358,22 +4440,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6405,22 +4472,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6443,22 +4495,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6494,22 +4531,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6548,22 +4570,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6596,22 +4603,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6649,22 +4641,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6686,22 +4663,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6729,22 +4691,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6767,22 +4714,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6803,22 +4735,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6850,22 +4767,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6888,22 +4790,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6930,22 +4817,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -6976,22 +4848,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7029,22 +4886,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7078,22 +4920,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7114,22 +4941,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7149,22 +4961,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7190,22 +4987,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7242,22 +5024,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7290,22 +5057,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7330,22 +5082,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7380,22 +5117,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7430,22 +5152,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7479,22 +5186,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7528,22 +5220,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7580,22 +5257,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7635,22 +5297,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7700,22 +5347,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7747,22 +5379,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7824,22 +5441,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7878,22 +5480,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7949,22 +5536,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -7997,22 +5569,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8052,22 +5609,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8111,22 +5653,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8150,22 +5677,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8185,22 +5697,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8243,22 +5740,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8289,22 +5771,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8327,22 +5794,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8365,22 +5817,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8416,22 +5853,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8472,22 +5894,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8515,22 +5922,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8576,22 +5968,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -8678,22 +6055,7 @@ body[data-theme="noche"] .regv2-btn{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -9155,20 +6517,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 <style id="aj-btn-mode-size-fix">
 /* Ajuste específico: Botón "Modo de juego" ligeramente más compacto */
-#btnMode{
-  font-size: 13px !important;
-  padding: 5px 12px !important;
-  min-height: 30px !important;
-  line-height: 1 !important;
-  font-weight: 800 !important;
-}
+#btnMode{ position:absolute; left:10px; top:10px; }
 
 @media (max-width: 900px){
-  #btnMode{
-    font-size: 12px !important;
-    padding: 5px 10px !important;
-    min-height: 28px !important;
-  }
+  #btnMode{ position:absolute; left:10px; top:10px; }
 }
 
 /* === AJETREZ_PAY_FIX === */
@@ -9232,23 +6584,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
 #btnReglasSimple,
 #amenazaRulesBtn,
 #guerraRulesBtn,
-#btnReglas{
-  position: absolute;
-  bottom: calc(var(--square) * -0.9);
-  left: 18px;
-  animation: none !important;   /* desactiva flotación */
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-}
+#btnReglas{ position:absolute; left:calc(50% + 90px); top:0px; z-index:999; }
 
 /* Mobile: mismo criterio, leve ajuste */
 @media (max-width: 900px){
   #btnReglasSimple,
   #amenazaRulesBtn,
   #guerraRulesBtn,
-  #btnReglas{
-    bottom: calc(var(--square) * -0.7);
-    left: 12px;
-  }
+  #btnReglas{ position:absolute; left:calc(50% + 90px); top:0px; z-index:999; }
 }
 
 /* === AJETREZ_PAY_FIX === */
@@ -9392,12 +6735,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   /* Alinear botones de menú y reglas abajo */
   .right-ctrls,
-  .mode-group{
-    position: static !important;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
+  .mode-group{ position:relative; left:0; top:0; }
 
 }
 </style>
@@ -9584,6 +6922,38 @@ button[data-mode="online"]:hover{
 /* === END PATCH === */
 
 </style>
+
+<style>
+/* === OVERLAY ROOT FIX: MATCH BOARD HEIGHT (8 SECTIONS) === */
+
+/* Backdrop limited to board height */
+#panelBackdrop{
+  height: calc(var(--square) * 8) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  bottom: auto !important;
+}
+
+/* Ensure no invisible extension affects layout */
+#panelBackdrop::after{
+  content: none !important;
+}
+
+/* Panel already sized correctly, just ensure centering */
+#megaPanel{
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+</style>
+
+
+<style id="debug-frame-outline">
+.frame{
+  outline: 3px solid red !important;
+  outline-offset: -3px;
+}
+</style>
+
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 ><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
@@ -11935,22 +9305,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -11971,22 +9326,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12011,7 +9351,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
     padding: clamp(9px, 1.8vw, 12px) clamp(14px, 3.6vw, 22px) !important;
   }
   /* Controles derechos: su separación ya depende de --square; aquí aseguramos que no se colapse */
-  .right-ctrls{ gap: max(8px, calc(var(--square) * 0.4)); }
+  .right-ctrls{ position:relative; }
   /* Evita que sombras externas generen scroll lateral */
   #board{ overflow: hidden; }
 }
@@ -12021,22 +9361,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12066,22 +9391,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12114,22 +9424,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12162,22 +9457,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12198,22 +9478,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12245,22 +9510,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12301,22 +9551,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12349,22 +9584,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12438,22 +9658,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12487,22 +9692,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -12532,22 +9722,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -13277,22 +10452,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -13599,22 +10759,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -13668,22 +10813,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -13711,22 +10841,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -13758,22 +10873,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -13883,22 +10983,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -14036,22 +11121,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -14109,22 +11179,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -15561,22 +12616,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -15605,22 +12645,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -15653,22 +12678,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -15689,22 +12699,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -15732,22 +12727,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -15768,22 +12748,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -16150,22 +13115,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -16358,22 +13308,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -16421,22 +13356,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -16484,22 +13404,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -16707,22 +13612,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -16779,22 +13669,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -17189,22 +14064,7 @@ catch(_){}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -17302,22 +14162,7 @@ catch(_){}
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -18620,22 +15465,7 @@ function showToast(){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -18682,22 +15512,7 @@ function showToast(){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -18719,22 +15534,7 @@ function showToast(){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -18851,22 +15651,7 @@ function showToast(){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -18993,22 +15778,7 @@ function showToast(){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -20819,22 +17589,7 @@ function showVeteranBanner(color){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -21027,22 +17782,7 @@ function showVeteranBanner(color){
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -21546,22 +18286,7 @@ Final: jaque mate o tablas (ahogado, 3 repeticiones, 50 jugadas, material insufi
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -21704,22 +18429,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -21779,22 +18489,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -22155,22 +18850,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -22347,22 +19027,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -22446,22 +19111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -22520,22 +19170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23162,6 +19797,71 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <!-- === END ROOT FIX === -->
 
+
+<!-- === ROOT FIX: MOVE EXISTING ONLINE BUTTON TO BOTTOM CENTER === -->
+
+
+
+
+
+<style>
+/* === TUNE GREY BASE HEIGHT WITHOUT ANCHORS === */
+
+/* Reduce grey base height from bottom */
+.frame{
+  padding-bottom: calc(var(--square) * 0.55);
+}
+
+/* Button follows naturally */
+#aj-online-bottom{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+#aj-online-bottom button{
+  transform: scale(0.88);
+}
+</style>
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // find existing button (single source of truth)
+  const onlineBtn = [...document.querySelectorAll("button")]
+    .find(b => b.textContent.trim().toLowerCase() === "jugar online");
+
+  if(!onlineBtn) return;
+
+  // clear any previous positioning
+  onlineBtn.style.position = "static";
+  onlineBtn.style.left = "";
+  onlineBtn.style.right = "";
+  onlineBtn.style.top = "";
+  onlineBtn.style.bottom = "";
+  onlineBtn.style.transform = "";
+
+  // create container once
+  let holder = document.getElementById("aj-online-bottom");
+  if(!holder){
+    holder = document.createElement("div");
+    holder.id = "aj-online-bottom";
+    document.querySelector(".frame").appendChild(holder);
+  }
+
+  // MOVE the real button (no clone)
+  holder.appendChild(onlineBtn);
+});
+</script>
+<!-- === END ROOT FIX === -->
+
 </body>
 
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->
@@ -23194,22 +19894,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23485,22 +20170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23531,7 +20201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* Mantener alineados los elementos absolutamente posicionados del top bar */
-  #topBar .mode-group{ top: calc(6px + var(--bar-trim)) !important; }
+  #topBar .mode-group{ position:relative; left:0; top:0; }
   #timeIndicator{ top: calc(6px + var(--bar-trim)) !important; }
 
   /* BOTTOM BAR: recorte explícito adicional coherente con el cálculo existente */
@@ -23551,22 +20221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23588,22 +20243,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23621,22 +20261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23688,22 +20313,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23741,22 +20351,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23791,22 +20386,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23851,22 +20431,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23901,22 +20466,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23940,22 +20490,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -23996,22 +20531,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24050,22 +20570,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24100,22 +20605,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24151,22 +20641,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24200,22 +20675,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24239,22 +20699,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24273,22 +20718,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24313,22 +20743,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24350,22 +20765,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24394,22 +20794,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24445,22 +20830,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24483,22 +20853,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24528,22 +20883,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24569,22 +20909,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24621,22 +20946,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24656,22 +20966,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24691,22 +20986,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24726,22 +21006,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24761,22 +21026,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24812,22 +21062,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24863,22 +21098,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24901,22 +21121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -24944,22 +21149,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -25043,22 +21233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -25186,22 +21361,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -25243,22 +21403,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -25290,22 +21435,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -25328,22 +21458,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -25366,22 +21481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
@@ -25443,22 +21543,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END RESTART FREE VISUAL POSITION === */
 
 /* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
+#btnMenuMain{ position:absolute; left:50%; top:0px; transform:translateX(-50%); z-index:999; }
 #btnMenuMain:hover{ background:#222; }
 /* === END NEW MAIN MENU BUTTON === */
 
