@@ -6739,6 +6739,16 @@ button[data-mode="online"]:hover{
 /* === END PATCH === */
 
 </style>
+
+<!-- === CLOCK WIDTH -10% PATCH === -->
+<style id="clockWidthMinus10">
+  .mode-indicator{
+    transform: scaleX(0.9);
+    transform-origin: center;
+  }
+</style>
+<!-- === END CLOCK WIDTH PATCH === -->
+
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button></div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap">
 <!-- Floating Replay FAB (centered over board) -->
@@ -19601,6 +19611,60 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <!-- === END ROOT FIX === -->
+
+
+<!-- === COLABORA CON EL PROYECTO === -->
+<style>
+#btnColabora{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  z-index:60;
+}
+#colaboraBackdrop{
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.35);
+  display:none; z-index:65;
+}
+#colaboraPanel{
+  position:absolute;
+  left:12px; bottom:64px;
+  width:280px;
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 12px 32px rgba(0,0,0,.25);
+  display:none; z-index:70;
+}
+#colaboraPanel h3{ margin:0 0 8px; }
+#colaboraPanel p{ font-size:14px; margin-bottom:12px; }
+#colaboraBtns{ display:flex; gap:16px; justify-content:center; }
+</style>
+
+<div id="btnColabora" class="btn">Colabora con el proyecto</div>
+
+<div id="colaboraBackdrop" onclick="closeColabora()"></div>
+<div id="colaboraPanel">
+  <h3>Gracias por tu apoyo ❤️</h3>
+  <p>Tu colaboración ayuda a que el proyecto siga creciendo.</p>
+  <div id="colaboraBtns">
+    <a href="#" target="_blank" class="aj-pay-bg mp"></a>
+    <a href="#" target="_blank" class="aj-pay-bg pp"></a>
+  </div>
+</div>
+
+<script>
+function openColabora(){
+  document.getElementById('colaboraBackdrop').style.display='block';
+  document.getElementById('colaboraPanel').style.display='block';
+}
+function closeColabora(){
+  document.getElementById('colaboraBackdrop').style.display='none';
+  document.getElementById('colaboraPanel').style.display='none';
+}
+document.getElementById('btnColabora').onclick=openColabora;
+</script>
+<!-- === END COLABORA === -->
 
 </body>
 
