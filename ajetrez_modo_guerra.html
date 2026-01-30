@@ -6739,38 +6739,6 @@ button[data-mode="online"]:hover{
 /* === END PATCH === */
 
 </style>
-
-<style>
-/* === OVERLAY ROOT FIX: MATCH BOARD HEIGHT (8 SECTIONS) === */
-
-/* Backdrop limited to board height */
-#panelBackdrop{
-  height: calc(var(--square) * 8) !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  bottom: auto !important;
-}
-
-/* Ensure no invisible extension affects layout */
-#panelBackdrop::after{
-  content: none !important;
-}
-
-/* Panel already sized correctly, just ensure centering */
-#megaPanel{
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-</style>
-
-
-<style id="debug-frame-outline">
-.frame{
-  outline: 3px solid red !important;
-  outline-offset: -3px;
-}
-</style>
-
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button></div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap">
 <!-- Floating Replay FAB (centered over board) -->
@@ -19630,71 +19598,6 @@ document.addEventListener("DOMContentLoaded", () => {
   wrap.appendChild(rulesBtn);
 
   document.body.appendChild(wrap);
-});
-</script>
-<!-- === END ROOT FIX === -->
-
-
-<!-- === ROOT FIX: MOVE EXISTING ONLINE BUTTON TO BOTTOM CENTER === -->
-
-
-
-
-
-<style>
-/* === TUNE GREY BASE HEIGHT WITHOUT ANCHORS === */
-
-/* Reduce grey base height from bottom */
-.frame{
-  padding-bottom: calc(var(--square) * 0.55);
-}
-
-/* Button follows naturally */
-#aj-online-bottom{
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 6px;
-}
-
-#aj-online-bottom button{
-  transform: scale(0.88);
-}
-</style>
-
-
-
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  // find existing button (single source of truth)
-  const onlineBtn = [...document.querySelectorAll("button")]
-    .find(b => b.textContent.trim().toLowerCase() === "jugar online");
-
-  if(!onlineBtn) return;
-
-  // clear any previous positioning
-  onlineBtn.style.position = "static";
-  onlineBtn.style.left = "";
-  onlineBtn.style.right = "";
-  onlineBtn.style.top = "";
-  onlineBtn.style.bottom = "";
-  onlineBtn.style.transform = "";
-
-  // create container once
-  let holder = document.getElementById("aj-online-bottom");
-  if(!holder){
-    holder = document.createElement("div");
-    holder.id = "aj-online-bottom";
-    document.querySelector(".frame").appendChild(holder);
-  }
-
-  // MOVE the real button (no clone)
-  holder.appendChild(onlineBtn);
 });
 </script>
 <!-- === END ROOT FIX === -->
