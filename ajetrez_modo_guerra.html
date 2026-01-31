@@ -6749,6 +6749,35 @@ button[data-mode="online"]:hover{
 </style>
 <!-- === END CLOCK WIDTH PATCH === -->
 
+
+<style id="restart-absolute-lock">
+/* === RESTART BUTTON HARD LOCK === */
+#btnRestartBR{
+  all: unset;
+}
+
+#btnRestartBR.aj-restart-fixed{
+  position: absolute !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: calc(14px - var(--square) - 4mm) !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  z-index: 60 !important;
+
+  /* estética mínima heredada */
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,.7);
+}
+/* === END RESTART BUTTON HARD LOCK === */
+</style>
+
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button></div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap">
 <!-- Floating Replay FAB (centered over board) -->
@@ -19613,58 +19642,121 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- === END ROOT FIX === -->
 
 
-<!-- === COLABORA CON EL PROYECTO === -->
-<style>
-#btnColabora{
-  position:absolute;
-  left:12px;
-  bottom:12px;
-  z-index:60;
-}
-#colaboraBackdrop{
-  position:absolute; inset:0;
-  background:rgba(0,0,0,.35);
-  display:none; z-index:65;
-}
-#colaboraPanel{
-  position:absolute;
-  left:12px; bottom:64px;
-  width:280px;
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
-  box-shadow:0 12px 32px rgba(0,0,0,.25);
-  display:none; z-index:70;
-}
-#colaboraPanel h3{ margin:0 0 8px; }
-#colaboraPanel p{ font-size:14px; margin-bottom:12px; }
-#colaboraBtns{ display:flex; gap:16px; justify-content:center; }
-</style>
+<!-- === BOTON REINICIAR === -->
+<button id="btnRestartBR" class="btn aj-restart-fixed"
+  style="position:absolute; right:14px; bottom:calc(14px - var(--square)); z-index:60;"
+  onclick="location.reload()">
+  Reiniciar
+</button>
+<!-- === FIN BOTON REINICIAR === -->
 
-<div id="btnColabora" class="btn">Colabora con el proyecto</div>
 
-<div id="colaboraBackdrop" onclick="closeColabora()"></div>
-<div id="colaboraPanel">
-  <h3>Gracias por tu apoyo ❤️</h3>
-  <p>Tu colaboración ayuda a que el proyecto siga creciendo.</p>
-  <div id="colaboraBtns">
-    <a href="#" target="_blank" class="aj-pay-bg mp"></a>
-    <a href="#" target="_blank" class="aj-pay-bg pp"></a>
+ -->
+
+
+<!-- === DONATION OVERLAY (AUTO SHOW ON LOAD) === -->
+<div id="donationOverlay">
+  <div class="donation-card">
+    <button class="donation-close" onclick="closeDonation()">✕</button>
+    <h2>💖 Apoyá el desarrollo de Ajetrez</h2>
+    <p>
+      Si disfrutás este juego y querés ayudar a que siga creciendo,
+      tu donación hace una gran diferencia.<br><br>
+      <strong>Muchas gracias por tu aporte.</strong>
+    </p>
+
+    <div class="donation-buttons logos">
+      <a href="https://www.paypal.com/donate" target="_blank" class="logo-btn">
+        <img src="logo paypal ok.png" alt="Donar con PayPal">
+      </a>
+      <a href="https://www.mercadopago.com.ar" target="_blank" class="logo-btn">
+        <img src="logo mercadopago ok.jpg" alt="Donar con MercadoPago">
+      </a>
+    </div>
   </div>
 </div>
 
+<style>
+#donationOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+.donation-card{
+  position: relative;
+  background: #111;
+  color: #fff;
+  padding: 28px 26px 26px;
+  border-radius: 18px;
+  max-width: 440px;
+  width: 92%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.donation-card h2{
+  margin-top: 0;
+  font-weight: 900;
+}
+.donation-card p{
+  opacity: 0.92;
+  line-height: 1.45;
+}
+.donation-buttons.logos{
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+.logo-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+.logo-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+}
+.logo-btn img{
+  max-height: 48px;
+  max-width: 180px;
+}
+.donation-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 900;
+}
+.donation-close:hover{
+  background: #333;
+}
+</style>
+
 <script>
-function openColabora(){
-  document.getElementById('colaboraBackdrop').style.display='block';
-  document.getElementById('colaboraPanel').style.display='block';
+function closeDonation(){
+  const el = document.getElementById("donationOverlay");
+  if(el) el.style.display = "none";
 }
-function closeColabora(){
-  document.getElementById('colaboraBackdrop').style.display='none';
-  document.getElementById('colaboraPanel').style.display='none';
-}
-document.getElementById('btnColabora').onclick=openColabora;
 </script>
-<!-- === END COLABORA === -->
+<!-- === END DONATION OVERLAY === -->
 
 </body>
 
