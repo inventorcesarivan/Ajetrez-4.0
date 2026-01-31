@@ -8,6 +8,47 @@
   .frame{
     margin-top: calc(var(--square) * -3);
   }
+
+/* === DONATION LINK FIX (FORCE REAL LINKS) === */
+.aj-don-inline a{
+  display:inline-block;
+  position:relative;
+  z-index:9999;
+  pointer-events:auto !important;
+}
+.aj-don-inline a *{
+  pointer-events:auto !important;
+}
+/* === END DONATION LINK FIX === */
+
+
+/* === DONATION ROOT FIX (NO HIJACK POSSIBLE) === */
+.aj-pay-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:110px;
+  height:34px;
+  padding:0 14px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:14px;
+  text-decoration:none;
+  cursor:pointer;
+  z-index:99999;
+  position:relative;
+}
+.aj-pay-link.mp{
+  background:#00b1ea;
+  color:#fff;
+}
+.aj-pay-link.pp{
+  background:#003087;
+  color:#fff;
+}
+.aj-pay-link:hover{ filter:brightness(1.08); }
+/* === END DONATION ROOT FIX === */
+
 </style>
 <!-- === END FRAME ONLY UP 2 SQUARES === -->
 
@@ -235,27 +276,30 @@
 
 .aj-don-inline .aj-don-btns{
   display: flex;
-  gap: 28px;
+  gap: 18px;
   justify-content: center;
   align-items: center;
 }
 
 .aj-pay-bg{
   display: inline-block;
-  width: 120px;
-  height: 42px;
+  width: 92px;
+  height: 32px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
+.aj-pay-bg{background-color:transparent;}
 
 .aj-pay-bg.mp{
   background-image: url("https://www.mercadopago.com/org-img/MP3/home/logomp3.gif");
 }
+.aj-pay-bg{background-color:transparent;}
 
 .aj-pay-bg.pp{
   background-image: url("https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg");
 }
+.aj-pay-bg{background-color:transparent;}
 
 /* Blindaje contra estilos por modo */
 .aj-don-inline,
@@ -269,6 +313,7 @@
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -548,81 +593,81 @@
 .btn.theme.active{ background:#b91c1c !important; color:#fff !important; }
 
 /* ---- Temas (suaves) ---- */
-body[data-theme="dia"] .frame{
+body[] .frame{
   background: radial-gradient(circle at 99% 1%, rgba(0,0,0,0.46) 0%, rgba(0,0,0,0.32) 22%, rgba(0,0,0,0.16) 40%, rgba(0,0,0,0) 66%),
               linear-gradient(to bottom, #dedede 0%, #e9e9e9 24%, #fafafa 50%, #8a8a8a 72%, #2e2e2e 100%);
 }
-body[data-theme="dia"] .sq.central.light { background: #e9eff8; }
-body[data-theme="dia"] .sq.central.dark  { background: #bcc7d8; }
-body[data-theme="dia"] .sq.lateral.light { background: #f6f9fe; }
-body[data-theme="dia"] .sq.lateral.dark  { background: #dfe7f3; }
-body[data-theme="dia"] { color: #111; }
+body[] .sq.central.light { background: #e9eff8; }
+body[] .sq.central.dark  { background: #bcc7d8; }
+body[] .sq.lateral.light { background: #f6f9fe; }
+body[] .sq.lateral.dark  { background: #dfe7f3; }
+body[] { color: #111; }
 
-body[data-theme="noche"] .frame{
+body[] .frame{
   background: radial-gradient(circle at 98% 2%, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 65%),
               linear-gradient(to bottom, #1b1f24 0%, #2a3038 35%, #3a414c 55%, #272d35 75%, #14181c 100%);
 }
-body[data-theme="noche"] .sq.central.light { background: #3f4a57; }
-body[data-theme="noche"] .sq.central.dark  { background: #2b333d; }
-body[data-theme="noche"] .sq.lateral.light { background: #4a5563; }
-body[data-theme="noche"] .sq.lateral.dark  { background: #374151; }
-body[data-theme="noche"] { color: #f2f2f2; }
+body[] .sq.central.light { background: #3f4a57; }
+body[] .sq.central.dark  { background: #2b333d; }
+body[] .sq.lateral.light { background: #4a5563; }
+body[] .sq.lateral.dark  { background: #374151; }
+body[] { color: #f2f2f2; }
 
-body[data-theme="madera"] .frame{
+body[] .frame{
   background:
     radial-gradient(circle at 96% 4%, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0) 70%),
     linear-gradient(to bottom, #c9b39a 0%, #d9c6ad 40%, #e7d6bf 50%, #d5c1a9 70%, #bea487 100%);
 }
 
-body[data-theme="madera"] .sq.central.light { background: #e9d9c5; }
-body[data-theme="madera"] .sq.central.dark  { background: #cdb69a; }
-body[data-theme="madera"] .sq.lateral.light { background: #f2e5d3; }
-body[data-theme="madera"] .sq.lateral.dark  { background: #ddc9af; }
-body[data-theme="madera"] { color: #2a1f14; }
+body[] .sq.central.light { background: #e9d9c5; }
+body[] .sq.central.dark  { background: #cdb69a; }
+body[] .sq.lateral.light { background: #f2e5d3; }
+body[] .sq.lateral.dark  { background: #ddc9af; }
+body[] { color: #2a1f14; }
 
 /* --- Refinado MADERA (parecido a captura): tonos cálidos crema/marrón --- */
-body[data-theme="madera"] .sq.central.light { background: #efe6d0; }  /* crema suave */
-body[data-theme="madera"] .sq.central.dark  { background: #b48960; }  /* marrón medio */
-body[data-theme="madera"] .sq.lateral.light { background: #f6ecd9; }  /* crema un poco más clara */
-body[data-theme="madera"] .sq.lateral.dark  { background: #c79a72; }  /* marrón claro */
-body[data-theme="madera"] .frame{
+body[] .sq.central.light { background: #efe6d0; }  /* crema suave */
+body[] .sq.central.dark  { background: #b48960; }  /* marrón medio */
+body[] .sq.lateral.light { background: #f6ecd9; }  /* crema un poco más clara */
+body[] .sq.lateral.dark  { background: #c79a72; }  /* marrón claro */
+body[] .frame{
   background:
     radial-gradient(circle at 96% 4%, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.12) 38%, rgba(0,0,0,0) 68%),
     linear-gradient(to bottom, #bfa385 0%, #cfb698 38%, #e7d6bf 50%, #cdb294 72%, #a98664 100%);
 }
 
 /* --- ARENA: cálido muy suave --- */
-body[data-theme="arena"] .frame{
+body[] .frame{
   background: linear-gradient(to bottom, #e6dfd2 0%, #efe9de 40%, #f8f4ee 50%, #e9e2d6 70%, #d8d0c4 100%);
 }
-body[data-theme="arena"] .sq.central.light { background: #f3e9d8; }
-body[data-theme="arena"] .sq.central.dark  { background: #c9b59b; }
-body[data-theme="arena"] .sq.lateral.light { background: #f8f0e2; }
-body[data-theme="arena"] .sq.lateral.dark  { background: #dbc8b0; }
-body[data-theme="arena"] { color:#222; }
+body[] .sq.central.light { background: #f3e9d8; }
+body[] .sq.central.dark  { background: #c9b59b; }
+body[] .sq.lateral.light { background: #f8f0e2; }
+body[] .sq.lateral.dark  { background: #dbc8b0; }
+body[] { color:#222; }
 
 /* --- PIZARRA: grises sobrios --- */
-body[data-theme="pizarra"] .frame{
+body[] .frame{
   background: linear-gradient(to bottom, #2a2f34 0%, #343b42 35%, #3f474f 55%, #2e353c 80%, #1c2126 100%);
 }
-body[data-theme="pizarra"] .sq.central.light { background: #5f6770; }
-body[data-theme="pizarra"] .sq.central.dark  { background: #454c54; }
-body[data-theme="pizarra"] .sq.lateral.light { background: #6b737c; }
-body[data-theme="pizarra"] .sq.lateral.dark  { background: #515961; }
-body[data-theme="pizarra"] { color:#f1f1f1; }
+body[] .sq.central.light { background: #5f6770; }
+body[] .sq.central.dark  { background: #454c54; }
+body[] .sq.lateral.light { background: #6b737c; }
+body[] .sq.lateral.dark  { background: #515961; }
+body[] { color:#f1f1f1; }
 
 /* --- OLIVA: verdes neutros suaves --- */
-body[data-theme="oliva"] .frame{
+body[] .frame{
   background: linear-gradient(to bottom, #b8c0ae 0%, #c8cfbf 40%, #e6eadf 50%, #c6cdbd 70%, #a8b198 100%);
 }
-body[data-theme="oliva"] .sq.central.light { background: #e5eddc; }
-body[data-theme="oliva"] .sq.central.dark  { background: #b9c6a8; }
-body[data-theme="oliva"] .sq.lateral.light { background: #eef4e6; }
-body[data-theme="oliva"] .sq.lateral.dark  { background: #c7d3ba; }
-body[data-theme="oliva"] { color:#223; }
+body[] .sq.central.light { background: #e5eddc; }
+body[] .sq.central.dark  { background: #b9c6a8; }
+body[] .sq.lateral.light { background: #eef4e6; }
+body[] .sq.lateral.dark  { background: #c7d3ba; }
+body[] { color:#223; }
 
 /* Eliminar veta/lineas en MADERA dentro del contenedor del tablero */
-body[data-theme="madera"] .board-wrap{ position: relative; }
+body[] .board-wrap{ position: relative; }
 
   /* === Ajetrez: Indicadores de restricción de desplazamiento === */
   #shiftCtrl #btnShift[aria-disabled="true"]{
@@ -657,6 +702,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -699,6 +745,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -717,6 +764,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -758,6 +806,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -786,6 +835,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -824,6 +874,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -847,6 +898,7 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -872,6 +924,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -906,6 +959,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -930,6 +984,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -952,6 +1007,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1008,6 +1064,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1048,6 +1105,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1068,6 +1126,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1087,6 +1146,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1119,6 +1179,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1142,6 +1203,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1304,6 +1366,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1326,6 +1389,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1363,6 +1427,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1384,6 +1449,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1401,6 +1467,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1424,6 +1491,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1451,6 +1519,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1482,6 +1551,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1503,6 +1573,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1525,6 +1596,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1559,6 +1631,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1592,6 +1665,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1614,6 +1688,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1633,6 +1708,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1654,6 +1730,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1685,6 +1762,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1718,6 +1796,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1736,6 +1815,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1757,6 +1837,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1782,6 +1863,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1803,6 +1885,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1826,6 +1909,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1859,6 +1943,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1892,6 +1977,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1925,6 +2011,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1958,6 +2045,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -1991,6 +2079,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2020,6 +2109,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2045,6 +2135,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2067,6 +2158,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2086,6 +2178,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2179,6 +2272,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2212,6 +2306,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2257,6 +2352,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2282,6 +2378,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2305,6 +2402,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2324,6 +2422,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2348,6 +2447,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2375,6 +2475,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2402,6 +2503,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2422,6 +2524,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2458,6 +2561,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2476,6 +2580,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2569,6 +2674,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2638,6 +2744,7 @@ body, html{overflow:visible!important;}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2658,6 +2765,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2677,6 +2785,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2708,6 +2817,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2753,6 +2863,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2786,6 +2897,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2811,6 +2923,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2831,6 +2944,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2859,6 +2973,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2888,6 +3003,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2930,6 +3046,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2965,6 +3082,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -2983,12 +3101,13 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
 
 <style id="aj-hide-registros-in-menu-2025-09-11">
-  .mp-tabs .tab-btn[data-tab="tab-registros"]{ display:none !important; }
+  .mp-tabs .tab-btn[]{ display:none !important; }
   #tab-registros{ display:none !important; }
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
@@ -3002,6 +3121,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3030,6 +3150,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3066,6 +3187,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3111,6 +3233,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3132,6 +3255,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3153,6 +3277,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3174,6 +3299,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3195,6 +3321,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3216,6 +3343,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3234,6 +3362,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3252,6 +3381,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3277,6 +3407,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3322,6 +3453,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3357,6 +3489,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3384,6 +3517,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3408,6 +3542,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3448,6 +3583,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3488,6 +3624,7 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3496,37 +3633,37 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 
 /* === Tema-safe: texto oscuro sobre fondos claros en "noche" y "pizarra" === */
 /* Panel principal de menú (#megaPanel) y secciones claras */
-body[data-theme="noche"]  #megaPanel,
-body[data-theme="pizarra"]#megaPanel,
-body[data-theme="noche"]  #megaPanel .mp-content,
-body[data-theme="pizarra"]#megaPanel .mp-content,
-body[data-theme="noche"]  #megaPanel .mp-footer,
-body[data-theme="pizarra"]#megaPanel .mp-footer,
+body[]  #megaPanel,
+body[]#megaPanel,
+body[]  #megaPanel .mp-content,
+body[]#megaPanel .mp-content,
+body[]  #megaPanel .mp-footer,
+body[]#megaPanel .mp-footer,
 /* Panel de registros (v1 y v2) */
-body[data-theme="noche"]  #regPanel,
-body[data-theme="pizarra"]#regPanel,
-body[data-theme="noche"]  #regv2-panel,
-body[data-theme="pizarra"]#regv2-panel{
+body[]  #regPanel,
+body[]#regPanel,
+body[]  #regv2-panel,
+body[]#regv2-panel{
   color:#111 !important; /* texto negro/oscuro para contraste en fondos blancos o muy claros */
 }
 
 /* Excepciones: encabezado oscuro del megaPanel mantiene texto claro */
-body[data-theme="noche"]  #megaPanel .mp-header,
-body[data-theme="pizarra"]#megaPanel .mp-header{
+body[]  #megaPanel .mp-header,
+body[]#megaPanel .mp-header{
   color:#fff !important;
 }
 
 /* Inputs y listas dentro de registros y menú con fondo claro: texto oscuro garantizado */
-body[data-theme="noche"]  #megaPanel input,
-body[data-theme="pizarra"]#megaPanel input,
-body[data-theme="noche"]  #megaPanel select,
-body[data-theme="pizarra"]#megaPanel select,
-body[data-theme="noche"]  #megaPanel textarea,
-body[data-theme="pizarra"]#megaPanel textarea,
-body[data-theme="noche"]  #regPanel *,
-body[data-theme="pizarra"]#regPanel *,
-body[data-theme="noche"]  #regv2-panel *,
-body[data-theme="pizarra"]#regv2-panel *{
+body[]  #megaPanel input,
+body[]#megaPanel input,
+body[]  #megaPanel select,
+body[]#megaPanel select,
+body[]  #megaPanel textarea,
+body[]#megaPanel textarea,
+body[]  #regPanel *,
+body[]#regPanel *,
+body[]  #regv2-panel *,
+body[]#regv2-panel *{
   color:#111 !important;
 }
 
@@ -3544,6 +3681,7 @@ body[data-theme="pizarra"]#regv2-panel *{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3551,8 +3689,8 @@ body[data-theme="pizarra"]#regv2-panel *{
 <style>
 
 /* === Texto legible en temas "noche" y "pizarra" (sin !important) === */
-body[data-theme="noche"],
-body[data-theme="pizarra"]{
+body[],
+body[]{
   color:#111; /* texto oscuro por defecto; encabezados/btn con color propio seguirán mostrándose bien */
 }
 
@@ -3567,6 +3705,7 @@ body[data-theme="pizarra"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3574,10 +3713,10 @@ body[data-theme="pizarra"]{
 <style>
 
 /* === Botones legibles en temas "noche" y "pizarra" === */
-body[data-theme="noche"]  .btn,
-body[data-theme="pizarra"] .btn,
-body[data-theme="noche"]  .tab-btn,
-body[data-theme="pizarra"] .tab-btn{
+body[]  .btn,
+body[] .btn,
+body[]  .tab-btn,
+body[] .tab-btn{
   color:#fff; /* texto blanco en botones/ pestañas con fondo oscuro */
 }
 
@@ -3592,6 +3731,7 @@ body[data-theme="pizarra"] .tab-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3599,11 +3739,11 @@ body[data-theme="pizarra"] .tab-btn{
 <style>
 
 /* === Fix específico para "noche": texto blanco en botones sobre fondos oscuros === */
-body[data-theme="noche"] .btn,
-body[data-theme="noche"] .tab-btn,
-body[data-theme="noche"] #megaPanel .btn,
-body[data-theme="noche"] #regPanel .btn,
-body[data-theme="noche"] #regv2-panel .btn{
+body[] .btn,
+body[] .tab-btn,
+body[] #megaPanel .btn,
+body[] #regPanel .btn,
+body[] #regv2-panel .btn{
   color:#fff !important;
 }
 
@@ -3618,6 +3758,7 @@ body[data-theme="noche"] #regv2-panel .btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3625,13 +3766,13 @@ body[data-theme="noche"] #regv2-panel .btn{
 <style>
 
 /* === Noche: asegurar iconos/✕ de cerrar visibles en blanco === */
-body[data-theme="noche"] #rpFabClose,
-body[data-theme="noche"] #/* btnClosePanel eliminado */,
-body[data-theme="noche"] #botChooserClose,
-body[data-theme="noche"] #rgClose,
-body[data-theme="noche"] #menu-robust-login-close-fix,
-body[data-theme="noche"] #regv2-close,
-body[data-theme="noche"] #verDevToastClose{
+body[] #rpFabClose,
+body[] #/* btnClosePanel eliminado */,
+body[] #botChooserClose,
+body[] #rgClose,
+body[] #menu-robust-login-close-fix,
+body[] #regv2-close,
+body[] #verDevToastClose{
   color:#fff !important;
 }
 
@@ -3646,6 +3787,7 @@ body[data-theme="noche"] #verDevToastClose{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3653,8 +3795,8 @@ body[data-theme="noche"] #verDevToastClose{
 <style>
 
 /* === Noche: asegurar que "Cargar demo" (#regv2-demo) muestre texto blanco === */
-body[data-theme="noche"] #regv2-demo,
-body[data-theme="noche"] .regv2-btn{
+body[] #regv2-demo,
+body[] .regv2-btn{
   color:#fff !important;
 }
 
@@ -3669,6 +3811,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3688,6 +3831,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3707,6 +3851,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3747,6 +3892,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3791,6 +3937,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3818,6 +3965,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3842,29 +3990,30 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
 
 <style id="aj-night-btn-contrast-fix">
   /* Forzar contraste en temas oscuros: texto blanco en botones del panel de registros */
-  body[data-theme="noche"]  #regv2-panel .btn,
-  body[data-theme="noche"]  #regv2-panel .regv2-btn,
-  body[data-theme="noche"]  #regv2-panel button,
-  body[data-theme="noche"]  #regPanel   .btn,
-  body[data-theme="noche"]  #regPanel   button,
-  body[data-theme="noche"]  #regPanel   label.btn,
-  body[data-theme="pizarra"]#regv2-panel .btn,
-  body[data-theme="pizarra"]#regv2-panel .regv2-btn,
-  body[data-theme="pizarra"]#regv2-panel button,
-  body[data-theme="pizarra"]#regPanel   .btn,
-  body[data-theme="pizarra"]#regPanel   button,
-  body[data-theme="pizarra"]#regPanel   label.btn{
+  body[]  #regv2-panel .btn,
+  body[]  #regv2-panel .regv2-btn,
+  body[]  #regv2-panel button,
+  body[]  #regPanel   .btn,
+  body[]  #regPanel   button,
+  body[]  #regPanel   label.btn,
+  body[]#regv2-panel .btn,
+  body[]#regv2-panel .regv2-btn,
+  body[]#regv2-panel button,
+  body[]#regPanel   .btn,
+  body[]#regPanel   button,
+  body[]#regPanel   label.btn{
     color: #fff !important;
   }
   /* Para selects dentro del header de acciones (si adoptan fondo oscuro) */
-  body[data-theme="noche"]  #regv2-panel .regv2-head-actions select,
-  body[data-theme="pizarra"]#regv2-panel .regv2-head-actions select{
+  body[]  #regv2-panel .regv2-head-actions select,
+  body[]#regv2-panel .regv2-head-actions select{
     color: #fff !important;
   }
 
@@ -3879,6 +4028,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3922,6 +4072,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3948,6 +4099,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -3977,6 +4129,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4001,6 +4154,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4027,6 +4181,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4065,6 +4220,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4091,6 +4247,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4125,6 +4282,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4158,6 +4316,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4185,6 +4344,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4209,6 +4369,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4236,6 +4397,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4258,6 +4420,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4313,6 +4476,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4336,6 +4500,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4359,6 +4524,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4382,6 +4548,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4405,6 +4572,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4428,6 +4596,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4446,6 +4615,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4478,6 +4648,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4501,6 +4672,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4537,6 +4709,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4576,6 +4749,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4609,6 +4783,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4647,6 +4822,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4669,6 +4845,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4697,6 +4874,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4720,6 +4898,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4741,6 +4920,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4773,6 +4953,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4796,6 +4977,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4823,6 +5005,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4854,6 +5037,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4892,6 +5076,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4926,6 +5111,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4947,6 +5133,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4967,6 +5154,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -4993,6 +5181,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5030,6 +5219,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5063,6 +5253,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5073,7 +5264,7 @@ body[data-theme="noche"] .regv2-btn{
   /* Por si no podemos añadir la clase, intentos genéricos */
   #tab-personalizacion select[name*="pieza" i],
   #tab-personalizacion select[name*="piece" i],
-  #tab-personalizacion select[data-role="piece-style"]{
+  #tab-personalizacion select[]{
     width:80% !important;
   }
 
@@ -5088,6 +5279,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5123,6 +5315,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5158,6 +5351,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5192,6 +5386,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5226,6 +5421,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5263,6 +5459,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5303,6 +5500,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5353,6 +5551,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5385,6 +5584,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5447,6 +5647,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5486,6 +5687,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5542,6 +5744,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5575,6 +5778,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5615,6 +5819,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5659,6 +5864,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5683,6 +5889,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5690,7 +5897,7 @@ body[data-theme="noche"] .regv2-btn{
 <style id="aj-no-login-final">
 #tabsView{ display:block !important; }
 #loginView{ display:none !important; } 
-#loggedUser, .user-label, [data-role="logged-user"]{ display:none !important; }
+#loggedUser, .user-label, []{ display:none !important; }
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
@@ -5703,6 +5910,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5746,6 +5954,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5777,6 +5986,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5800,6 +6010,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5823,6 +6034,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5859,6 +6071,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5900,6 +6113,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5928,6 +6142,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -5974,6 +6189,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6061,6 +6277,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6186,6 +6403,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6228,6 +6446,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6276,6 +6495,7 @@ body[data-theme="noche"] .regv2-btn{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6400,6 +6620,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6429,6 +6650,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6472,6 +6694,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6483,6 +6706,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6511,6 +6735,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6525,6 +6750,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6549,6 +6775,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6573,6 +6800,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6596,6 +6824,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6620,6 +6849,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -6869,7 +7099,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 /* === PATCH: BOTÓN JUGAR ONLINE FLOTANTE === */
 #btnOnline,
 .btn-online,
-button[data-mode="online"]{
+button[]{
   all: unset;
   position: absolute;
   left: calc(var(--square) * 0.25);
@@ -6887,7 +7117,7 @@ button[data-mode="online"]{
 }
 #btnOnline:hover,
 .btn-online:hover,
-button[data-mode="online"]:hover{
+button[]:hover{
   background:#222;
 }
 /* === END PATCH === */
@@ -6898,7 +7128,7 @@ button[data-mode="online"]:hover{
 /* === PATCH: JUGAR ONLINE SOBRE RELOJ (TOP RIGHT) === */
 #btnOnline,
 .btn-online,
-button[data-mode="online"]{
+button[]{
   all: unset;
   position: absolute;
   right: calc(var(--square) * 0.5);
@@ -6916,7 +7146,7 @@ button[data-mode="online"]{
 }
 #btnOnline:hover,
 .btn-online:hover,
-button[data-mode="online"]:hover{
+button[]:hover{
   background:#222;
 }
 /* === END PATCH === */
@@ -6962,9 +7192,9 @@ button[data-mode="online"]:hover{
 </style>
 
 </head><body>
-<!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
-><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
-<button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button></div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap">
+<!-- REMOVED_DUPLICATE_BUTTON >Reglas</button><!-- checked -->
+><div class="frame"  id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
+<button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item"   style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item"   style="position:static;" type="button">Player vs player (local)</button></div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap">
 <!-- Floating Replay FAB (centered over board) -->
 <div aria-label="Reproducir partida" id="rpFab" role="region" style="display:none">
 <button class="btn small btn-close-internal" id="rpFabBtn">▶ Reproducir en tablero</button>
@@ -6998,7 +7228,7 @@ button[data-mode="online"]:hover{
 </div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div><div id="overlay"><div id="banner">FIN</div></div><div id="panelBackdrop"></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
 </div><div class="mp-header"><div id="mpTitle">Panel de Ajetrez
 <button class="btn small btn-close-internal" id="btnClosePanel" aria-label="Cerrar panel">Cerrar</button></div><div class="right"><span class="hint-sm" id="loggedUser"></span><button class="btn" id="/* btnClosePanel eliminado */" type="button"></button></div></div><div id="tabsView"><div class="mp-tabs">
-    <button class="tab-btn active" data-tab="tab-version">Versión de Ajetrez</button><button class="tab-btn" data-tab="tab-modos">Modos de juego</button><button class="tab-btn" data-tab="tab-personalizacion">Personalización</button><button class="tab-btn" data-tab="tab-registros" id="btnRegistrosTab">Registros</button>
+    <button class="tab-btn active" >Versión de Ajetrez</button><button class="tab-btn" >Modos de juego</button><button class="tab-btn" >Personalización</button><button class="tab-btn"  id="btnRegistrosTab">Registros</button>
 </div><div class="mp-content">
 
     <div class="tab" id="tab-personalizacion" style="display:none"><h3>Personalización del juego</h3><div class="row"><div class="field"><label>Estilo de piezas</label><select id="selSprites"><option value="auto">Auto (usar sprites si están disponibles)</option><option value="sprites">Sprites (imágenes)</option><option value="unicode">Unicode (símbolos)</option></select>
@@ -7035,8 +7265,8 @@ button[data-mode="online"]:hover{
   </div>
 </div>
 
-</div><div class="field"><label>Estilo visual</label><div aria-label="Elegir estilo visual" class="row" id="themePicker" role="group"><button class="btn theme" data-theme="dia" title="Tonos claros, suaves" type="button">Día</button><button class="btn theme" data-theme="noche" title="Tonos oscuros, suaves" type="button">Noche</button><button class="btn theme" data-theme="madera" title="Tonos madera, suaves" type="button">Madera</button><button class="btn theme" data-theme="arena" title="Arena suave" type="button">Arena</button><button class="btn theme" data-theme="pizarra" title="Pizarra / gris" type="button">Pizarra</button><button class="btn theme" data-theme="oliva" title="Verde oliva suave" type="button">Oliva</button></div><span class="hint-sm">Los estilos son suaves para no distraer durante la partida.</span></div></div></div><div class="tab" id="tab-version" style="display:block"><h3>Versión de Ajetrez</h3><p>Versión actual del juego: <strong id="verActual">2.5 (Estable)</strong></p><div class="field"><label>Seleccionar versión</label><select id="selVersion"><option selected="" value="3_0_simple">Versión 3.0 (modo simple)</option><option value="3_0_amenaza">Versión 3.0 (modo amenaza)</option><option value="3_0_guerra">Versión 3.0 (modo guerra)</option></select></div><div class="hint-sm">La selección futura podrá cargar configuraciones específicas por versión.
-</div></div><div class="tab" id="tab-modos" style="display:none"><h3>Modos de juego</h3><div class="row"><button class="btn mode" data-gmode="pvp-local">Player vs player (local)</button><button class="btn mode" data-gmode="bot">Player Vs Bot</button></div><div aria-live="polite" id="modeHelp" role="note"><span class="title">¿Cómo funciona este modo?</span><div class="body">Elegí un modo para ver una breve explicación.</div></div><p class="hint-sm">
+</div><div class="field"><label>Estilo visual</label><div aria-label="Elegir estilo visual" class="row" id="themePicker" role="group"><button class="btn theme"  title="Tonos claros, suaves" type="button">Día</button><button class="btn theme"  title="Tonos oscuros, suaves" type="button">Noche</button><button class="btn theme"  title="Tonos madera, suaves" type="button">Madera</button><button class="btn theme"  title="Arena suave" type="button">Arena</button><button class="btn theme"  title="Pizarra / gris" type="button">Pizarra</button><button class="btn theme"  title="Verde oliva suave" type="button">Oliva</button></div><span class="hint-sm">Los estilos son suaves para no distraer durante la partida.</span></div></div></div><div class="tab" id="tab-version" style="display:block"><h3>Versión de Ajetrez</h3><p>Versión actual del juego: <strong id="verActual">2.5 (Estable)</strong></p><div class="field"><label>Seleccionar versión</label><select id="selVersion"><option selected="" value="3_0_simple">Versión 3.0 (modo simple)</option><option value="3_0_amenaza">Versión 3.0 (modo amenaza)</option><option value="3_0_guerra">Versión 3.0 (modo guerra)</option></select></div><div class="hint-sm">La selección futura podrá cargar configuraciones específicas por versión.
+</div></div><div class="tab" id="tab-modos" style="display:none"><h3>Modos de juego</h3><div class="row"><button class="btn mode" >Player vs player (local)</button><button class="btn mode" >Player Vs Bot</button></div><div aria-live="polite" id="modeHelp" role="note"><span class="title">¿Cómo funciona este modo?</span><div class="body">Elegí un modo para ver una breve explicación.</div></div><p class="hint-sm">
 <!-- === DONACIONES INLINE (JUGAR ONLINE) === -->
 <div class="aj-don-inline">
   <div class="aj-don-title">Apoya el proyecto</div>
@@ -7046,8 +7276,8 @@ button[data-mode="online"]:hover{
   </div>
 </div>
 <!-- === FIN DONACIONES INLINE === -->
-</p></div><div class="tab aj-reglas-ver" id="tab-reglas" style="display:none"><h3></h3><div class="field"><label for="selRulesVersion">Ver reglas según versión</label><select id="selRulesVersion"><option selected="selected" value="3_0">3.0 (Modo simple)</option><option value="3_0_amenaza">3.0 (Modo amenaza)</option><option value="3_0_guerra">3.0 (Modo guerra)</option></select><div class="hint-sm">Este selector es independiente del de “Versión de Ajetrez”. Cambiarlo solo afecta el texto mostrado aquí.</div></div><div id="rulesContent" style="margin-top:8px;"><div class="rules-version" data-version="3_0"><h4>Ajetrez Version 3.0 (Modo simple) — Reglas Básicas del juego</h4><div><p>En este modo, sólo el recuadro central del tablero es jugable. Las partes sobrantes (aunque contengan piezas) no participan hasta que sean ingresadas mediante el desplazamiento de secciones.</p><h5><span class="subtitulo">Distribución de las piezas</span></h5><p>Por color, el tablero contiene:</p><ul><li>2 reyes</li><li>2 reinas</li><li>4 alfiles, 4 caballos, 4 torres</li><li>16 peones</li></ul><p>Las piezas son distribuidas en el recuadro central de la misma manera que en el ajedrez clásico. En los laterales, (si bien ocupan las mismas posiciones entre ellas). Las piezas se colocan desplazadas, 2 secciones hacia abajo en negras y 2 hacia arriba en blancas.</p><ul><li>Ajetrez respeta todas las reglas del clásico ajedrez, por lo tanto, se debe jugar de la misma manera y respetando las reglas generales del ajedrez clásico.</li><li>A su vez, añade nuevas reglas, que dependen del modo de juego que se utilice.</li><li>En este modo de juego (Modo simple). Luego de capturar, se puede elegir entre desplazar o mantener la sección del tablero donde ahora se ubica la pieza que realizó la captura.</li><li>Si decide desplazar. Se desplaza (hacia el lado opuesto al que se encuentra y solo una vez).</li><li>Luego de la elección de mantener, o desplazar la sección, queda cedido el turno al contrincante.</li><li>El desplazamiento de la sección, puede sacar, o introducir piezas del área jugable.</li></ul><h5>Función del desplazamiento de las secciones</h5><ul><li>Escapar de una captura.</li><li>Alterar las posibles estrategias del oponente.</li><li>Sacar piezas rivales del área jugable.</li><li>Ingresar piezas propias al área jugable.</li><li>También ingresar piezas del oponente para luego intentar capturarlas.</li></ul><p>Importante: Si una pieza sale del recuadro central, esto no significa que queda fuera de juego definitivamente; podría reingresar tras nuevos desplazamientos.</p><h5>⚠️ Imposibilidad de desplazamiento de secciones</h5><ul><li>En jaque/mate no hay desplazamientos de las secciones (aun cuando se haya capturado una pieza del oponente que se encuentre en la sección donde está el rey).</li><li>No se pueden desplazar secciones cuando esa acción implica que el recuadro central jugable quede sin piezas disponibles de alguno de los dos participantes.</li></ul></div></div>
-<div class="rules-version" data-version="3_0_guerra">
+</p></div><div class="tab aj-reglas-ver" id="tab-reglas" style="display:none"><h3></h3><div class="field"><label for="selRulesVersion">Ver reglas según versión</label><select id="selRulesVersion"><option selected="selected" value="3_0">3.0 (Modo simple)</option><option value="3_0_amenaza">3.0 (Modo amenaza)</option><option value="3_0_guerra">3.0 (Modo guerra)</option></select><div class="hint-sm">Este selector es independiente del de “Versión de Ajetrez”. Cambiarlo solo afecta el texto mostrado aquí.</div></div><div id="rulesContent" style="margin-top:8px;"><div class="rules-version" ><h4>Ajetrez Version 3.0 (Modo simple) — Reglas Básicas del juego</h4><div><p>En este modo, sólo el recuadro central del tablero es jugable. Las partes sobrantes (aunque contengan piezas) no participan hasta que sean ingresadas mediante el desplazamiento de secciones.</p><h5><span class="subtitulo">Distribución de las piezas</span></h5><p>Por color, el tablero contiene:</p><ul><li>2 reyes</li><li>2 reinas</li><li>4 alfiles, 4 caballos, 4 torres</li><li>16 peones</li></ul><p>Las piezas son distribuidas en el recuadro central de la misma manera que en el ajedrez clásico. En los laterales, (si bien ocupan las mismas posiciones entre ellas). Las piezas se colocan desplazadas, 2 secciones hacia abajo en negras y 2 hacia arriba en blancas.</p><ul><li>Ajetrez respeta todas las reglas del clásico ajedrez, por lo tanto, se debe jugar de la misma manera y respetando las reglas generales del ajedrez clásico.</li><li>A su vez, añade nuevas reglas, que dependen del modo de juego que se utilice.</li><li>En este modo de juego (Modo simple). Luego de capturar, se puede elegir entre desplazar o mantener la sección del tablero donde ahora se ubica la pieza que realizó la captura.</li><li>Si decide desplazar. Se desplaza (hacia el lado opuesto al que se encuentra y solo una vez).</li><li>Luego de la elección de mantener, o desplazar la sección, queda cedido el turno al contrincante.</li><li>El desplazamiento de la sección, puede sacar, o introducir piezas del área jugable.</li></ul><h5>Función del desplazamiento de las secciones</h5><ul><li>Escapar de una captura.</li><li>Alterar las posibles estrategias del oponente.</li><li>Sacar piezas rivales del área jugable.</li><li>Ingresar piezas propias al área jugable.</li><li>También ingresar piezas del oponente para luego intentar capturarlas.</li></ul><p>Importante: Si una pieza sale del recuadro central, esto no significa que queda fuera de juego definitivamente; podría reingresar tras nuevos desplazamientos.</p><h5>⚠️ Imposibilidad de desplazamiento de secciones</h5><ul><li>En jaque/mate no hay desplazamientos de las secciones (aun cuando se haya capturado una pieza del oponente que se encuentre en la sección donde está el rey).</li><li>No se pueden desplazar secciones cuando esa acción implica que el recuadro central jugable quede sin piezas disponibles de alguno de los dos participantes.</li></ul></div></div>
+<div class="rules-version" >
   <h4>Ajetrez — Modo Guerra (Reglas generales)</h4>
   <ol>
     <li><b>Conflicto permanente:</b> todas las capturas disponibles son obligatorias.</li>
@@ -7060,9 +7290,9 @@ button[data-mode="online"]:hover{
   </ol>
 </div>
 
-<div class="rules-version" data-version="3_0_amenaza"></div>
+<div class="rules-version" ></div>
 
-<div class="rules-version" data-version="3_0_guerra">
+<div class="rules-version" >
   <h4>Ajetrez — Modo Guerra (Reglas generales)</h4>
   <ol>
     <li><b>Conflicto permanente:</b> todas las capturas disponibles son obligatorias.</li>
@@ -7075,7 +7305,7 @@ button[data-mode="online"]:hover{
   </ol>
 </div>
 
-<div class="rules-version" data-version="3_0_amenaza">
+<div class="rules-version" >
   <h4>Ajetrez — Modo Amenaza (Reglas generales)</h4>
   <ol>
     <li><b>Amenaza obligatoria:</b> si existe una jugada que genere una amenaza directa (jaque o captura forzada), el jugador debe realizarla.</li>
@@ -7089,7 +7319,7 @@ button[data-mode="online"]:hover{
   </ol>
 </div>
 
-<div class="rules-version" data-version="3_0_guerra">
+<div class="rules-version" >
   <h4>Ajetrez — Modo Guerra (Reglas generales)</h4>
 
   <h5>1) Tablero y secciones</h5>
@@ -7189,7 +7419,8 @@ button[data-mode="online"]:hover{
   function setRulesVersion(v){
     document.querySelectorAll('#rulesContent .rules-version').forEach(function(el){
       el.style.display = (el.getAttribute('data-version') === v) ? 'block' : 'none';
-    });
+    }
+.aj-pay-bg{background-color:transparent;});
   }
   try{
     var sel = document.getElementById('selRulesVersion');
@@ -8845,7 +9076,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
         try{ const d=new Date(s); return d.toLocaleString(); }catch(_){ return s; }
       };
       const winner = log.winner==='w' ? 'Blancas' : (log.winner==='b' ? 'Negras' : (log.winner==='draw' ? '-' : (log.winner||'-')));
-      tr.innerHTML = `<td><a href="#" class="log-open" data-id="${log.id}">${fmt(log.startedAt)}</a></td><td>${log.mode||'-'}</td><td>${log.result}</td><td>${winner}</td><td>${log.moves||0}</td>`;
+      tr.innerHTML = `<td><a href="#" class="log-open" >${fmt(log.startedAt)}</a></td><td>${log.mode||'-'}</td><td>${log.result}</td><td>${winner}</td><td>${log.moves||0}</td>`;
       t.appendChild(tr);
     });
     document.getElementById('statTotal').textContent = logs.length;
@@ -9233,8 +9464,8 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
     }
     function bindOnlineButtons(){ return; // disabled
       var sels = [
-        '[data-gmode="online"]',
-        '[data-mode="online"]'
+        '[]',
+        '[]'
       ];
       var nodes = [];
       sels.forEach(function(sel){
@@ -9318,6 +9549,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9339,6 +9571,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9374,6 +9607,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9404,6 +9638,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9437,6 +9672,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9470,6 +9706,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9491,6 +9728,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9523,6 +9761,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9564,6 +9803,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9597,6 +9837,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9671,6 +9912,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9705,6 +9947,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9735,6 +9978,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -9863,7 +10107,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
       const tr = document.createElement('tr');
       const fmt = (s)=>{ try{ const d=new Date(s); return d.toLocaleString(); }catch(_){ return s; } };
       const winner = log.winner==='w' ? 'Blancas' : (log.winner==='b' ? 'Negras' : (log.result==='tablas' ? '-' : (log.winner||'-')));
-      const btn = '<button class="btn small secondary btn-view" data-id="'+log.id+'" type="button">Ver</button>';
+      const btn = '<button class="btn small secondary btn-view"  type="button">Ver</button>';
       tr.innerHTML = '<td>'+fmt(log.startedAt)+'</td><td>'+(log.mode||'-')+'</td><td>'+(log.result||'-')+'</td><td>'+winner+'</td><td>'+(log.moves||0);
       tbody.appendChild(tr);
     });
@@ -9968,7 +10212,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
             const side = s.side ? (s.side==='w'?'(B) ':'(N) ') : '';
             const lab = s.san ? (' — '+s.san) : (s.label ? (' — '+s.label) : '');
             const li = document.createElement('li');
-            li.innerHTML = '<a href="#" data-i="'+i+'" class="rpJump">'+String(i).padStart(2,'0')+' · '+tag+' '+side+lab+'</a>';
+            li.innerHTML = '<a href="#"  class="rpJump">'+String(i).padStart(2,'0')+' · '+tag+' '+side+lab+'</a>';
             list.appendChild(li);
           });
         }
@@ -10465,6 +10709,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -10477,7 +10722,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
   function qsa(sel, root){ return Array.from((root||document).querySelectorAll(sel)); }
 
   function getModesScope(){
-    return qs('#tab-modos, #modos, .tab-modos, [data-tab="modos"]') || document;
+    return qs('#tab-modos, #modos, .tab-modos, []') || document;
   }
   function findOnlineButton(){
     const scope = getModesScope();
@@ -10578,7 +10823,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
   function qsa(sel, root){ return Array.from((root||document).querySelectorAll(sel)); }
 
   function findOnlineBtn(){
-    const scope = qs('#tab-modos, #modos, .tab-modos, [data-tab="modos"]') || document;
+    const scope = qs('#tab-modos, #modos, .tab-modos, []') || document;
     const btns = qsa('button, .btn, [role="button"]', scope);
   }
 
@@ -10623,7 +10868,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
   function setActiveOnline(btn){
     // Quitar active de sus hermanos y activar online
-    const scope = qs('#tab-modos, #modos, .tab-modos, [data-tab="modos"]') || document;
+    const scope = qs('#tab-modos, #modos, .tab-modos, []') || document;
     qsa('.btn.mode, button.mode, .btn', scope).forEach(b=> b.classList && b.classList.remove('active'));
     if(btn && btn.classList) btn.classList.add('active');
   }
@@ -10772,6 +11017,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -10826,6 +11072,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -10854,6 +11101,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -10886,6 +11134,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -10927,7 +11176,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
         const mode = window.__AJ_LAST_PENDING_MODE__;
         let label = '';
         try{
-          const item = document.querySelector('#modeDropdown .dd-item[data-mode="'+mode+'"]');
+          const item = document.querySelector('#modeDropdown .dd-item[]');
           label = (item && (item.getAttribute('data-label') || item.textContent)) || '';
         }catch(_){}
         try{
@@ -10935,7 +11184,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
             window.setGameMode(mode, label);
           }else{
             // Fallback: simulate click on the dd item
-            const item = document.querySelector('#modeDropdown .dd-item[data-mode="'+mode+'"]');
+            const item = document.querySelector('#modeDropdown .dd-item[]');
             if(item){ item.click(); }
           }
         }catch(_){}
@@ -10996,6 +11245,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -11134,6 +11384,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -11192,6 +11443,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -12337,7 +12589,7 @@ const g = window.__AJ_CURRENT_GAME__; if(!g) return;
       var tabs = Array.from(panel.querySelectorAll('.tab'));
       var buttons = Array.from(panel.querySelectorAll('.tab-btn'));
       buttons.forEach(function(x){ x.classList.remove('active'); });
-      var btn = panel.querySelector('.tab-btn[data-tab="'+id+'"]');
+      var btn = panel.querySelector('.tab-btn[]');
       if(btn) btn.classList.add('active');
       tabs.forEach(function(t){ t.style.display = (t.id===id) ? 'block' : 'none'; });
       if(id==='tab-info' && window.renderLogs){ try{ window.renderLogs(); }catch(_){} }
@@ -12463,7 +12715,7 @@ function setHelp(mode){
   }
 
   tab.addEventListener('click', function(ev){
-    var b = ev.target && ev.target.closest && ev.target.closest('[data-gmode="online"]');
+    var b = ev.target && ev.target.closest && ev.target.closest('[]');
     if(!b || !tab.contains(b)) return;
     // Evitar cualquier tooltip/toast previo
     try{ ev.preventDefault(); ev.stopPropagation(); }catch(_){}
@@ -12482,7 +12734,7 @@ function setHelp(mode){
       var all = panel.querySelectorAll('.btn.mode');
       all.forEach(function(b){ b.classList.remove('active'); });
       if(!gm) return;
-      var btn = panel.querySelector('.btn.mode[data-gmode="'+gm+'"]');
+      var btn = panel.querySelector('.btn.mode[]');
       if(btn) btn.classList.add('active');
     }catch(_){}
   }
@@ -12629,6 +12881,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -12636,7 +12889,7 @@ div[style="height:var(--toolbar-gap)"]{
 /* Reducir 15% el tamaño del selector de modo y del indicador de modo (arriba a la izquierda) */
 #btnMode, #gameModeBtn, #modeToggle, #btnGameMode, #modeBtn,
 .mode-indicator, #modeIndicator, .mode-pill, .pill.mode, .modePill,
-[aria-label="Modo de juego"], [aria-label="Seleccionar modo"], [data-role="mode-button"]{
+[aria-label="Modo de juego"], [aria-label="Seleccionar modo"], []{
   transform: scale(0.85);
   transform-origin: top left;
 }
@@ -12658,6 +12911,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -12691,6 +12945,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -12712,6 +12967,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -12740,6 +12996,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -12761,6 +13018,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -13128,6 +13386,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -13321,6 +13580,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -13369,6 +13629,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -13417,6 +13678,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -13625,6 +13887,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -13682,6 +13945,7 @@ div[style="height:var(--toolbar-gap)"]{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -14077,6 +14341,7 @@ catch(_){}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -14175,6 +14440,7 @@ catch(_){}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -14773,7 +15039,7 @@ catch(_){}
       if (el) return el;
     }
     // Fallback por clase común
-    var cands = document.querySelectorAll('.board, .game-board, [data-role="board"]');
+    var cands = document.querySelectorAll('.board, .game-board, []');
     if (cands.length) return cands[0];
     return null;
   }
@@ -14791,8 +15057,8 @@ catch(_){}
     if (window.innerWidth > 900) return; // sólo móvil
     // Candidatos típicos de botones de la zona superior derecha
     var selectors = [
-      '#btn-fullscreen', '#fullscreenBtn', '[data-role="fullscreen"]', '.btn-fullscreen',
-      '#btn-reiniciar',  '#reiniciarBtn',  '[data-role="reiniciar"]',  '.btn-reiniciar'
+      '#btn-fullscreen', '#fullscreenBtn', '[]', '.btn-fullscreen',
+      '#btn-reiniciar',  '#reiniciarBtn',  '[]',  '.btn-reiniciar'
     ];
     var nodes = [];
     selectors.forEach(function(sel){
@@ -14854,7 +15120,7 @@ catch(_){}
 <button id="comoJugarCloseFloat"
         type="button"
         aria-label="Cerrar guía"
-        onclick="document.getElementById('comoJugarBackdrop').style.display='none'">
+        >
   ✕
 </button>
 
@@ -14885,6 +15151,7 @@ catch(_){}
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -15478,6 +15745,7 @@ function showToast(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -15525,6 +15793,7 @@ function showToast(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -15547,6 +15816,7 @@ function showToast(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -15664,6 +15934,7 @@ function showToast(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -15791,6 +16062,7 @@ function showToast(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -15960,7 +16232,7 @@ function showToast(){
       var bp=$('#panelBackdrop'), mp=$('#megaPanel');
       if(bp) bp.style.display='flex';
       if(mp) mp.style.display='flex';
-      var tbtn = document.querySelector('.mp-tabs .tab-btn[data-tab="tab-personalizacion"]');
+      var tbtn = document.querySelector('.mp-tabs .tab-btn[]');
       if(tbtn) tbtn.click();
     }catch(_){}
   }
@@ -17132,9 +17404,9 @@ function showToast(){
     div.innerHTML = [
       '<h3 style="margin:0 0 8px">Versiones de Ajetrez</h3>',
       '<div class="row" style="display:flex; gap:8px; flex-wrap:wrap">',
-      '<button class="btn" data-ver="simple">Modo simple</button>',
-      '<button class="btn" data-ver="amenaza">Modo amenaza</button>',
-      '<button class="btn" data-ver="guerra">Modo guerra (beta)</button>',
+      '<button class="btn" >Modo simple</button>',
+      '<button class="btn" >Modo amenaza</button>',
+      '<button class="btn" >Modo guerra (beta)</button>',
       '</div>'
     ].join('');
     div.querySelectorAll('button[data-ver]').forEach(function(b){
@@ -17189,9 +17461,9 @@ function showToast(){
     dd.style.borderRadius = '12px';
     dd.style.zIndex = '200';
     dd.innerHTML = [
-      '<button class="btn" style="background:#fff;color:#111" data-ver="simple">Modo simple</button>',
-      '<button class="btn" style="background:#fff;color:#111" data-ver="amenaza">Modo amenaza</button>',
-      '<button class="btn" style="background:#fff;color:#111" data-ver="guerra">Modo guerra (beta)</button>'
+      '<button class="btn" style="background:#fff;color:#111" >Modo simple</button>',
+      '<button class="btn" style="background:#fff;color:#111" >Modo amenaza</button>',
+      '<button class="btn" style="background:#fff;color:#111" >Modo guerra (beta)</button>'
     ].join('');
     dd.querySelectorAll('button[data-ver]').forEach(function(b){
       b.addEventListener('click', function(){ goTo(b.dataset.ver); });
@@ -17459,7 +17731,7 @@ function showToast(){
 <button id="comoJugarCloseFloat"
         type="button"
         aria-label="Cerrar guía"
-        onclick="document.getElementById('comoJugarBackdrop').style.display='none'">
+        >
   ✕
 </button>
 
@@ -17490,6 +17762,7 @@ function showToast(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -17602,6 +17875,7 @@ function showVeteranBanner(color){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -17795,6 +18069,7 @@ function showVeteranBanner(color){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -18094,7 +18369,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h3 id="comoJugarTitulo">Cómo jugar Ajetrez</h3>
     <p id="comoJugarTexto">Texto de referencia</p>
     <div style="text-align:right;">
-      <button class="btn small btn-close-internal" type="button" onclick="document.getElementById('comoJugarBackdrop').style.display='none'"></button>
+      <button class="btn small btn-close-internal" type="button" ></button>
     </div>
   </div>
 </div>
@@ -18102,7 +18377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <button id="comoJugarCloseFloat"
         type="button"
         aria-label="Cerrar guía"
-        onclick="document.getElementById('comoJugarBackdrop').style.display='none'">
+        >
   ✕
 </button>
 
@@ -18133,6 +18408,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -18299,6 +18575,7 @@ Final: jaque mate o tablas (ahogado, 3 repeticiones, 50 jugadas, material insufi
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -18442,6 +18719,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -18450,7 +18728,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="internal-float">
     <header>
       <span>Reglas modo amenaza</span>
-      <button class="btn small btn-close-internal" onclick="closeRulesModoSimple()"></button>
+      <button class="btn small btn-close-internal" ></button>
     </header>
     <div class="content" id="rulesSimpleContent"></div>
   </div>
@@ -18502,6 +18780,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -18753,7 +19032,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 
   /* ---------- PANEL / TAB MODOS ---------- */
-  const tab = document.querySelector('#tab-modos') || document.querySelector('[data-tab="modos"]');
+  const tab = document.querySelector('#tab-modos') || document.querySelector('[]');
   if(!tab) return;
 
   const btnRow = tab.querySelector('.row') || tab;
@@ -18863,6 +19142,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -19040,6 +19320,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -19124,6 +19405,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -19183,6 +19465,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -19513,6 +19796,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -19609,6 +19893,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -19684,7 +19969,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if(tabBtn) tabBtn.click();
 
     const onlineBtn = document.getElementById('btnOnlineMode') ||
-      document.querySelector('[data-gmode="online"]');
+      document.querySelector('[]');
     if(onlineBtn) onlineBtn.click();
   }
 
@@ -19707,12 +19992,14 @@ document.addEventListener('click', function(e){
     window.open('https://link.mercadopago.com.ar/ajetrez', '_blank', 'noopener');
     return;
   }
+.aj-pay-bg{background-color:transparent;}
   const pp = e.target.closest('.aj-pay-bg.pp');
   if(pp){
     e.preventDefault();
     window.open('https://www.paypal.com/ncp/payment/PTRWET3UWGEY8', '_blank', 'noopener');
     return;
   }
+.aj-pay-bg{background-color:transparent;}
 }, true);
 /* === END AJETREZ_PAY_FIX JS === */
 </script>
@@ -19808,7 +20095,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- === BOTON REINICIAR === -->
 <button id="btnRestartBR" class="btn aj-restart-fixed"
   style="position:absolute; right:14px; bottom:calc(14px - var(--square)); z-index:60;"
-  onclick="location.reload()">
+  >
   Reiniciar
 </button>
 <!-- === FIN BOTON REINICIAR === -->
@@ -19820,7 +20107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- === DONATION OVERLAY (AUTO SHOW ON LOAD) === -->
 <div id="donationOverlay">
   <div class="donation-card">
-    <button class="donation-close" onclick="closeDonation()">✕</button>
+    <button class="donation-close" >✕</button>
     <h2>💖 Apoyá el desarrollo de Ajetrez</h2>
     <p>
       Si disfrutás este juego y querés ayudar a que siga creciendo,
@@ -19959,6 +20246,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20235,6 +20523,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20286,6 +20575,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20308,6 +20598,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20326,6 +20617,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20378,6 +20670,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20416,6 +20709,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20451,6 +20745,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20496,6 +20791,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20531,6 +20827,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20555,6 +20852,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20596,6 +20894,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20635,6 +20934,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20670,6 +20970,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20706,6 +21007,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20740,6 +21042,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20764,6 +21067,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20783,6 +21087,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20808,6 +21113,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20830,6 +21136,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20859,6 +21166,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20895,6 +21203,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20918,6 +21227,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20948,6 +21258,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -20974,6 +21285,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21011,6 +21323,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21031,6 +21344,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21051,6 +21365,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21071,6 +21386,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21091,6 +21407,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21127,6 +21444,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21163,6 +21481,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21186,6 +21505,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21214,6 +21534,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21298,6 +21619,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21426,6 +21748,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21468,6 +21791,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21500,6 +21824,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21523,6 +21848,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21546,6 +21872,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
@@ -21608,6 +21935,7 @@ function closeDonation(){
 
 /* === AJETREZ_PAY_FIX === */
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+.aj-pay-bg{background-color:transparent;}
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
