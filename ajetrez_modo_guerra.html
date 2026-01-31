@@ -234,11 +234,11 @@
 }
 
 .aj-pay-bg.mp{
-  background-image: url("https://www.mercadopago.com/org-img/MP3/home/logomp3.gif");
+  background-image: url("logo mercadopago ok.jpg");
 }
 
 .aj-pay-bg.pp{
-  background-image: url("https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg");
+  background-image: url("logo paypal ok.png");
 }
 
 /* Blindaje contra estilos por modo */
@@ -299,7 +299,21 @@
 
   .mode-group{ position:relative; left:0; top:0; }
   #btnMode { position: static !important; inset: auto !important; transform: none !important; z-index: auto !important; }
-  .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
+  .mode-indicator{
+  position: relative;
+  margin-left: 10px;
+  margin-top: 3mm; /* ajuste fino solicitado */
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
+  background:#111;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+  border:1.5px solid rgba(255,255,255,.75);
+  white-space:nowrap;
+}
   .dropdown{ position:absolute; top: calc(var(--mode-y) + 40px); left: var(--mode-x); display:none; flex-direction:column; gap:8px; margin-top:8px; padding:8px; z-index: 20; background: transparent; }
   .dropdown.open{ display:flex; }
   .dropdown .dd-item{ position: static; }
@@ -1225,7 +1239,21 @@ body, html{overflow:visible!important;}
 }
 
 /* === Indicador a la derecha del selector de Modo del tablero: estilizado como botón negro === */
-#modeIndicator, .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
+#modeIndicator, .mode-indicator{
+  position: relative;
+  margin-left: 10px;
+  margin-top: 3mm; /* ajuste fino solicitado */
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
+  background:#111;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+  border:1.5px solid rgba(255,255,255,.75);
+  white-space:nowrap;
+}
 
 /* === Contorno blanco alrededor del panel completo del menú === */
 #megaPanel{
@@ -1617,7 +1645,21 @@ body, html{overflow:visible!important;}
     position: absolute !important;
   }
   /* Indicador de modo (texto a la derecha del botón) */
-  #topBar .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
+  #topBar .mode-indicator{
+  position: relative;
+  margin-left: 10px;
+  margin-top: 3mm; /* ajuste fino solicitado */
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
+  background:#111;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+  border:1.5px solid rgba(255,255,255,.75);
+  white-space:nowrap;
+}
   /* HUD de bot u otros bloques de la derecha/izquierda */
   #topBar .bot-hud,
   #topBar .right-ctrls{ position:relative; }
@@ -1652,7 +1694,21 @@ body, html{overflow:visible!important;}
 
   /* Botones e indicadores internos: sin desplazamientos verticales extra */
   #topBar .btn,
-  #topBar .mode-indicator{ position:absolute; right:calc(20px - (var(--square) * 0.5)); top:calc(6px - (var(--square) * 0.5) + 2mm); font-weight:800; opacity:1; z-index:25; background:#111; color:#fff; padding:8px 14px; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1.5px solid rgba(255,255,255,.75); white-space:nowrap;}
+  #topBar .mode-indicator{
+  position: relative;
+  margin-left: 10px;
+  margin-top: 3mm; /* ajuste fino solicitado */
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
+  background:#111;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+  border:1.5px solid rgba(255,255,255,.75);
+  white-space:nowrap;
+}
 
   /* El menú desplegable se mantiene sin corrimiento adicional */
   #topBar .dropdown{
@@ -6599,9 +6655,20 @@ button[data-mode="online"]:hover{
 <!-- === CLOCK WIDTH -10% PATCH === -->
 <style id="clockWidthMinus10">
   .mode-indicator{
-    transform: scaleX(0.9);
-    transform-origin: center;
-  }
+  position: relative;
+  margin-left: 10px;
+  margin-top: 3mm; /* ajuste fino solicitado */
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
+  background:#111;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+  border:1.5px solid rgba(255,255,255,.75);
+  white-space:nowrap;
+}
 </style>
 <!-- === END CLOCK WIDTH PATCH === -->
 
@@ -6686,6 +6753,30 @@ button[data-mode="online"]:hover{
     padding: 8px 10px;
     gap: 6px;
   }
+}
+</style>
+
+
+<style id="donationLogosEnhanceV2">
+/* === DONATION LOGOS – BIG & ATTRACTIVE === */
+.aj-don-inline{
+  padding: 22px 26px;
+}
+
+.aj-don-inline .aj-don-btns{
+  gap: 32px;
+}
+
+.aj-pay-bg{
+  width: 160px;
+  height: 56px;
+  background-size: contain;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.aj-pay-bg:hover{
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
 }
 </style>
 
@@ -9694,7 +9785,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
       panel.innerHTML = '<div class="row" style="justify-content:space-between;align-items:center;margin-bottom:8px;">'
         + '<strong style="font-size:18px">Reproductor de partida</strong>'
         + '<button class="btn small btn-close-internal" id="rpExit"></button></div>'
-        + '<div class="row" style="gap:6px;margin-bottom:8px;"><button class="btn small btn-close-internal" id="rpReset">Reiniciar</button>'
+        + '<div class="row" style="gap:6px;margin-bottom:8px;">'
         + '<button class="btn small btn-close-internal" id="rpPrev">◀</button><button class="btn small btn-close-internal" id="rpPlay">▶</button>'
         + '<button class="btn small btn-close-internal" id="rpPause" style="display:none;">⏸</button><button class="btn small btn-close-internal" id="rpNext">▶</button>'
         + '<select id="rpSpeed" class="sel small"><option value="1200">x1</option><option value="700">x1.7</option><option value="400">x3</option></select>'
@@ -9837,7 +9928,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
         + '<div class="row" style="align-items:flex-end;gap:12px;">'
         + '  <div class="field" style="min-width:220px;"><label>Partida seleccionada</label><div class="pill" id="replayMeta">—</div></div>'
         + '  <div class="row controls-row" role="group" aria-label="Controles" style="gap:6px;">'
-        + '    <button class="btn small btn-close-internal" id="rpReset">Reiniciar</button>'
+        + '    '
         + '    <button class="btn small btn-close-internal" id="rpPrev">◀</button>'
         + '    <button class="btn small btn-close-internal" id="rpPlay">▶</button>'
         + '    <button class="btn small btn-close-internal" id="rpPause" style="display:none;">⏸</button>'
@@ -19656,6 +19747,70 @@ function closeDonation(){
 </script>
 <!-- === END DONATION OVERLAY === -->
 
+
+<script id="reiniciar-dedup-patch">
+(function(){
+  const nodes = Array.from(document.querySelectorAll('button, div, span, a'))
+    .filter(el => el.textContent && el.textContent.trim() === 'Reiniciar');
+
+  if(nodes.length <= 1) return;
+
+  // Prefer keeping the one with id or onclick
+  let keeper = nodes.find(n => n.id || n.onclick);
+  if(!keeper) keeper = nodes[0];
+
+  nodes.forEach(n => {
+    if(n !== keeper){
+      n.remove();
+    }
+  });
+})();
+</script>
+
+
+<script id="mode-indicator-offset-patch">
+(function(){
+  // Find the mode indicator button (the one that is NOT 'Modo de juego' and NOT 'Jugar Online')
+  const buttons = Array.from(document.querySelectorAll('button'));
+  const target = buttons.find(b => {
+    const t = b.textContent.trim();
+    return (
+      t.length &&
+      t !== 'Modo de juego' &&
+      t !== 'Jugar Online' &&
+      /player|bot|local|dif/i.test(t)
+    );
+  });
+
+  if(target){
+    target.setAttribute('data-mode-indicator', 'true');
+  }
+})();
+</script>
+
+<style id="mode-indicator-offset-css">
+button[data-mode-indicator="true"]{
+  transform: translateY(3mm) !important;
+}
+</style>
+
+
+<script id="modo-juego-offset-patch">
+(function(){
+  const buttons = Array.from(document.querySelectorAll('button'));
+  const modoBtn = buttons.find(b => b.textContent && b.textContent.trim() === 'Modo de juego');
+  if(modoBtn){
+    modoBtn.setAttribute('data-modo-juego', 'true');
+  }
+})();
+</script>
+
+<style id="modo-juego-offset-css">
+button[data-modo-juego="true"]{
+  transform: translateY(-3mm) !important;
+}
+</style>
+
 </body>
 
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->
@@ -21189,3 +21344,161 @@ function closeDonation(){
 })();
 </script>
 
+
+<style id="kill-jugar-online">
+/* Fuerza ocultar cualquier botón Jugar Online fuera del menú */
+button:not(.dd-item)[id*="Online" i],
+button:not(.dd-item):contains("Jugar Online"){
+  display:none !important;
+}
+</style>
+
+
+
+<!-- === HARD RESET: TOP BOARD BUTTONS FREE LAYOUT (WEB + MOBILE) === -->
+<style id="topButtonsHardReset">
+/* Target top controls explicitly */
+#btnMegaMenu,
+#btnMenuMain,
+#btnReglas,
+#btnMode,
+.mode-indicator,
+.mode-group,
+.bar,
+.right-ctrls{
+  position: static !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+}
+
+/* Remove layout side-effects from parents */
+.bar,
+.mode-group,
+.right-ctrls{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+/* Kill any global offsets that might affect only the top bar */
+.bar *{
+  transform: none !important;
+}
+
+/* Ensure no overlay blocks movement */
+#panelBackdrop,
+#overlay{
+  pointer-events: auto;
+}
+
+/* Mobile: same rules, no exceptions */
+@media (max-width: 900px){
+  #btnMegaMenu,
+  #btnMenuMain,
+  #btnReglas,
+  #btnMode,
+  .mode-indicator,
+  .mode-group,
+  .bar,
+  .right-ctrls{
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
+</style>
+<!-- === END HARD RESET === -->
+
+
+
+<!-- === MOVE GAME MODE BUTTON TO LEFT (NO ANCHOR) === -->
+<style id="modeButtonMoveLeft">
+/* Barra superior como flex */
+.bar{
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+/* Grupo de modo a la izquierda */
+.mode-group{
+  margin-right: auto !important;
+}
+
+/* Botón y label sin anclajes */
+#btnMode,
+.mode-indicator{
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+}
+</style>
+<!-- === END MOVE GAME MODE BUTTON TO LEFT === -->
+
+
+
+<!-- === UNGROUP MODE ELEMENTS + PLACE ONLINE BUTTON ABOVE MENU/REGLAS === -->
+<style id="ungroupModeAndPlaceOnline">
+
+/* 1. Desagrupar completamente el grupo de modo */
+.mode-group{
+  display: contents !important; /* rompe el grupo sin mover DOM */
+}
+
+/* Cada elemento vuelve a ser independiente */
+#btnMode,
+.mode-indicator,
+#btnOnlineMode{
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+/* 2. Barra superior como layout vertical controlado */
+.bar{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+}
+
+/* 3. Orden visual (sin anclajes) */
+#btnOnlineMode{
+  order: 1;
+}
+
+#btnMegaMenu,
+#btnMenuMain,
+#btnReglas{
+  order: 2;
+}
+
+#btnMode,
+.mode-indicator{
+  order: 3;
+}
+
+/* 4. Evitar herencias raras */
+.bar *{
+  float: none !important;
+}
+
+/* Mobile: mismo comportamiento */
+@media (max-width: 900px){
+  .bar{
+    align-items: flex-start !important;
+  }
+}
+
+</style>
+<!-- === END UNGROUP MODE + ONLINE POSITION === -->
