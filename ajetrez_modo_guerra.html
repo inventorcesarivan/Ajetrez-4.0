@@ -2344,72 +2344,6 @@ body, html{overflow:visible!important;}
     if(hookStop() || tries > 40){ clearInterval(t); }
   }, 250);
 })();
-</script><style id="aj-clockwrap-style">
-  /* Base contenedora negra para reloj + pausa */
-  #aj-clockwrap{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #000 !important;
-    color: #fff !important;
-    border-radius: 10px;
-    padding: 2px 10px;
-    order: 3 !important;       /* aparece donde estaba el reloj */
-    margin-left: 8px;
-  }
-  /* Dentro del contenedor, los hijos no llevan fondo propio */
-  #aj-clockwrap #timeTxt,
-  #aj-clockwrap #pauseBtn{
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-  #aj-clockwrap #pauseBtn{
-    margin-left: 6px !important;
-  }
-
-/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
-
-/* === END RESTART FREE VISUAL POSITION === */
-
-/* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain { position: static !important; inset: auto !important; transform: none !important; z-index: auto !important; }
-#btnMenuMain:hover{ background:#222; }
-/* === END NEW MAIN MENU BUTTON === */
-
-/* === AJETREZ_PAY_FIX === */
-
-/* === END AJETREZ_PAY_FIX === */
-</style><script id="aj-clockwrap-script">
-(function(){
-  function $(s,root=document){ return root.querySelector(s); }
-  function ensureWrap(){
-    var host = $('#timeIndicator');
-    var time = $('#timeTxt');
-    var pause = $('#pauseBtn');
-    if(!host || !time || !pause) return false;
-
-    var wrap = $('#aj-clockwrap');
-    if(!wrap){
-      wrap = document.createElement('div');
-      wrap.id = 'aj-clockwrap';
-      host.appendChild(wrap);
-    }
-    if(time.parentElement !== wrap) wrap.appendChild(time);
-    if(pause.parentElement !== wrap) wrap.appendChild(pause);
-    return true;
-  }
-
-  // Try immediately and keep trying as DOM updates
-  ensureWrap();
-  var tries = 0;
-  var obs = new MutationObserver(function(){
-    if(ensureWrap()){
-      // keep observing in case scripts relocate nodes later,
-      // but avoid running too often
-    }
-  });
-  obs.observe(document.documentElement, {childList:true, subtree:true});
-})();
 </script><style id="rv2-sticky-css">
 #rv2 .wrapper{ width:min(1040px,92vw); margin:12px auto; box-sizing:border-box; }
 #rv2 .grid{ display:grid; grid-template-columns:38% 62%; gap:16px; align-items:stretch; }
@@ -6290,6 +6224,20 @@ button[data-mode="online"]:hover{
 
 /* === FIN MODO FLOTANTE === */
 </style>
+
+<style id="aj-pause-free">
+  /* PAUSE BUTTON FREE: no anchors, no JS positioning */
+  #pauseBtn{
+    position: fixed !important;
+    inset: auto !important;
+    left: 20px;  /* change freely */
+    top: 20px;   /* change freely */
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 50 !important;
+  }
+</style>
+
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar"><button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button></div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap"><!-- Floating Replay FAB (centered over board) --><div aria-label="Reproducir partida" id="rpFab" role="region" style="display:none"><button class="btn small btn-close-internal" id="rpFabBtn">▶ Reproducir en tablero</button><button aria-label="Cerrar" class="btn small btn-close-internal" id="rpFabClose">✕</button></div><!-- Replay Controls (Modo Revisión) --><div id="replayBar" style="display:none; position:absolute; left:50%; transform:translateX(-50%); top: calc(-1.5 * var(--square) + 4px); width:auto; max-width:min(96vw, calc(var(--square)*var(--board-cols) - 24px)); z-index:2147483602; pointer-events:auto;"><div style="display:flex; align-items:center; gap:8px; background:rgba(17,17,17,.92); color:#fff; border:2px solid #fff; border-radius:12px; padding:6px 8px;"><button class="btn small btn-close-internal" id="rp-start" type="button">⏮</button><button class="btn small btn-close-internal" id="rp-prev" type="button">◀︎</button><button class="btn small btn-close-internal" id="rp-play" type="button">▶︎</button><button class="btn small btn-close-internal" id="rp-pause" type="button">⏸</button><button class="btn small btn-close-internal" id="rp-next" type="button">▶︎</button><button class="btn small btn-close-internal" id="rp-end" type="button">⏭</button><select aria-label="Velocidad de reproducción" class="sel small" id="rp-speed" style="width:88px"><option selected="" value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="2.5">2.5×</option><option value="3">3×</option></select><input id="rp-slider" max="0" min="0" style="flex:1" type="range" value="0"/><button aria-label="Cerrar" class="btn small btn-close-internal" id="rp-exit" type="button">✕</button></div></div><div aria-label="Overlay de inicio" aria-live="polite" id="startOverlay"><div class="start-card"><div style="font-weight:800; font-size:18px;">Comenzar partida
 </div><button id="btnStartGame" type="button">Comenzar partida</button><div class="hint">Pulsa para iniciar. Bloquea el juego en todos los modos hasta empezar.
 </div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div><div id="overlay"><div id="banner">FIN</div></div><div id="panelBackdrop"></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
@@ -18283,6 +18231,263 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
+<style id="aj-pause-bottom-override">
+/* === PAUSE BUTTON: CLEAN, NO ANCHORS, BOTTOM === */
+#pauseBtn{
+  position: fixed !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  margin: 0 !important;
+  left: 50% !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+}
+/* Neutralize any helper classes/scripts */
+#pauseBtn.__ajCentered{
+  left: 50% !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+}
+/* Detach from containers */
+#timeIndicator #pauseBtn{
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+}
+</style>
+
+
+<style id="aj-pause-over-clock">
+/* === PAUSE BUTTON OVER CLOCK === */
+#timeIndicator{
+  position: relative !important;
+}
+
+#pauseBtn{
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  bottom: auto !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  z-index: 20 !important;
+}
+
+/* Neutralize any helper classes */
+#pauseBtn.__ajCentered{
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* Ensure no container forces layout */
+#timeIndicator #pauseBtn{
+  position: absolute !important;
+}
+</style>
+
+
+<style id="aj-pause-above-clock-floating">
+/* === PAUSE BUTTON FLOATING ABOVE CLOCK === */
+
+/* Ensure clock is reference */
+#timeIndicator{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Floating pause button just ABOVE the clock */
+#pauseBtn{
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 100% !important;           /* place above */
+  margin-bottom: 6px !important;     /* small gap */
+  top: auto !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  display: inline-flex !important;
+}
+
+/* Neutralize any helper / centering logic */
+#pauseBtn.__ajCentered{
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 100% !important;
+  margin-bottom: 6px !important;
+  top: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Detach from layout constraints */
+#timeIndicator #pauseBtn{
+  pointer-events: auto !important;
+}
+</style>
+
+
+<style id="aj-pause-deep-clean">
+/* === REMOVE PHANTOM BLACK EXTENSIONS UNDER CLOCK === */
+#timeIndicator::before,
+#timeIndicator::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* Ensure clock itself is clean */
+#timeIndicator{
+  overflow: visible !important;
+}
+
+/* Reset pause button completely */
+#pauseBtn{
+  all: unset;
+  position: fixed !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  z-index: 10000 !important;
+}
+
+/* Remove any inherited helpers */
+#pauseBtn.__ajCentered{
+  all: unset;
+}
+</style>
+
+<script>
+/* === FLOAT PAUSE BUTTON ABOVE CLOCK (ROBUST) === */
+(function(){
+  function placePause(){
+    var clock = document.getElementById('timeIndicator');
+    var btn   = document.getElementById('pauseBtn');
+    if(!clock || !btn) return;
+
+    var r = clock.getBoundingClientRect();
+    var bw = btn.offsetWidth || 0;
+    var bh = btn.offsetHeight || 0;
+
+    btn.style.left = Math.round(r.left + r.width/2 - bw/2) + 'px';
+    btn.style.top  = Math.round(r.top - bh - 6) + 'px'; // 6px gap above
+  }
+
+  function init(){
+    placePause();
+    ['resize','orientationchange','scroll'].forEach(e=>{
+      window.addEventListener(e, placePause, {passive:true});
+    });
+    document.addEventListener('fullscreenchange', placePause, {passive:true});
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+})();
+</script>
+
+
+<style id="aj-pause-final-visible">
+/* --- FINAL VISIBILITY GUARANTEE FOR PAUSE BUTTON --- */
+
+/* Kill any ghost extensions */
+#timeIndicator::before,
+#timeIndicator::after{ content:none !important; display:none !important; }
+
+/* Clock must not clip */
+#timeIndicator{ overflow: visible !important; position: relative !important; }
+
+/* Pause button visual */
+#pauseBtn{
+  position: fixed !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #111 !important;
+  color: #fff !important;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  z-index: 2147483646 !important; /* above everything */
+  cursor: pointer;
+  pointer-events: auto !important;
+}
+
+/* Never hide */
+#pauseBtn[hidden],
+#pauseBtn[style*="display: none"]{
+  display: inline-flex !important;
+}
+</style>
+
+<script>
+/* === FINAL PAUSE BUTTON GUARANTEE === */
+(function(){
+  function ensurePauseButton(){
+    var btn = document.getElementById('pauseBtn');
+    if(!btn){
+      // recreate if missing
+      var box = document.getElementById('timeIndicator') || document.body;
+      btn = document.createElement('button');
+      btn.id = 'pauseBtn';
+      btn.textContent = '⏸ Pausa';
+      document.body.appendChild(btn);
+    }
+    return btn;
+  }
+
+  function placePause(){
+    var clock = document.getElementById('timeIndicator');
+    var btn   = ensurePauseButton();
+    if(!clock || !btn) return;
+
+    btn.style.display = 'inline-flex';
+
+    var r = clock.getBoundingClientRect();
+    var bw = btn.offsetWidth || 0;
+    var bh = btn.offsetHeight || 0;
+
+    btn.style.left = Math.round(r.left + r.width/2 - bw/2) + 'px';
+    btn.style.top  = Math.round(r.top - bh - 8) + 'px'; // clearly above
+  }
+
+  function bind(){
+    placePause();
+    ['resize','scroll','orientationchange'].forEach(e=>{
+      window.addEventListener(e, placePause, {passive:true});
+    });
+    document.addEventListener('fullscreenchange', placePause, {passive:true});
+
+    // Re-run after DOM mutations (panels, mode change, etc.)
+    var mo = new MutationObserver(placePause);
+    mo.observe(document.body, { childList:true, subtree:true });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bind);
+  }else{
+    bind();
+  }
+})();
+</script>
+
 </body><!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 --><style id="aj-replay-glass-css">
   #aj-replay-glass-pane{
     position:absolute; inset:0;
@@ -19246,7 +19451,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === AJETREZ_PAY_FIX === */
 
 /* === END AJETREZ_PAY_FIX === */
-</style><!-- AJETREZ: Centrar horizontalmente el botón de Pausa (#pauseBtn) sobre el tablero (2025-09-13) --><style id="aj-pause-center-css-2025-09-13">
+</style><!-- AJETREZ: Centrar horizontalmente el botón de Pausa (#pauseBtn) sobre el tablero (2025-09-13) --><!-- removed 
   /* Neutralizar orden/márgenes previos cuando esté centrado */
   #pauseBtn.__ajCentered{
     position: absolute !important;
@@ -19270,7 +19475,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === AJETREZ_PAY_FIX === */
 
 /* === END AJETREZ_PAY_FIX === */
-</style><script id="aj-pause-center-js-2025-09-13">
+</style><!-- removed 
 (function(){
   if(window.__AJ_PAUSE_CENTERED__) return; window.__AJ_PAUSE_CENTERED__ = true;
 
@@ -19324,7 +19529,7 @@ document.addEventListener("DOMContentLoaded", () => {
     init();
   }
 })();
-</script><!-- AJETREZ: Forzar posicionamiento del botón Pausa y eliminar anclajes (2025-09-13) --><style id="aj-pause-center-hardening-css-2025-09-13">
+</script><!-- AJETREZ: Forzar posicionamiento del botón Pausa y eliminar anclajes (2025-09-13) --><!-- removed 
   /* Solo cuando está centrado (clase de control) anulamos anclajes previos */
   #pauseBtn.__ajCentered{
     position: fixed !important;   /* fijo al viewport, coordinado con getBoundingClientRect() del tablero */
@@ -19349,7 +19554,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === AJETREZ_PAY_FIX === */
 
 /* === END AJETREZ_PAY_FIX === */
-</style><script id="aj-pause-center-hardening-js-2025-09-13">
+</style><!-- removed 
 (function(){
   if(window.__AJ_PAUSE_CENTER_HARDENED__) return; window.__AJ_PAUSE_CENTER_HARDENED__=true;
 
