@@ -343,8 +343,6 @@
   .bot-hud-inner{ background: rgba(0,0,0,.85); color:#fff; border-radius:999px; padding:8px 13px; font-weight:800; letter-spacing:.1px; box-shadow:0 8px 20px rgba(0,0,0,.3); max-width: 572px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size:14px; text-align:center; }
 
   
-  #btnRestartBR_REMOVED:hover{ background:#222; }
-
   Hpx;
     bottom: calc(10px - var(--square) - 3mm);
     appearance:none; border:none; border-radius:999px;
@@ -9503,11 +9501,37 @@ button[data-mode="online"]:hover{
 <style>
 
 /* === AJUSTE FINO: SUBIR BOTONES REINICIAR Y REGLAS 0.5 CASILLERO === */
-#btnRestart,
-#btnRules{
-  transform: translateY(calc(var(--square, 56px) * -0.5)) !important;
-}
 /* === END AJUSTE === */
+
+</style>
+<style>
+
+/* === FIX DEFINITIVO POSICION BOTONES (DESKTOP + MOBILE) === */
+
+/* Asegurar anclaje relativo al tablero */
+.board-wrap{
+  position: relative !important;
+}
+
+/* Botón Reiniciar */
+#btnRestart{
+  position: absolute !important;
+  left: 50% !important;
+  bottom: calc(var(--square, 56px) * -0.5) !important;
+  transform: translateX(-50%) !important;
+  z-index: 25;
+}
+
+/* Botón Reglas (si existe) */
+#btnRules{
+  position: absolute !important;
+  left: 50% !important;
+  bottom: calc(var(--square, 56px) * 0.3) !important;
+  transform: translateX(-50%) !important;
+  z-index: 25;
+}
+
+/* === END FIX === */
 
 </style>
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
@@ -13248,19 +13272,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
   function move(){
     const audio = qs('#audioGroup');
     const right = qs('#rightControls');
-    const restart = qs('#btnRestartBR_REMOVED');
-    if(audio && right && restart && audio.parentNode !== right){
-      right.insertBefore(audio, restart); // Sonido queda a la izquierda de Reiniciar
-      // Ajustar estilos del grupo de audio para verse como botón alineado
-      audio.style.position = 'static';
-      audio.style.left = 'auto';
-      audio.style.top = 'auto';
-      audio.style.whiteSpace = 'nowrap';
-      audio.style.display = 'inline-flex';
-      audio.style.alignItems = 'center';
-      audio.style.justifyContent = 'center';
-    }
-  }
+    const restart = qs('}
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded', move, {once:true});
   }else{
@@ -18236,13 +18248,7 @@ function showToast(){
       var rc = document.getElementById('rightControls');
       if(!rc) return;
       var wake = rc.querySelector('#wakeLockToggle');
-      var restart = rc.querySelector('#btnRestartBR_REMOVED');
-      if(wake && restart){
-        // Colocar Reiniciar inmediatamente después de Pantalla activa
-        if(restart.previousElementSibling !== wake){
-          wake.insertAdjacentElement('afterend', restart);
-        }
-      }
+      var restart = rc.querySelector('}
     }catch(e){ /* noop */ }
   });
 })();
@@ -23020,21 +23026,7 @@ document.addEventListener("DOMContentLoaded", () => {
     [...document.querySelectorAll("button")].find(b => /menú/i.test(b.textContent));
 
   const rulesBtn =
-    document.querySelector("#btnRules") ||
-    [...document.querySelectorAll("button")].find(b => /reglas/i.test(b.textContent));
-
-  if(!menuBtn || !rulesBtn) return;
-
-  // Create floating container
-  const wrap = document.createElement("div");
-  wrap.id = "floatingTopControls";
-
-  // Move (not clone!) the real buttons
-  wrap.appendChild(menuBtn);
-  wrap.appendChild(rulesBtn);
-
-  document.body.appendChild(wrap);
-});
+    document.querySelector(");
 </script>
 <!-- === END ROOT FIX === -->
 
@@ -23267,21 +23259,6 @@ document.addEventListener("DOMContentLoaded", () => {
   justify-content:center;
   margin-top:3mm;
 }
-#btnRestartSingle{
-  min-height:36px;
-  padding:0 18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#111;
-  color:#fff;
-  border:none;
-  border-radius:999px;
-  font-weight:900;
-  cursor:pointer;
-  box-shadow:0 4px 14px rgba(0,0,0,.35);
-}
-#btnRestartSingle:hover{ background:#222; }
 </style>
 
 <script id="restart-single-clean-js">
@@ -23293,7 +23270,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   if(!wrap){
     wrap = document.createElement('div');
     wrap.id = 'restartSingleWrap';
-    wrap.innerHTML = '<button id="btnRestartSingle">Reiniciar</button>';
+    wrap.innerHTML = '';
     boardWrap.insertAdjacentElement('afterend', wrap);
   }
 
