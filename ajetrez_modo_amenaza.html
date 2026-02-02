@@ -6,7 +6,7 @@
 <style id="globalGameUpOffset">
   /* Desplaza TODO el juego (frame + botones) hacia arriba ~1 casillero */
   .frame{
-    transform: translateY(calc(var(--square, 56px) * -1));
+    transform: translateY(calc(var(--square, 56px) * 1));
   }
 
 .close-don{
@@ -9672,6 +9672,42 @@ button[data-mode="online"]:hover{
 
 
 
+<style>
+
+/* === FIX DEFINITIVO MERCADOPAGO === */
+.aj-don-inline .aj-pay-bg{
+  all: revert;
+}
+
+.aj-pay-bg.mp{
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 140px !important;
+  height: 48px !important;
+  background-image: url("https://www.mercadopago.com/org-img/MP3/home/logomp3.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  visibility: visible !important;
+  opacity: 1 !important;
+  filter: none !important;
+  z-index: 10;
+  pointer-events: auto;
+}
+/* === END FIX MERCADOPAGO === */
+
+</style>
+<style>
+
+/* === AJUSTE FINO: SUBIR BOTONES REINICIAR Y REGLAS 0.5 CASILLERO === */
+#btnRestart,
+#btnRules{
+  transform: translateY(calc(var(--square, 56px) * -0.5)) !important;
+}
+/* === END AJUSTE === */
+
+</style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 ><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
