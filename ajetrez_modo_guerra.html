@@ -9535,26 +9535,43 @@ button[data-mode="online"]:hover{
 
 </style>
 
-<style id="mobile-donation-fix">
+<style id="mobile-layout-unify-fix">
 @media (max-width: 900px){
-  #startOverlay{
-    align-items: center;
-    justify-content: center;
+
+  /* === UNIFICAR BOTÓN REINICIAR (como desktop) === */
+  #btnRestart{
+    position: absolute !important;
+    bottom: calc(var(--square) * -0.9) !important;
+    top: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 20 !important;
   }
+
+  /* === PANEL DE DONACIONES LIMITADO AL JUEGO === */
+  #startOverlay{
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto;
+  }
+
   #startOverlay .start-card{
-    width: 90%;
-    max-width: 360px;
-    max-height: 85%;
+    width: calc(var(--square) * 7.5);
+    max-width: 92%;
+    max-height: calc(var(--square) * 7);
     padding: 14px 16px;
     border-radius: 14px;
+    overflow-y: auto;
   }
+
   #startOverlay .start-card p{
     font-size: 13px;
     line-height: 1.4;
   }
-  #startOverlay .start-card strong{
-    font-size: 13px;
-  }
+
   #btnStartGame{
     padding: 8px 14px;
     font-size: 14px;
