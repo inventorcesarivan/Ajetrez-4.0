@@ -9225,6 +9225,28 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE BUTTON OFFSET === */
 </style>
+<style>
+/* === MOBILE + FULLSCREEN: SUBIR BOTONES (EXCEPTO MENU Y REGLAS) MEDIO CASILLERO === */
+@media (max-width: 900px), (display-mode: fullscreen){
+
+  /* botones del HUD / juego */
+  #reiniciarLibre,
+  #btnFullscreen,
+  #btnStartGame,
+  #btnMode,
+  .mode-indicator{
+    transform: translateY(calc(var(--square) * -0.5)) !important;
+  }
+
+  /* excluir explícitamente menú y reglas */
+  #btnMenuMain,
+  #btnRules,
+  #btnReglas{
+    transform: none !important;
+  }
+}
+/* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
+</style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
