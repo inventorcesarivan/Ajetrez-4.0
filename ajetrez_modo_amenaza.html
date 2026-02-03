@@ -2,30 +2,6 @@
 
 <html lang="es"><head>
 
-<!-- === GLOBAL GAME UP OFFSET (1 SQUARE) === -->
-<style id="globalGameUpOffset">
-  /* Desplaza TODO el juego (frame + botones) hacia arriba ~1 casillero */
-  .frame{
-    transform: translateY(calc(var(--square, 56px) * 1));
-  }
-
-.close-don{
-  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
-}
-.close-don:hover{
-  background:#b91c1c;
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 10px 28px rgba(185,28,28,.45);
-}
-.close-don:active{
-  transform: translateY(0) scale(.99);
-  box-shadow: 0 6px 18px rgba(0,0,0,.35) inset;
-}
-
-</style>
-<!-- === END GLOBAL GAME UP OFFSET === -->
-
-
 <!-- === MOBILE GAME OFFSET PATCH === -->
 <style id="mobileGameOffset">
 @media (max-width: 900px){
@@ -343,7 +319,9 @@
   .bot-hud-inner{ background: rgba(0,0,0,.85); color:#fff; border-radius:999px; padding:8px 13px; font-weight:800; letter-spacing:.1px; box-shadow:0 8px 20px rgba(0,0,0,.3); max-width: 572px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size:14px; text-align:center; }
 
   
-  
+  #btnRestartBR:hover{ background:#222; }
+
+  Hpx;
     bottom: calc(10px - var(--square) - 3mm);
     appearance:none; border:none; border-radius:999px;
     padding: 8px 12px; font-weight:800; cursor:pointer;
@@ -5144,13 +5122,127 @@ body[data-theme="noche"] .regv2-btn{
 </style>
 
 
+<style id="aj-menu-restart-adjacency">
+  /* Place restart right next to Menu with a small gap */
+  #btnMegaMenu + 
+
+/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
+
+/* === END RESTART FREE VISUAL POSITION === */
+
+/* === NEW MAIN MENU BUTTON (STABLE) === */
+#btnMenuMain{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * -1.2);
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+#btnMenuMain:hover{ background:#222; }
+/* === END NEW MAIN MENU BUTTON === */
+
+/* === AJETREZ_PAY_FIX === */
+.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+/* === END AJETREZ_PAY_FIX === */
+</style>
 
 
+<style id="aj-restart-left-4">
+  /* Desplaza el botón Reiniciar 4 casilleros a la izquierda */
+  
+
+/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
+
+/* === END RESTART FREE VISUAL POSITION === */
+
+/* === NEW MAIN MENU BUTTON (STABLE) === */
+#btnMenuMain{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * -1.2);
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+#btnMenuMain:hover{ background:#222; }
+/* === END NEW MAIN MENU BUTTON === */
+
+/* === AJETREZ_PAY_FIX === */
+.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+/* === END AJETREZ_PAY_FIX === */
+</style>
 
 
+<style id="aj-menu-size-match-restart">
+  /* Hacer que el botón Menú tenga el mismo tamaño visual que Reiniciar (.btn.small) */
+  #btnMegaMenu{
+  all: unset;
+  position: absolute;
+  left: 50%;
+  top: calc(100% - (var(--square) * 0.5));
+  transform: translateX(-50%);
+  z-index: 50;
 
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  border: 1.5px solid rgba(255,255,255,0.7);
+}
+  /* En algunos layouts se aplican paddings por id anteriores, reforzamos aquí */
+  #btnMegaMenu.btn.small {
+    padding: 5.4px 8.1px !important; /* igual que .btn.small (-10%) */
+    font-size: 90% !important;
+  }
 
+/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
+/* === END RESTART FREE VISUAL POSITION === */
+
+/* === NEW MAIN MENU BUTTON (STABLE) === */
+#btnMenuMain{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * -1.2);
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+#btnMenuMain:hover{ background:#222; }
+/* === END NEW MAIN MENU BUTTON === */
+
+/* === AJETREZ_PAY_FIX === */
+.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+/* === END AJETREZ_PAY_FIX === */
+</style>
 
 
 <style id="aj-topright-separated-styles">
@@ -9264,14 +9356,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 <style id="aj-mobile-online-btn-position">
 @media (max-width: 900px){
   /* Colocar botón externo Jugar Online encima del botón Modo */
-  #btnOnlineExternal{
-    position: absolute !important;
-    left: 10px !important;
-    top: -38px !important;
-    z-index: 60 !important;
-  }
-}
-</style>
+  
 
 
 <style id="aj-floating-menu-rules">
@@ -9357,33 +9442,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 </style>
 <style>
 
-/* === PATCH: BOTÓN JUGAR ONLINE FLOTANTE === */
-#btnOnline,
-.btn-online,
-button[data-mode="online"]{
-  all: unset;
-  position: absolute;
-  left: calc(var(--square) * 0.25);
-  top: calc(var(--square) * 0.25);
-  z-index: 70;
 
-  background:#111;
-  color:#fff;
-  border-radius:999px;
-  padding:7px 12px;
-  font-weight:900;
-  cursor:pointer;
-  box-shadow:0 2px 8px rgba(0,0,0,.2);
-  border:1.5px solid rgba(255,255,255,.75);
-}
-#btnOnline:hover,
-.btn-online:hover,
-button[data-mode="online"]:hover{
-  background:#222;
-}
-/* === END PATCH === */
-
-</style>
 <style>
 
 /* === PATCH: JUGAR ONLINE SOBRE RELOJ (TOP RIGHT) === */
@@ -9449,336 +9508,113 @@ button[data-mode="online"]:hover{
 <!-- === END OPTION A === -->
 
 
-<!-- === BASE GRIS DOWN OFFSET (0.5 SQUARE) === -->
-<style id="baseGreyDownOffset" disabled>
-  /* Se baja SOLO la base gris moviendo el contenido interno hacia arriba */
-  .frame .shell{
-    transform: translateY(calc(var(--square, 56px) * -0.5));
+<style id="baseGreyUpPatch">
+/* Desplazar SOLO la base gris (frame) medio casillero hacia arriba */
+.frame{
+  transform: translateY(calc(var(--square) * -0.5));
+}
+</style>
+
+
+<style id="contentUpOneSquare">
+/* Desplazar TODO el contenido sobre la base gris 1 casillero hacia arriba */
+.frame > *{
+  transform: translateY(calc(var(--square) * -1));
+}
+</style>
+
+
+<!-- === AJETREZ: SINGLE CLEAN RESTART BUTTON === -->
+<style id="aj-single-restart-style">
+/* Base gris como referencia */
+.frame{
+  position: relative !important;
+}
+
+/* Botón único de reinicio */
+#ajRestartClean{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * 0.6); /* dentro de la base gris */
+  transform: translateX(-50%);
+  z-index: 50;
+
+  background:#111;
+  color:#fff;
+  border-radius:999px;
+  padding:8px 16px;
+  font-weight:900;
+  font-size:14px;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+  border:1.5px solid rgba(255,255,255,.8);
+}
+#ajRestartClean:hover{ background:#222; }
+
+@media (max-width:900px){
+  #ajRestartClean{
+    bottom: calc(var(--square) * 1.0);
+    font-size:13px;
+    padding:7px 14px;
   }
-</style>
-<!-- === END BASE GRIS DOWN OFFSET === -->
-
-
-<!-- === BASE GRIS EXTRA DOWN ( +3mm ) === -->
-<style id="baseGreyExtra3mm">
-  /* Ajuste fino: bajar la base gris 3mm adicionales */
-  .frame .shell{
-    transform: translateY(calc(var(--square, 56px) * -0.5 + 3mm));
-  }
-</style>
-<!-- === END BASE GRIS EXTRA DOWN === -->
-
-
-<!-- === PATCH: JUGAR ONLINE 100% LIBRE === -->
-<style id="free-online-btn">
-/* Neutralizar cualquier anclaje previo */
-#btnOnlineExternal,
-#btnOnlineMode{
-  all: unset !important;
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  margin: 0 !important;
-  padding: 10px 16px !important;
-  transform: none !important;
-  inset: auto !important;
-  float: none !important;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  background: #b91c1c !important;
-  color: #fff !important;
-  border-radius: 999px !important;
-  font-weight: 900 !important;
-  cursor: pointer !important;
-  z-index: 9999 !important;
-}
-
-/* Blindaje contra contenedores */
-#btnOnlineExternal *,
-#btnOnlineMode *{
-  all: unset;
-}
-</style>
-<!-- === END PATCH === -->
-
-
-<!-- === PATCH: JUGAR ONLINE FLOTANTE (FIXED) === -->
-<style id="fixed-online-btn">
-#btnOnlineExternal,
-#btnOnlineMode{
-  all: unset !important;
-  position: fixed !important; /* FLOTANTE respecto a la ventana */
-  bottom: 16px;               /* posición inicial (editable) */
-  right: 16px;
-  margin: 0 !important;
-  padding: 10px 16px !important;
-  transform: none !important;
-  inset: auto !important;
-  float: none !important;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  background: #b91c1c !important;
-  color: #fff !important;
-  border-radius: 999px !important;
-  font-weight: 900 !important;
-  cursor: pointer !important;
-  z-index: 99999 !important;
-}
-
-/* Blindaje contra contenedores */
-#btnOnlineExternal *,
-#btnOnlineMode *{
-  all: unset;
-}
-</style>
-<!-- === END PATCH === -->
-
-
-<!-- === PATCH: JUGAR ONLINE SOBRE RELOJ (DERECHA) === -->
-<style id="online-btn-over-clock">
-#btnOnlineExternal,
-#btnOnlineMode{
-  position: fixed !important;
-  right: 18px !important;
-  bottom: calc(18px + (var(--square, 56px) * 1.2)) !important; /* arriba del reloj */
-  transform: none !important;
-}
-</style>
-<!-- === END PATCH === -->
-
-
-<!-- === PATCH: AJUSTE +0.5 CASILLERO ARRIBA === -->
-<style id="online-btn-half-square-up">
-#btnOnlineExternal,
-#btnOnlineMode{
-  bottom: calc(18px + (var(--square, 56px) * 1.7)) !important;
-}
-</style>
-<!-- === END PATCH === -->
-
-
-<!-- === HARD FIX: JUGAR ONLINE DESACOPLADO TOTAL === -->
-<style id="online-btn-hard-fix">
-#btnOnlineExternal,
-#btnOnlineMode{
-  all: unset !important;
-  position: fixed !important;
-  right: 18px !important;
-  bottom: calc(18px + (var(--square, 56px) * 1.7)) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 10px 18px !important;
-  background: #b91c1c !important;
-  color: #fff !important;
-  border-radius: 999px !important;
-  font-weight: 900 !important;
-  cursor: pointer !important;
-  z-index: 999999 !important;
-  pointer-events: auto !important;
-}
-
-/* Eliminar cualquier herencia visual del HUD */
-.mode-group #btnOnlineExternal,
-.mode-group #btnOnlineMode,
-.bar #btnOnlineExternal,
-.bar #btnOnlineMode{
-  all: unset !important;
-  display: none !important;
 }
 </style>
 
-<script id="online-btn-hard-js">
+<script id="aj-single-restart-script">
 (function(){
-  const ids = ['btnOnlineExternal','btnOnlineMode'];
-  ids.forEach(id=>{
-    const btn = document.getElementById(id);
-    if(!btn) return;
-    if(btn.parentElement !== document.body){
-      document.body.appendChild(btn); // sacar del HUD definitivamente
-    }
+  function removeOldRestartButtons(){
+    const ids = [
+      'btnRestartBR','btnReiniciar','btnReset',
+      'ajRestartFloating','zonesReset','rpReset'
+    ];
+    ids.forEach(id=>{
+      document.querySelectorAll('#'+id).forEach(el=>el.remove());
+    });
+
+    // eliminar cualquier botón cuyo texto sea "Reiniciar" fuera del nuevo
+    document.querySelectorAll('button').forEach(btn=>{
+      if(btn.id !== 'ajRestartClean' && /reiniciar/i.test(btn.textContent)){
+        btn.remove();
+      }
+    });
+  }
+
+  function createRestart(){
+    if(document.getElementById('ajRestartClean')) return;
+
+    const btn = document.createElement('button');
+    btn.id = 'ajRestartClean';
+    btn.textContent = 'Reiniciar';
+
+    btn.addEventListener('click', ()=>{
+      try{
+        if(typeof restartGame === 'function'){ restartGame(); return; }
+        if(typeof window.restartGame === 'function'){ window.restartGame(); return; }
+      }catch(e){}
+      location.reload();
+    });
+
+    const frame = document.querySelector('.frame') || document.body;
+    frame.appendChild(btn);
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    removeOldRestartButtons();
+    createRestart();
   });
 })();
 </script>
-<!-- === END HARD FIX === -->
+<!-- === END SINGLE CLEAN RESTART === -->
 
+</head><body>
+<!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
+<div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
+<button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
 
-<!-- === PATCH: ONLINE COMO OPCIÓN DE MODO === -->
-<style id="online-as-mode-style">
-.dd-item.online-mode{
-  background:#b91c1c !important;
-  color:#fff !important;
-  font-weight:900 !important;
-}
-.dd-item.online-mode:hover{
-  background:#a31616 !important;
-}
-</style>
-
-
-<style id="online-panel-css-fix">
-/* Reubicar botón Online dentro del panel de Modos */
-#megaPanel .btn.online-mode,
-#megaPanel #btnOnlinePanel{
-  position: relative !important;
-  margin-left: auto;
-  margin-right: 0;
-  margin-top: 8px;
-  margin-bottom: 12px;
-  align-self: flex-end;
-}
-</style>
-
-
-
-
-
-<style id="frame-down-half-square">
-/* Desplazar la base gris del juego ~0.5 casillero hacia abajo */
-.frame{
-  transform: translateY(calc(var(--square) * 0.5)) !important;
-}
-</style>
-
-
-<style id="content-up-one-square">
-/* Subir TODO el contenido interno 1 casillero SIN mover la base gris */
-.frame .shell{
-  transform: translateY(calc(var(--square) * -1)) !important;
-}
-</style>
-
-
-
-
-
-
-
-
-<style id="global-up-one-square">
-/* Subir TODO el juego (base gris + contenido) 1 casillero */
-.frame{
-  transform: translateY(calc(var(--square) * -1)) !important;
-}
-</style>
-
-
-
-
-
-
-
-<style>
-
-/* === FIX DEFINITIVO MERCADOPAGO === */
-.aj-don-inline .aj-pay-bg{
-  all: revert;
-}
-
-.aj-pay-bg.mp{
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 140px !important;
-  height: 48px !important;
-  background-image: url("https://www.mercadopago.com/org-img/MP3/home/logomp3.gif");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  visibility: visible !important;
-  opacity: 1 !important;
-  filter: none !important;
-  z-index: 10;
-  pointer-events: auto;
-}
-/* === END FIX MERCADOPAGO === */
-
-</style>
-<style>
-
-/* === AJUSTE FINO: SUBIR BOTONES REINICIAR Y REGLAS 0.5 CASILLERO === */
-/* === END AJUSTE === */
-
-</style>
-<style>
-
-/* === FIX DEFINITIVO POSICION BOTONES (DESKTOP + MOBILE) === */
-
-/* Asegurar anclaje relativo al tablero */
-.board-wrap{
-  position: relative !important;
-}
-
-/* Botón Reiniciar */
-#btnRestart{
-  position: absolute !important;
-  left: 50% !important;
-  bottom: calc(var(--square, 56px) * -0.5) !important;
-  transform: translateX(-50%) !important;
-  z-index: 25;
-}
-
-/* Botón Reglas (si existe) */
-#btnRules{
-  position: absolute !important;
-  left: 50% !important;
-  bottom: calc(var(--square, 56px) * 0.3) !important;
-  transform: translateX(-50%) !important;
-  z-index: 25;
-}
-
-/* === END FIX === */
-
-</style>
-
-<style id="mobile-layout-unify-fix">
-@media (max-width: 900px){
-
-  /* === UNIFICAR BOTÓN REINICIAR (como desktop) === */
-  #btnRestart{
-    position: absolute !important;
-    bottom: calc(var(--square) * -0.9) !important;
-    top: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    z-index: 20 !important;
-  }
-
-  /* === PANEL DE DONACIONES LIMITADO AL JUEGO === */
-  #startOverlay{
-    position: absolute !important;
-    inset: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    pointer-events: auto;
-  }
-
-  #startOverlay .start-card{
-    width: calc(var(--square) * 7.5);
-    max-width: 92%;
-    max-height: calc(var(--square) * 7);
-    padding: 14px 16px;
-    border-radius: 14px;
-    overflow-y: auto;
-  }
-
-  #startOverlay .start-card p{
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  #btnStartGame{
-    padding: 8px 14px;
-    font-size: 14px;
-  }
-}
-</style>
-
-</head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
-<button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button></div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap">
+<button class="btn mode" data-gmode="online" id="btnOnlineExternal">
+  Modo Online
+</button>
+</div></div><div style="height:var(--toolbar-gap)"></div><div class="board-wrap" id="boardWrap">
 <!-- Floating Replay FAB (centered over board) -->
 <div aria-label="Reproducir partida" id="rpFab" role="region" style="display:none">
 <button class="btn small btn-close-internal" id="rpFabBtn">▶ Reproducir en tablero</button>
@@ -9850,7 +9686,12 @@ button[data-mode="online"]:hover{
 </div>
 
 </div><div class="field"><label>Estilo visual</label><div aria-label="Elegir estilo visual" class="row" id="themePicker" role="group"><button class="btn theme" data-theme="dia" title="Tonos claros, suaves" type="button">Día</button><button class="btn theme" data-theme="noche" title="Tonos oscuros, suaves" type="button">Noche</button><button class="btn theme" data-theme="madera" title="Tonos madera, suaves" type="button">Madera</button><button class="btn theme" data-theme="arena" title="Arena suave" type="button">Arena</button><button class="btn theme" data-theme="pizarra" title="Pizarra / gris" type="button">Pizarra</button><button class="btn theme" data-theme="oliva" title="Verde oliva suave" type="button">Oliva</button></div><span class="hint-sm">Los estilos son suaves para no distraer durante la partida.</span></div></div></div><div class="tab" id="tab-version" style="display:block"><h3>Versión de Ajetrez</h3><p>Versión actual del juego: <strong id="verActual">2.5 (Estable)</strong></p><div class="field"><label>Seleccionar versión</label><select id="selVersion"><option selected="" value="3_0_simple">Versión 3.0 (modo simple)</option><option value="3_0_amenaza">Versión 3.0 (modo amenaza)</option><option value="3_0_guerra">Versión 3.0 (modo guerra)</option></select></div><div class="hint-sm">La selección futura podrá cargar configuraciones específicas por versión.
-</div></div><div class="tab" id="tab-modos" style="display:none"><h3>Modos de juego</h3><div class="row"><button class="btn mode" data-gmode="pvp-local">Player vs player (local)</button><button class="btn mode" data-gmode="bot">Player Vs Bot</button></div><div aria-live="polite" id="modeHelp" role="note"><span class="title">¿Cómo funciona este modo?</span><div class="body">Elegí un modo para ver una breve explicación.</div></div><p class="hint-sm">
+</div></div><div class="tab" id="tab-modos" style="display:none"><h3>Modos de juego</h3><div class="row"><button class="btn mode" data-gmode="pvp-local">Player vs player (local)</button>
+
+<button class="btn mode" data-gmode="online" id="btnOnlineExternal">
+  Modo Online
+</button>
+<button class="btn mode" data-gmode="bot">Player Vs Bot</button></div><div aria-live="polite" id="modeHelp" role="note"><span class="title">¿Cómo funciona este modo?</span><div class="body">Elegí un modo para ver una breve explicación.</div></div><p class="hint-sm">
 <!-- === DONACIONES INLINE (JUGAR ONLINE) === -->
 <div class="aj-don-inline">
   <div class="aj-don-title">Apoya el proyecto</div>
@@ -11468,7 +11309,47 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
   const res = window.AJ_RULES.legalShiftWithReason(row, target, boardRef, offsRef);
   return !!res.ok;
 };
-</script><!--   const tabs = Array.from(document.querySelectorAll('.tab'));
+</script><!-- Botones: Reiniciar y Pantalla completa --><script>
+(function(){
+  const btnRestartBR = document.getElementById('btnRestartBR');
+  if(btnRestartBR){
+    btnRestartBR.addEventListener('click', ()=>{
+      try{ if(typeof restartGame === 'function'){ restartGame(); try{ if(typeof showStartOverlay==="function") showStartOverlay(); }catch(_){ } } }catch(e){ console.error(e); }
+    });
+  }
+  const fsRoot  = document.getElementById('fsRoot');
+  const btnFSBR = document.getElementById('btnFSBR');
+  if(btnFSBR){
+    btnFSBR.addEventListener('click', async ()=>{
+      try{
+        if(!document.fullscreenElement){ await fsRoot.requestFullscreen(); btnFSBR.textContent='salir'; }
+        else { await document.exitFullscreen(); btnFSBR.textContent='Pantalla completa'; }
+      }catch(e){ console.error(e); }
+    });
+    document.addEventListener('fullscreenchange', ()=>{
+      if(!btnFSBR) return;
+      btnFSBR.textContent = document.fullscreenElement ? 'salir' : 'Pantalla completa';
+    });
+  }
+})();
+</script><!-- Panel (login + pestañas) + Info partidas --><script>
+(function(){
+  const root = document.documentElement;
+  const panel = document.getElementById('megaPanel');
+  const backdrop = document.getElementById('panelBackdrop');
+  const btnOpen = document.getElementById('btnMegaMenu');
+  const btnClose = document.getElementById('/* btnClosePanel eliminado */');
+  const btnLogout = document.getElementById('btnLogout');
+  const loggedUser = document.getElementById('loggedUser');
+
+  const loginView = document.getElementById('loginView');
+  const tabsView  = document.getElementById('tabsView');
+  const btnLogin  = document.getElementById('btnLogin');
+  const inpUser   = document.getElementById('inpUser');
+  const inpPass   = document.getElementById('inpPass');
+
+  const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+  const tabs = Array.from(document.querySelectorAll('.tab'));
 
   function openPanel(){
     backdrop.style.display = 'flex';
@@ -11952,7 +11833,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
     }
     function init(){
       var btn = document.getElementById('btnStartGameBR');
-      var reset = document.getElementById('btnRestartBR_REMOVED');
+      var reset = document.getElementById('btnRestartBR');
       if(!window.GAME_STARTED) setAttention(true);
       if(btn){
         btn.addEventListener('click', function(){
@@ -13686,7 +13567,19 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
   function move(){
     const audio = qs('#audioGroup');
     const right = qs('#rightControls');
-    const restart = qs('}
+    const restart = qs('#btnRestartBR');
+    if(audio && right && restart && audio.parentNode !== right){
+      right.insertBefore(audio, restart); // Sonido queda a la izquierda de Reiniciar
+      // Ajustar estilos del grupo de audio para verse como botón alineado
+      audio.style.position = 'static';
+      audio.style.left = 'auto';
+      audio.style.top = 'auto';
+      audio.style.whiteSpace = 'nowrap';
+      audio.style.display = 'inline-flex';
+      audio.style.alignItems = 'center';
+      audio.style.justifyContent = 'center';
+    }
+  }
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded', move, {once:true});
   }else{
@@ -18344,7 +18237,25 @@ function showToast(){
   };
 })();
 </script>
-
+<script id="aj-move-restart-next-to-menu">
+(function(){
+  function moveRestart() {
+    try {
+      var menu = document.getElementById('btnMegaMenu');
+      var restart = document.getElementById('btnRestartBR');
+      if (!menu || !restart) return;
+      if (restart.previousElementSibling === menu) return; // already placed
+      // Insert Restart immediately after Menu
+      menu.insertAdjacentElement('afterend', restart);
+    } catch(e){ console.warn('moveRestart error', e); }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', moveRestart);
+  } else {
+    moveRestart();
+  }
+})();
+</script>
 <script id="aj-apply-small-to-menu">
 (function(){
   function applySmall(){
@@ -18663,12 +18574,60 @@ function showToast(){
       var rc = document.getElementById('rightControls');
       if(!rc) return;
       var wake = rc.querySelector('#wakeLockToggle');
-      var restart = rc.querySelector('}
+      var restart = rc.querySelector('#btnRestartBR');
+      if(wake && restart){
+        // Colocar Reiniciar inmediatamente después de Pantalla activa
+        if(restart.previousElementSibling !== wake){
+          wake.insertAdjacentElement('afterend', restart);
+        }
+      }
     }catch(e){ /* noop */ }
   });
 })();
 </script>
+<script id="aj-restart-shift-compose">
+(function(){
+  if(window.__AJ_RESTART_SHIFT_COMPOSE__) return; window.__AJ_RESTART_SHIFT_COMPOSE__=true;
+  function $(s,r){ return (r||document).querySelector(s); }
+  function px(n){ try{ return (typeof n==='number')? n : parseFloat(n)||0; }catch(_){ return 0; } }
 
+  function shiftRestart(){
+    var el = $('#rightControls #btnRestartBR');
+    if(!el) return;
+    var cs = getComputedStyle(el);
+    var tr = cs.transform;
+    // Detect translateY from the common 'matrix(...)' or 'matrix3d(...)'
+    var ty = 0;
+    try{
+      if(tr && tr !== 'none'){
+        var parts = tr.startsWith('matrix3d') ? tr.slice(9,-1).split(',') : tr.slice(7,-1).split(',');
+        if(parts.length >= 6){
+          // matrix(a,b,c,d, tx, ty)
+          ty = parseFloat(parts[5]) || 0;
+        }else if(parts.length >= 16){
+          // matrix3d(..., tx, ty, tz)
+          ty = parseFloat(parts[13]) || 0;
+        }
+      }
+    }catch(_){ ty = 0; }
+    // Target X shift = 2 * square (fallback 24px)
+    var sq = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--square')) || 24;
+    var tx = 2 * sq;
+    // Compose new transform with both X and existing Y
+    el.style.transform = 'translate(' + tx + 'px,' + ty + 'px)';
+  }
+
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', fn); else fn(); }
+  ready(function(){
+    shiftRestart();
+    window.addEventListener('resize', shiftRestart);
+    document.addEventListener('fullscreenchange', shiftRestart);
+    // Reapply after we re-order rightControls (if any script does)
+    setTimeout(shiftRestart, 200);
+    setTimeout(shiftRestart, 600);
+  });
+})();
+</script>
 <!-- Canonical override: tamaño del panel del menú unificado (+4mm hacia ARRIBA) -->
 <style id="aj-megaPanel-canonical-2025-09-12">
   #megaPanel{
@@ -21031,7 +20990,7 @@ function showVeteranBanner(color){
   // Reset historia al iniciar/reiniciar
   document.addEventListener('click', function(e){
     const id = e && e.target && e.target.id;
-    if(id==='btnStartGame' || id==='btnRestartBR_REMOVED'){
+    if(id==='btnStartGame' || id==='btnRestartBR'){
       try{ window.AJ_BOOK.history = []; }catch(_){}
     }
   }, true);
@@ -22661,7 +22620,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
 /* === MOVE_RESTART_INTO_BOARD (hard fix) === */
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('btnRestartBR_REMOVED');
+  const btn = document.getElementById('btnRestartBR');
   const boardWrap = document.querySelector('.board-wrap');
   if(btn && boardWrap && btn.parentElement !== boardWrap){
     boardWrap.appendChild(btn);
@@ -23217,260 +23176,47 @@ document.addEventListener("DOMContentLoaded", () => {
     [...document.querySelectorAll("button")].find(b => /menú/i.test(b.textContent));
 
   const rulesBtn =
-    document.querySelector(");
+    document.querySelector("#btnRules") ||
+    [...document.querySelectorAll("button")].find(b => /reglas/i.test(b.textContent));
+
+  if(!menuBtn || !rulesBtn) return;
+
+  // Create floating container
+  const wrap = document.createElement("div");
+  wrap.id = "floatingTopControls";
+
+  // Move (not clone!) the real buttons
+  wrap.appendChild(menuBtn);
+  wrap.appendChild(rulesBtn);
+
+  document.body.appendChild(wrap);
+});
 </script>
 <!-- === END ROOT FIX === -->
 
 
-<script id="online-as-mode-js">
-(function(){
-  const dropdown = document.querySelector('.dropdown');
-  if(!dropdown) return;
+<!-- === FIX: FORCE EXTERNAL ONLINE BUTTON LABEL === -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const fixOnlineLabel = () => {
+    const btn =
+      document.getElementById('btnOnlineExternal') ||
+      document.getElementById('btnOnline') ||
+      document.querySelector('button[data-mode="online"]');
 
-  // Evitar duplicados
-  if(document.getElementById('modeOnlineItem')) return;
-
-  const item = document.createElement('button');
-  item.id = 'modeOnlineItem';
-  item.className = 'btn mode dd-item online-mode';
-  item.textContent = 'Jugar Online';
-
-  item.onclick = function(){
-    const btn = document.getElementById('btnOnlineMode') || document.getElementById('btnOnlineExternal');
-    if(btn){
-      btn.click();
-    }else{
-      alert('Modo online no disponible');
+    if (btn) {
+      btn.textContent = 'Modo Online';
     }
   };
 
-  dropdown.appendChild(item);
-})();
-</script>
-<!-- === END PATCH === -->
-
-
-<script id="online-mode-behavior-fix">
-(function(){
-  const labelText = 'Próximamente';
-
-  function applyOnlineMode(){
-    // 1) Forzar texto del indicador de modo
-    const indicator = document.querySelector('.mode-indicator');
-    if(indicator){
-      indicator.textContent = labelText;
-    }
-
-    // 2) Reabrir el panel de menú (comportamiento previo)
-    const btnMenu = document.getElementById('btnMegaMenu') || document.getElementById('btnMenuMain');
-    if(btnMenu){
-      btnMenu.click();
-    }else{
-      // fallback directo
-      const panel = document.getElementById('megaPanel');
-      const backdrop = document.getElementById('panelBackdrop');
-      if(panel && backdrop){
-        panel.style.display = 'flex';
-        backdrop.style.display = 'block';
-      }
-    }
-  }
-
-  // Hook sobre el item online
-  const tryBind = () => {
-    const onlineItem = document.getElementById('modeOnlineItem');
-    if(!onlineItem) return false;
-
-    onlineItem.onclick = function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      applyOnlineMode();
-    };
-    return true;
-  };
-
-  // Intentar bind inmediato o diferido
-  if(!tryBind()){
-    document.addEventListener('DOMContentLoaded', tryBind);
-  }
-})();
-</script>
-
-
-<script id="online-panel-fix">
-(function(){
-
-  function openOnlineModePanel(){
-    // 1) Abrir panel
-    const panel = document.getElementById('megaPanel');
-    const backdrop = document.getElementById('panelBackdrop');
-    if(panel && backdrop){
-      panel.style.display = 'flex';
-      backdrop.style.display = 'block';
-    }
-
-    // 2) Activar pestaña "Modos de juego"
-    const tabs = document.querySelectorAll('.mp-tabs .tab-btn');
-    tabs.forEach(t=>t.classList.remove('active','selected'));
-
-    const modosTab = Array.from(tabs).find(t=>/Modos de juego/i.test(t.textContent));
-    if(modosTab){
-      modosTab.classList.add('active','selected');
-      modosTab.click();
-    }
-
-    // 3) Marcar subsección Online (si existe contenedor)
-    const onlineBtn = document.querySelector('.btn.online-mode, #btnOnlinePanel');
-    if(onlineBtn){
-      onlineBtn.classList.add('selected');
-      onlineBtn.scrollIntoView({block:'center', behavior:'smooth'});
-    }
-  }
-
-  // Hookear selector externo
-  const bind = () => {
-    const onlineItem = document.getElementById('modeOnlineItem');
-    if(!onlineItem) return false;
-
-    onlineItem.onclick = function(e){
-      e.preventDefault();
-      e.stopPropagation();
-
-      // Indicador externo
-      const indicator = document.querySelector('.mode-indicator');
-      if(indicator) indicator.textContent = 'Próximamente';
-
-      openOnlineModePanel();
-    };
-    return true;
-  };
-
-  if(!bind()){
-    document.addEventListener('DOMContentLoaded', bind);
-  }
-
-})();
-</script>
-
-
-<!-- === START DONATION OVERLAY === -->
-<style>
-#donationOverlay{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:60;
-  background: rgba(0,0,0,.35);
-}
-#donationOverlay .don-card{
-  width: calc(var(--square) * 14);
-  max-width: 90%;
-  background:#fff;
-  border-radius:18px;
-  padding:22px 24px;
-  box-shadow:0 16px 40px rgba(0,0,0,.35);
-  text-align:center;
-}
-#donationOverlay p{
-  font-size:14px;
-  line-height:1.45;
-  margin-bottom:18px;
-}
-#donationOverlay .don-btns{
-  display:flex;
-  gap:26px;
-  justify-content:center;
-  align-items:center;
-}
-#donationOverlay .don-btns img{
-  height:48px;
-  cursor:pointer;
-}
-#donationOverlay .close-don{
-  margin-top:18px;
-  background:#111;
-  color:#fff;
-  border-radius:999px;
-  padding:10px 28px; max-width:260px; width:auto; margin-left:auto; margin-right:auto;
-  font-weight:800;
-  cursor:pointer;
-}
-</style>
-
-<div id="donationOverlay">
-  <div class="don-card">
-    <p>
-    Gracias por tu interés en el juego. Esperamos que lo disfrutes y que puedas apoyar el proyecto con una donación.
-    El monto que puedas aportar será bienvenido.<br><br>
-    Pronto estarán disponibles nuevas funciones, como por ejemplo el <b><span style="color:#b91c1c; font-weight:800;">modo online</span></b> para jugar contra otros usuarios en línea.<br><br>
-    Quienes apoyen el proyecto con una donación obtendrán <span style="color:#b91c1c; font-weight:800;">importantes beneficios</span> como probar funciones beta antes de su publicación
-    y participar en sorteos de tableros físicos.<br><br>
-    Desde ya, <b>muchas gracias</b> y no olvides compartir en tus redes.
-    </p>
-
-    <div class="don-btns">
-      <a href="https://link.mercadopago.com.ar/ajetrez" target="_blank">
-        <img src="logo mercadopago ok.jpg" alt="MercadoPago">
-      </a>
-      <a href="https://www.paypal.com/ncp/payment/PTRWET3UWGEY8" target="_blank">
-        <img src="logo paypal ok.png" alt="PayPal">
-      </a>
-    </div>
-
-    <div class="close-don" onclick="document.getElementById('donationOverlay').style.display='none'">
-      Comenzar juego
-    </div>
-  </div>
-</div>
-<!-- === END DONATION OVERLAY === -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style id="restart-single-clean">
-#restartSingleWrap{
-  display:flex;
-  justify-content:center;
-  margin-top:3mm;
-}
-</style>
-
-<script id="restart-single-clean-js">
-document.addEventListener('DOMContentLoaded', ()=>{
-  const boardWrap = document.querySelector('.board-wrap');
-  if(!boardWrap) return;
-
-  let wrap = document.getElementById('restartSingleWrap');
-  if(!wrap){
-    wrap = document.createElement('div');
-    wrap.id = 'restartSingleWrap';
-    wrap.innerHTML = '<button id="btnRestartSingle">Reiniciar</button>';
-    boardWrap.insertAdjacentElement('afterend', wrap);
-  }
-
-  const btn = document.getElementById('btnRestartSingle');
-  if(btn){
-    btn.onclick = ()=>location.reload();
-  }
+  // Run immediately and after possible re-creations
+  fixOnlineLabel();
+  setTimeout(fixOnlineLabel, 0);
+  setTimeout(fixOnlineLabel, 50);
+  setTimeout(fixOnlineLabel, 200);
 });
 </script>
+<!-- === END FIX === -->
 
 </body>
 
@@ -24957,19 +24703,143 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 <!-- AJETREZ: Reiniciar +1 casillero a la derecha (2025-09-13) -->
+<style id="aj-restart-right-plus-1sq-2025-09-13">
+  /* Desplaza el botón Reiniciar 1 casillero a la derecha */
+  
 
+/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
+
+/* === END RESTART FREE VISUAL POSITION === */
+
+/* === NEW MAIN MENU BUTTON (STABLE) === */
+#btnMenuMain{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * -1.2);
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+#btnMenuMain:hover{ background:#222; }
+/* === END NEW MAIN MENU BUTTON === */
+
+/* === AJETREZ_PAY_FIX === */
+.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+/* === END AJETREZ_PAY_FIX === */
+</style>
 
 
 <!-- AJETREZ: Reiniciar ajustar -0.5 casillero desde el último cambio (2025-09-13) -->
+<style id="aj-restart-left-minus-0_5sq-2025-09-13">
+  /* Ahora, respecto al ajuste previo de +1c, lo movemos 0.5c a la izquierda => queda +0.5c */
+  
 
+/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
+
+/* === END RESTART FREE VISUAL POSITION === */
+
+/* === NEW MAIN MENU BUTTON (STABLE) === */
+#btnMenuMain{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * -1.2);
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+#btnMenuMain:hover{ background:#222; }
+/* === END NEW MAIN MENU BUTTON === */
+
+/* === AJETREZ_PAY_FIX === */
+.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+/* === END AJETREZ_PAY_FIX === */
+</style>
 
 
 <!-- AJETREZ: Reiniciar ajustar -0.5 casillero adicional (2025-09-13) -->
+<style id="aj-restart-left-minus-0_5sq-ADICIONAL-2025-09-13">
+  /* Desde +0.5c, movemos 0.5c más a la izquierda => 0c neto */
+  
 
+/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
+
+/* === END RESTART FREE VISUAL POSITION === */
+
+/* === NEW MAIN MENU BUTTON (STABLE) === */
+#btnMenuMain{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * -1.2);
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+#btnMenuMain:hover{ background:#222; }
+/* === END NEW MAIN MENU BUTTON === */
+
+/* === AJETREZ_PAY_FIX === */
+.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+/* === END AJETREZ_PAY_FIX === */
+</style>
 
 
 <!-- AJETREZ: Reiniciar neto -0.5 casillero a la izquierda (2025-09-13) -->
+<style id="aj-restart-left-net-minus-0_5sq-2025-09-13">
+  /* Mueve el botón Reiniciar medio casillero a la izquierda con respecto a su posición original */
+  
 
+/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
+
+/* === END RESTART FREE VISUAL POSITION === */
+
+/* === NEW MAIN MENU BUTTON (STABLE) === */
+#btnMenuMain{
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--square) * -1.2);
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border: 1.5px solid rgba(255,255,255,0.75);
+}
+#btnMenuMain:hover{ background:#222; }
+/* === END NEW MAIN MENU BUTTON === */
+
+/* === AJETREZ_PAY_FIX === */
+.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
+/* === END AJETREZ_PAY_FIX === */
+</style>
 
 
 <!-- AJETREZ: Menú +0.5 casillero adicional (ahora +3c + 3mm) - 2025-09-13 -->
@@ -25672,29 +25542,3 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })();
 </script>
 
-
-<!-- === HARD MERCADOPAGO VISIBILITY FIX (WEB + MOBILE) === -->
-<style id="mp-hard-fix">
-  .aj-don-inline{display:block!important}
-  .aj-don-inline .aj-don-btns{
-    display:flex!important;
-    justify-content:center!important;
-    align-items:center!important;
-    gap:24px!important;
-  }
-  .aj-pay-bg.mp{
-    display:inline-block!important;
-    width:140px!important;
-    height:48px!important;
-    min-width:140px!important;
-    min-height:48px!important;
-    background-size:contain!important;
-    background-repeat:no-repeat!important;
-    background-position:center!important;
-    opacity:1!important;
-    visibility:visible!important;
-    z-index:999999!important;
-    position:relative!important;
-  }
-</style>
-<!-- === END HARD MERCADOPAGO FIX === -->
