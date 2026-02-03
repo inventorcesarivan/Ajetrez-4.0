@@ -24409,23 +24409,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-<!-- === RESTART BUTTON HARD UNLOCK + REPOSITION FIX === -->
-<style id="restartHardFix">
-/* Ensure frame is positioning context */
-.frame{ position: relative !important; }
+<!-- === RESTART BUTTON DOM UNLOCK + OVERLAY FIX === -->
+<style id="restartOverlayFix">
+  /* Ensure nothing blocks the restart button */
+  #btnRestartBR{
+    position: absolute !important;
+    left: calc(var(--square) * 0.5) !important;
+    bottom: calc(var(--square) * 0.5) !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    z-index: 999 !important;
+    pointer-events: auto !important;
+  }
 
-/* Hard-unlock restart button from all previous rules */
-#btnRestartBR{
-  position: absolute !important;
-  left: calc(var(--square) * 0.5) !important;
-  bottom: calc(var(--square) * 0.5) !important;
+  /* Force frame as anchor */
+  .frame{ position: relative !important; }
 
-  right: auto !important;
-  top: auto !important;
-  transform: none !important;
-  margin: 0 !important;
-
-  z-index: 20 !important;
-}
+  /* Disable any invisible overlay catching clicks */
+  #startOverlay,
+  #boardOverlay,
+  .overlay,
+  .fullscreen-overlay{
+    pointer-events: none !important;
+  }
 </style>
-<!-- === END RESTART BUTTON HARD UNLOCK + REPOSITION FIX === -->
+
+<script>
+(function(){
+  // 1. Remove duplicated restart buttons if any
+  const btns = document.querySelectorAll('#btnRestartBR');
+  if(btns.length > 1){
+    btns.forEach((b,i)=>{ if(i>0) b.remove(); });
+  }
+
+  // 2. Force-move restart button inside frame at runtime
+  const frame = document.querySelector('.frame');
+  const btn = document.querySelector('#btnRestartBR');
+  if(frame && btn && btn.parentElement !== frame){
+    frame.appendChild(btn);
+  }
+
+  // 3. Kill rogue transforms applied later
+  const observer = new MutationObserver(()=>{
+    btn.style.transform = 'none';
+    btn.style.top = 'auto';
+    btn.style.right = 'auto';
+  });
+  if(btn){
+    observer.observe(btn, { attributes:true, attributeFilter:['style','class'] });
+  }
+})();
+</script>
+<!-- === END RESTART BUTTON DOM UNLOCK + OVERLAY FIX === -->
