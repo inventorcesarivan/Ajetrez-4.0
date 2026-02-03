@@ -9575,6 +9575,25 @@ button[data-mode="online"]:hover{
 </style>
 <!-- === END PATCH MENU CLONA REGLAS === -->
 
+
+<!-- === PATCH: MENU PANEL MOVIL OFFSET + CENTRADO === -->
+<style id="menuMobileOffsetCenter">
+@media (max-width: 900px){
+  /* Overlay como contenedor de referencia */
+  #panelBackdrop{
+    position: relative !important;
+  }
+
+  /* Panel centrado y bajado 2 casilleros */
+  #megaPanel{
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: calc(var(--square) * 2) !important; /* bajar 2 casilleros */
+  }
+}
+</style>
+<!-- === END PATCH MENU PANEL MOVIL OFFSET + CENTRADO === -->
+
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
 

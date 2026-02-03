@@ -9773,6 +9773,25 @@ button[data-mode="online"]:hover{
 </style>
 <!-- === END PATCH MENU CLONA REGLAS === -->
 
+
+<!-- === PATCH: MENU PANEL MOVIL OFFSET + CENTRADO === -->
+<style id="menuMobileOffsetCenter">
+@media (max-width: 900px){
+  /* Overlay como contenedor de referencia */
+  #panelBackdrop{
+    position: relative !important;
+  }
+
+  /* Panel centrado y bajado 2 casilleros */
+  #megaPanel{
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: calc(var(--square) * 2) !important; /* bajar 2 casilleros */
+  }
+}
+</style>
+<!-- === END PATCH MENU PANEL MOVIL OFFSET + CENTRADO === -->
+
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
