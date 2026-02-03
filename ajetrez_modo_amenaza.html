@@ -9191,6 +9191,18 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE MENU PANEL SCALE + FULL CENTERING === */
 </style>
+<style>
+/* === MOBILE MENU PANEL: CENTERED + DOWN 1 SQUARE === */
+@media (max-width: 900px){
+  #megaPanel{
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, calc(-50% + var(--square))) scale(0.7) !important;
+    transform-origin: center center !important;
+  }
+}
+/* === END MOBILE MENU PANEL OFFSET === */
+</style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
