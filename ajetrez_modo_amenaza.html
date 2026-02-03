@@ -9247,6 +9247,18 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
 </style>
+
+<!-- === MOBILE BASE HEIGHT REDUCTION PATCH === -->
+<style id="mobileBaseHeightReduction">
+@media (max-width: 900px){
+  /* Achica la base gris desde abajo hacia arriba ~1 casillero */
+  .frame{
+    padding-bottom: calc(14px - var(--square, 56px));
+  }
+}
+</style>
+<!-- === END MOBILE BASE HEIGHT REDUCTION PATCH === -->
+
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
