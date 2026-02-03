@@ -9036,16 +9036,27 @@ button[data-mode="online"]:hover{
 /* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
 </style>
 
-<!-- === MOBILE BASE HEIGHT REDUCTION PATCH === -->
-<style id="mobileBaseHeightReduction">
+<!-- === MOBILE PATCH: HIDE RESTART + SHRINK GREY BASE === -->
+<style id="mobileRestartAndBasePatch">
 @media (max-width: 900px){
-  /* Achica la base gris desde abajo hacia arriba ~1 casillero */
+
+  /* Ocultar botón Reiniciar SOLO en móvil */
+  #btnRestart,
+  #btnRestartBR,
+  .btn-restart,
+  [data-action="restart"]{
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Achicar base gris desde abajo ~1 casillero */
   .frame{
-    padding-bottom: calc(14px - var(--square, 56px));
+    padding-bottom: calc(14px - var(--square));
   }
 }
 </style>
-<!-- === END MOBILE BASE HEIGHT REDUCTION PATCH === -->
+<!-- === END MOBILE PATCH === -->
 
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" style="position:absolute; right:10px; top:6px; z-index:50;" type="button">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
@@ -22178,18 +22189,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- === END FIX === -->
-
-<!-- === RESET GAME BUTTON (CLEAN & CENTRALIZED) === -->
-<div id="resetGameBar" style="
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin-top:12px;
-">
-  <button id="btnResetGame" class="btn secondary">Reiniciar juego</button>
-</div>
-<!-- === END RESET GAME BUTTON === -->
-
 </body>
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->
 <style id="aj-replay-glass-css">
@@ -22449,36 +22448,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }catch(_){}
 })();
 </script>
-
-<script>
-/* === CENTRAL RESET FUNCTION (SINGLE SOURCE OF TRUTH) === */
-function resetGame(reason = "manual"){
-  try{
-    // Reset core game state
-    if(typeof clearSelection === "function") clearSelection();
-    if(typeof resetBoard === "function") resetBoard();
-    if(typeof initBoard === "function") initBoard();
-    if(typeof hideShiftCtrl === "function") hideShiftCtrl();
-
-    // Flags
-    if(typeof gameStarted !== "undefined") gameStarted = false;
-    if(typeof selectedSq !== "undefined") selectedSq = null;
-
-    console.log("[resetGame]", reason);
-  }catch(e){
-    console.warn("Reset error:", e);
-  }
-}
-
-/* === RESET BUTTON BINDING === */
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("btnResetGame");
-  if(btn){
-    btn.addEventListener("click", () => resetGame("button"));
-  }
-});
-</script>
-
 </html><!-- Session guard and HUD cancel on mode/restart --><script>
 (function(){
   window.__GAME_SESSION__ = window.__GAME_SESSION__ || 0;
