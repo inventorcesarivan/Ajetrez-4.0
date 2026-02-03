@@ -9606,6 +9606,127 @@ button[data-mode="online"]:hover{
 </script>
 <!-- === END SINGLE CLEAN RESTART === -->
 
+
+<!-- === PATCH: BOTON REGLAS LIBRE Y DESANCLADO === -->
+<style id="rulesButtonFree">
+#btnRules{
+  all: unset;
+  position: absolute !important;
+  left: 50% !important;
+  top: calc(100% + (var(--square) * 0.5)) !important; /* medio casillero hacia abajo */
+  transform: translateX(-50%) !important;
+  z-index: 60 !important;
+  pointer-events: auto !important;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  border: 1.5px solid rgba(255,255,255,0.7);
+}
+</style>
+<!-- === END PATCH BOTON REGLAS === -->
+
+
+<!-- === PATCH: BOTON MENU LIBRE Y DESANCLADO === -->
+<style id="menuButtonFree">
+#btnMegaMenu, #btnMenuMain{
+  all: unset;
+  position: absolute !important;
+  left: 50% !important;
+  top: calc(100% + (var(--square) * 0.5)) !important; /* medio casillero hacia abajo */
+  transform: translateX(-50%) !important;
+  z-index: 65 !important;
+  pointer-events: auto !important;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  border: 1.5px solid rgba(255,255,255,0.7);
+}
+</style>
+<!-- === END PATCH BOTON MENU === -->
+
+
+<!-- === PATCH: MENU + REGLAS FIJOS EN BARRA SUPERIOR === -->
+<style id="menuRulesFixedTop">
+/* Contenedor lógico superior */
+.bar{
+  position: relative !important;
+}
+
+/* Botón MENÚ fijo arriba, centrado */
+#btnMegaMenu, #btnMenuMain{
+  all: unset;
+  position: absolute !important;
+  top: 6px !important;
+  left: 50% !important;
+  transform: translateX(-120%) !important; /* centro-izquierda */
+  z-index: 60 !important;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  border: 1.5px solid rgba(255,255,255,0.7);
+}
+
+/* Botón REGLAS fijo arriba, centrado */
+#btnRules{
+  all: unset;
+  position: absolute !important;
+  top: 6px !important;
+  left: 50% !important;
+  transform: translateX(20%) !important; /* centro-derecha */
+  z-index: 60 !important;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  border: 1.5px solid rgba(255,255,255,0.7);
+}
+</style>
+<!-- === END PATCH MENU + REGLAS FIJOS === -->
+
+
+<!-- === PATCH: PANEL MENU RESPONSIVE (ALTURA TABLERO EN MOVIL) === -->
+<style id="mobileMenuPanelFix">
+/* Desktop: se mantiene tal cual */
+#megaPanel{
+  height: calc(var(--square) * 8);
+  max-height: calc(var(--square) * 8);
+}
+
+/* Mobile: el panel respeta la altura del tablero */
+@media (max-width: 900px){
+  #megaPanel{
+    height: calc(var(--square) * 8) !important;
+    max-height: calc(var(--square) * 8) !important;
+    width: calc(var(--square) * 16);
+  }
+
+  /* Ajuste interno para evitar overflow visual */
+  .mp-content{
+    max-height: calc(100% - 140px) !important;
+  }
+}
+</style>
+<!-- === END PATCH PANEL MENU RESPONSIVE === -->
+
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
@@ -9864,7 +9985,7 @@ button[data-mode="online"]:hover{
 </div></div><div class="field"><label>Tablas</label><div class="pill" id="statD">0
 </div></div></div><div id="infoSplit"><div id="infoLeft"><div style="margin-top:10px;max-height:120px;overflow:auto;border:1px solid #eee;border-radius:10px;"><table class="simple" id="logsTable"><thead><tr><th>Fecha</th><th>Modo</th><th>Resultado</th><th>Ganador</th><th>Movs</th></tr></thead><tbody></tbody></table></div><div id="replayDock" style="display:none"></div><!-- Replay panel will be injected here --><div id="replayDock"></div></div></div></div><div class="row" style="margin-top:8px;"></div></div><div class="tab" id="tab-mas" style="display:none"><h3>Más funciones</h3><p>Acá vamos a agregar: estilos claros/oscuros, selector de temas, perfiles, estadísticas detalladas, etc.</p></div></div></div></div></div><div style="height:var(--toolbar-gap)"></div><div aria-label="Barra inferior" class="bar" id="bottomBar">
 
-<div class="right-ctrls" id="rightControls"><button class="btn small btn-close-internal" id="btnFSBR" type="button">Pantalla completa</button></div></div></div><script>
+<div class="right-ctrls" id="rightControls"></div></div></div><script>
 // --- Audio FX setup ---
 (function(){
   function make(src){ try{ const a = new Audio(src); a.preload='auto'; a.volume = 0.85; return a; }catch(_){ return null; } }
