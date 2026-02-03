@@ -8991,47 +8991,6 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE MENU PANEL OFFSET === */
 </style>
-<style>
-/* === MOBILE EXPERIMENT: RESTART BUTTON RESET + FLOAT + RE-ANCHOR === */
-@media (max-width: 900px){
-
-  /* Paso 1: neutralizar TODO */
-  #btnRestartBR{
-    all: unset !important;
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    z-index: 9999 !important;
-
-    /* re-aplicar estilos visuales mínimos */
-    appearance: none !important;
-    border: none !important;
-    border-radius: 999px !important;
-    padding: 8px 14px !important;
-    font-weight: 800 !important;
-    cursor: pointer !important;
-    background: #111 !important;
-    color: #fff !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25) !important;
-  }
-
-  /* Paso 2: ahora forzar anclaje al contenedor gris */
-  .frame{
-    position: relative !important;
-  }
-
-  #btnRestartBR{
-    position: absolute !important;
-    bottom: 6mm !important;
-    right: 6mm !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    z-index: 30 !important;
-  }
-}
-/* === END MOBILE EXPERIMENT === */
-</style>
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" style="position:absolute; right:10px; top:6px; z-index:50;" type="button">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
 <button class="btn mode" data-gmode="online" id="btnOnlineExternal">
@@ -21378,7 +21337,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // el tablero debe ser relativo para que el botón se ancle bien
   board.style.position = 'relative';
-  board.appendChild(btn);
+  const frame = document.querySelector('.frame') || board;
+  frame.appendChild(btn);
 
   // Posición exacta:
   // 6 casilleros a la derecha del centro
@@ -21398,10 +21358,12 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 /* Botón Reiniciar libre */
+/* === REINICIAR LIBRE (ANCLADO A FRAME GRIS) === */
 #reiniciarLibre{
   position: absolute;
-  right: calc(var(--square) * 0.5);
-  bottom: 0; transform: translate(-50%, calc(50%));
+  right: 6mm;
+  bottom: calc(var(--square) + 3mm);
+  transform: none;
   z-index: 9999;
 
   background: #111;
@@ -21413,6 +21375,7 @@ document.addEventListener('DOMContentLoaded', () => {
   border: 1.5px solid rgba(255,255,255,0.7);
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
+/* === END REINICIAR LIBRE === */
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
@@ -21474,16 +21437,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Proxy exacto al comportamiento original
   btn.onclick = () => originalBtn.click();
 
-  board.appendChild(btn);
+  const frame = document.querySelector('.frame') || board;
+  frame.appendChild(btn);
 });
 </script>
 <!-- === FIN REINICIAR LIBRE === -->
 <!-- === POSICIONAMIENTO LIMPIO POR BOUNDING RECT === -->
 <style>
-#menuLibre, #reiniciarLibre{
-  position: fixed;
+#menuLibre, /* === REINICIAR LIBRE (ANCLADO A FRAME GRIS) === */
+#reiniciarLibre{
+  position: absolute;
+  right: 6mm;
+  bottom: calc(var(--square) + 3mm);
+  transform: none;
   z-index: 9999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
+/* === END REINICIAR LIBRE === */
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
