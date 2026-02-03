@@ -9247,41 +9247,6 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
 </style>
-
-<!-- === MOBILE DEEP FIX: REMOVE BOTTOM BAR + RESTART === -->
-<style id="mobileDeepFix">
-@media (max-width: 900px){
-
-  /* Ocultar botón Reiniciar real */
-  #btnRestartBR{
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
-
-  /* Reestructurar layout del juego */
-  .shell{
-    grid-template-rows:
-      var(--toolbar-h)
-      var(--toolbar-gap)
-      auto
-      0px
-      0px;
-  }
-
-  /* Eliminar barra inferior gris */
-  .shell > .bar:last-child{
-    display: none !important;
-  }
-
-  /* Limpiar padding sobrante */
-  .frame{
-    padding-bottom: 0 !important;
-  }
-}
-</style>
-<!-- === END MOBILE DEEP FIX === -->
-
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
