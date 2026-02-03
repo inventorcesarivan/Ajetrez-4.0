@@ -9080,6 +9080,40 @@ button[data-mode="online"]:hover{
 }
 </style>
 
+
+<style>
+/* === AJUSTE GLOBAL UI SUPERIOR: SUBIR MEDIO CASILLERO === */
+/* Botones de modo de juego + indicador + registro de partidas + reloj */
+.mode-group,
+.mode-indicator,
+#registroPartidas,
+#registro-partidas,
+#gameTimer,
+#clock,
+#btnRegistro,
+#btnRegistroPartidas{
+  transform: translateY(calc(var(--square) * -0.5)) !important;
+}
+</style>
+
+
+<style>
+/* === AJUSTE FINAL UI: ESCALA INDICADOR Y RELOJ === */
+
+/* Indicador de modo: -10% tamaño general */
+.mode-indicator{
+  transform: scale(0.9) translateY(calc(var(--square) * -0.5)) !important;
+  transform-origin: center center;
+}
+
+/* Reloj: -10% SOLO ancho */
+#gameTimer,
+#clock{
+  transform: scaleX(0.9) translateY(calc(var(--square) * -0.5)) !important;
+  transform-origin: center center;
+}
+</style>
+
 </head><body>
 
 <!-- === DONATION PANEL (PERSISTENT) === -->
