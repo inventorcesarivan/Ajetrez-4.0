@@ -9170,7 +9170,7 @@ button[data-mode="online"]:hover{
 </style>
 <!-- === END PATCH MENU + REGLAS FIJOS === -->
 <style>
-/* === MOBILE MENU PANEL SCALE (30% smaller) === */
+/* === MOBILE MENU PANEL SCALE (30% smaller) — replaced === */
 @media (max-width: 900px){
   #megaPanel{
     transform: translateX(-50%) scale(0.7) !important;
@@ -9178,6 +9178,18 @@ button[data-mode="online"]:hover{
   }
 }
 /* === END MOBILE MENU PANEL SCALE === */
+</style>
+<style>
+/* === MOBILE MENU PANEL SCALE + FULL CENTERING === */
+@media (max-width: 900px){
+  #megaPanel{
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
+    transform-origin: center center !important;
+  }
+}
+/* === END MOBILE MENU PANEL SCALE + FULL CENTERING === */
 </style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
