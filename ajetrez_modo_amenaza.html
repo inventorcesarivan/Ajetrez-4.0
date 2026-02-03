@@ -9204,31 +9204,23 @@ button[data-mode="online"]:hover{
 /* === END MOBILE MENU PANEL OFFSET === */
 </style>
 <style>
-/* === MOBILE: RESTART BUTTON UP HALF SQUARE === */
+/* === MOBILE OVERRIDE: RESTART BUTTON (CONSOLIDATED, NON-DESTRUCTIVE) === */
 @media (max-width: 900px){
-  #btnRestartBR{
-    transform: translateY(calc(var(--square) * -0.5)) !important;
-  }
-}
-/* === END MOBILE RESTART OFFSET === */
-</style>
-<style>
-/* === MOBILE: RESTART BUTTON FIXED TO GREY CONTAINER === */
-@media (max-width: 900px){
-  /* asegurar contenedor gris como referencia */
+  /* Ensure grey frame is the anchor */
   .frame{
-    position: relative !important;
+    position: relative;
   }
 
-  /* botón reiniciar: NO flotante, anclado al contenedor */
+  /* Restart button: fixed to frame, no floating */
   #btnRestartBR{
     position: absolute !important;
-    bottom: 3mm !important;          /* margen exacto desde última sección */
+    bottom: 3mm !important;      /* 3mm from last movable section */
     left: 50% !important;
     transform: translateX(-50%) !important;
+    z-index: 20 !important;
   }
 }
-/* === END MOBILE RESTART FIX === */
+/* === END MOBILE OVERRIDE: RESTART BUTTON === */
 </style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
