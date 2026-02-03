@@ -8992,7 +8992,7 @@ button[data-mode="online"]:hover{
 /* === END MOBILE MENU PANEL OFFSET === */
 </style>
 <style>
-/* === MOBILE OVERRIDE: RESTART BUTTON (CONSOLIDATED, NON-DESTRUCTIVE) === */
+/* === MOBILE OVERRIDE: RESTART BUTTON (REPLACED) === */
 @media (max-width: 900px){
   /* Ensure grey frame is the anchor */
   .frame{
@@ -9003,6 +9003,27 @@ button[data-mode="online"]:hover{
   #btnRestartBR{
     position: absolute !important;
     bottom: 3mm !important;      /* 3mm from last movable section */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 20 !important;
+  }
+}
+/* === END MOBILE OVERRIDE: RESTART BUTTON === */
+</style>
+<style>
+/* === MOBILE OVERRIDE: RESTART BUTTON (ADJUSTED TO LAST SECTION) === */
+@media (max-width: 900px){
+  .frame{
+    position: relative;
+  }
+
+  /*
+    Ubicamos el botón respecto al final real del juego:
+    1 casillero (altura de sección inferior) + 3mm de margen
+  */
+  #btnRestartBR{
+    position: absolute !important;
+    bottom: calc(var(--square) + 3mm) !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 20 !important;
