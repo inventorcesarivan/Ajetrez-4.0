@@ -24409,11 +24409,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-<!-- === RESTART BUTTON OFFSET PATCH (GLOBAL) === -->
-<style id="restartOffsetPatch">
-  /* Subir botón Reiniciar medio casillero en todas las vistas */
-  #btnRestartBR{
-    bottom: calc((var(--square) * -1) - (var(--square) * 0.5)) !important;
-  }
+<!-- === RESTART BUTTON HARD UNLOCK + REPOSITION FIX === -->
+<style id="restartHardFix">
+/* Ensure frame is positioning context */
+.frame{ position: relative !important; }
+
+/* Hard-unlock restart button from all previous rules */
+#btnRestartBR{
+  position: absolute !important;
+  left: calc(var(--square) * 0.5) !important;
+  bottom: calc(var(--square) * 0.5) !important;
+
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+
+  z-index: 20 !important;
+}
 </style>
-<!-- === END RESTART BUTTON OFFSET PATCH === -->
+<!-- === END RESTART BUTTON HARD UNLOCK + REPOSITION FIX === -->
