@@ -22166,6 +22166,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- === END FIX === -->
+
+<!-- === RESET GAME BUTTON (CLEAN & CENTRALIZED) === -->
+<div id="resetGameBar" style="
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:12px;
+">
+  <button id="btnResetGame" class="btn secondary">Reiniciar juego</button>
+</div>
+<!-- === END RESET GAME BUTTON === -->
+
 </body>
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->
 <style id="aj-replay-glass-css">
@@ -22425,6 +22437,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }catch(_){}
 })();
 </script>
+
+<script>
+/* === CENTRAL RESET FUNCTION (SINGLE SOURCE OF TRUTH) === */
+function resetGame(reason = "manual"){
+  try{
+    // Reset core game state
+    if(typeof clearSelection === "function") clearSelection();
+    if(typeof resetBoard === "function") resetBoard();
+    if(typeof initBoard === "function") initBoard();
+    if(typeof hideShiftCtrl === "function") hideShiftCtrl();
+
+    // Flags
+    if(typeof gameStarted !== "undefined") gameStarted = false;
+    if(typeof selectedSq !== "undefined") selectedSq = null;
+
+    console.log("[resetGame]", reason);
+  }catch(e){
+    console.warn("Reset error:", e);
+  }
+}
+
+/* === RESET BUTTON BINDING === */
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("btnResetGame");
+  if(btn){
+    btn.addEventListener("click", () => resetGame("button"));
+  }
+});
+</script>
+
 </html><!-- Session guard and HUD cancel on mode/restart --><script>
 (function(){
   window.__GAME_SESSION__ = window.__GAME_SESSION__ || 0;
@@ -24406,116 +24448,3 @@ document.addEventListener('DOMContentLoaded', () => {
   update();
 })();
 </script>
-
-
-
-<!-- === RESTART BUTTON DOM UNLOCK + OVERLAY FIX === -->
-<style id="restartOverlayFix">
-  /* Ensure nothing blocks the restart button */
-  #btnRestartBR{
-    position: absolute !important;
-    left: calc(var(--square) * 0.5) !important;
-    bottom: calc(var(--square) * 0.5) !important;
-    top: auto !important;
-    right: auto !important;
-    transform: none !important;
-    z-index: 999 !important;
-    pointer-events: auto !important;
-  }
-
-  /* Force frame as anchor */
-  .frame{ position: relative !important; }
-
-  /* Disable any invisible overlay catching clicks */
-  #startOverlay,
-  #boardOverlay,
-  .overlay,
-  .fullscreen-overlay{
-    pointer-events: none !important;
-  }
-</style>
-
-<script>
-(function(){
-  // 1. Remove duplicated restart buttons if any
-  const btns = document.querySelectorAll('#btnRestartBR');
-  if(btns.length > 1){
-    btns.forEach((b,i)=>{ if(i>0) b.remove(); });
-  }
-
-  // 2. Force-move restart button inside frame at runtime
-  const frame = document.querySelector('.frame');
-  const btn = document.querySelector('#btnRestartBR');
-  if(frame && btn && btn.parentElement !== frame){
-    frame.appendChild(btn);
-  }
-
-  // 3. Kill rogue transforms applied later
-  const observer = new MutationObserver(()=>{
-    btn.style.transform = 'none';
-    btn.style.top = 'auto';
-    btn.style.right = 'auto';
-  });
-  if(btn){
-    observer.observe(btn, { attributes:true, attributeFilter:['style','class'] });
-  }
-})();
-</script>
-<!-- === END RESTART BUTTON DOM UNLOCK + OVERLAY FIX === -->
-
-
-
-<!-- === RESTART BUTTON TOP CENTER GLOBAL POSITION === -->
-<style id="restartTopCenter">
-  /* Ensure frame is anchor */
-  .frame{ position: relative !important; }
-
-  /* Restart button: top center, below Menu & Rules */
-  #btnRestartBR{
-    position: absolute !important;
-    top: calc(var(--toolbar-h) + (var(--square) * 0.25)) !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    bottom: auto !important;
-    right: auto !important;
-    margin: 0 !important;
-
-    z-index: 30 !important;
-    pointer-events: auto !important;
-  }
-</style>
-<!-- === END RESTART BUTTON TOP CENTER GLOBAL POSITION === -->
-
-
-
-<!-- === RESTART BUTTON FIXED INSIDE FRAME (BOTTOM CENTER) === -->
-<style id="restartFixedBottomCenter">
-  /* Base contenedora como referencia visual */
-  .frame{
-    position: relative !important;
-  }
-
-  /*
-    Botón FIXED:
-    - fijo respecto al viewport
-    - centrado horizontalmente
-    - ubicado justo debajo de la última sección desplazable
-    - margen real de 3mm desde el borde inferior del juego
-  */
-  #btnRestartBR{
-    position: fixed !important;
-
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    bottom: calc(3mm + var(--square)) !important;
-
-    top: auto !important;
-    right: auto !important;
-
-    z-index: 999 !important;
-    pointer-events: auto !important;
-  }
-</style>
-<!-- === END RESTART BUTTON FIXED INSIDE FRAME === -->
