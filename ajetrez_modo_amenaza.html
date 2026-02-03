@@ -9212,6 +9212,24 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE RESTART OFFSET === */
 </style>
+<style>
+/* === MOBILE: RESTART BUTTON FIXED TO GREY CONTAINER === */
+@media (max-width: 900px){
+  /* asegurar contenedor gris como referencia */
+  .frame{
+    position: relative !important;
+  }
+
+  /* botón reiniciar: NO flotante, anclado al contenedor */
+  #btnRestartBR{
+    position: absolute !important;
+    bottom: 3mm !important;          /* margen exacto desde última sección */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+/* === END MOBILE RESTART FIX === */
+</style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
