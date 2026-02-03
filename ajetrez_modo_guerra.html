@@ -265,7 +265,7 @@
   .sq.capture::after{ content:""; position:absolute; inset:0; background: rgba(220,0,0,.15); }
   .piece.fallback{ width:auto; height:auto; }
 
-  #overlay{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; background: rgba(0,0,0,.25); z-index: 5; }
+  
   #banner{ background:#111; color:#fff; padding: 10px 18px; font-weight: 700; letter-spacing: 1px; border-radius: 999px; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 
   .shift-ctrl{
@@ -323,19 +323,10 @@
   #btnFSBR:hover{ background:#222; }
 
   /* === PANEL COMPLETO === */
-  #panelBackdrop{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height: calc(var(--square) * 8);
-  background: rgba(0,0,0,.30);
-  display:none; pointer-events:auto;
-  z-index: 30;
-}
+  
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -1119,16 +1110,10 @@ body, html{overflow:visible!important;}
 </style>
 <style id="menu-panel-zfix">
 /* --- Menu panel layering fix: ensure menu is above board/overlays but below replay modal --- */
-#panelBackdrop{
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,.35);
-  display:none; pointer-events:auto;
-  z-index: 30;
-}
+
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -1463,7 +1448,7 @@ body, html{overflow:visible!important;}
 /* === Contorno blanco alrededor del panel completo del menú === */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2345,7 +2330,7 @@ body, html{overflow:visible!important;}
   /* Achicar el panel de menú un 5% (general: web + móvil) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2392,7 +2377,7 @@ body, html{overflow:visible!important;}
   /* Achicar el panel de menú un 5% adicional (total ~10%) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2439,7 +2424,7 @@ body, html{overflow:visible!important;}
   /* Desplazar un poco a la derecha y hacia abajo, manteniendo scale(0.90) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2486,7 +2471,7 @@ body, html{overflow:visible!important;}
   /* Desplazar medio casillero a la derecha (+ mantener 3mm abajo) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2533,7 +2518,7 @@ body, html{overflow:visible!important;}
   /* Centrado perfecto entre derecha e izquierda respecto al tablero */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -5573,7 +5558,7 @@ body[data-theme="noche"] .regv2-btn{
   /* Aumentar altura del panel completo de menú ~4mm (aprox) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -9008,7 +8993,7 @@ button[data-mode="online"]:hover{
 </div>
 <div aria-label="Overlay de inicio" aria-live="polite" id="startOverlay"><div class="start-card"><div style="font-weight:800; font-size:18px;">Comenzar partida
 </div><button id="btnStartGame" type="button">Comenzar partida</button><div class="hint">Pulsa para iniciar. Bloquea el juego en todos los modos hasta empezar.
-</div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div><div id="overlay"><div id="banner">FIN</div></div><div id="panelBackdrop"></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
+</div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
 </div><div class="mp-header"><div id="mpTitle">Panel de Ajetrez
 <button aria-label="Cerrar panel" class="btn small btn-close-internal" id="btnClosePanel">Cerrar</button></div><div class="right"><span class="hint-sm" id="loggedUser"></span><button class="btn" id="/* btnClosePanel eliminado */" type="button"></button></div></div><div id="tabsView"><div class="mp-tabs">
 <button class="tab-btn active" data-tab="tab-version">Versión de Ajetrez</button><button class="tab-btn" data-tab="tab-modos">Modos de juego</button><button class="tab-btn" data-tab="tab-personalizacion">Personalización</button><button class="tab-btn" data-tab="tab-registros" id="btnRegistrosTab">Registros</button>
@@ -11261,7 +11246,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* Reducir tamaño total del panel (ancho y alto) un 10% */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -11491,7 +11476,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 :root{ --panel-w: 18.2952; }
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -11627,7 +11612,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 :root{ --panel-h: 9.45; } /* antes 9 */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -17715,7 +17700,7 @@ function showToast(){
 <style id="aj-megaPanel-canonical-2025-09-12">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -17762,7 +17747,7 @@ function showToast(){
   /* Evita transparencias en el cuerpo del panel del menú */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -22565,7 +22550,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <style id="aj-drop-panel-2mm-more">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -23028,7 +23013,7 @@ document.addEventListener('DOMContentLoaded', () => {
   :root{ --panel-h: 8; }
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -23075,7 +23060,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <style id="aj-panel-down-half-square-more">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -24243,10 +24228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     height: 100vh;
   }
 
-  #panelBackdrop{
-    position: fixed;
-    inset: 0;
-  }
+  
 
   #megaPanel{
     position: fixed;
