@@ -24462,3 +24462,60 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 <!-- === END RESTART BUTTON DOM UNLOCK + OVERLAY FIX === -->
+
+
+
+<!-- === RESTART BUTTON TOP CENTER GLOBAL POSITION === -->
+<style id="restartTopCenter">
+  /* Ensure frame is anchor */
+  .frame{ position: relative !important; }
+
+  /* Restart button: top center, below Menu & Rules */
+  #btnRestartBR{
+    position: absolute !important;
+    top: calc(var(--toolbar-h) + (var(--square) * 0.25)) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    bottom: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+
+    z-index: 30 !important;
+    pointer-events: auto !important;
+  }
+</style>
+<!-- === END RESTART BUTTON TOP CENTER GLOBAL POSITION === -->
+
+
+
+<!-- === RESTART BUTTON FIXED INSIDE FRAME (BOTTOM CENTER) === -->
+<style id="restartFixedBottomCenter">
+  /* Base contenedora como referencia visual */
+  .frame{
+    position: relative !important;
+  }
+
+  /*
+    Botón FIXED:
+    - fijo respecto al viewport
+    - centrado horizontalmente
+    - ubicado justo debajo de la última sección desplazable
+    - margen real de 3mm desde el borde inferior del juego
+  */
+  #btnRestartBR{
+    position: fixed !important;
+
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    bottom: calc(3mm + var(--square)) !important;
+
+    top: auto !important;
+    right: auto !important;
+
+    z-index: 999 !important;
+    pointer-events: auto !important;
+  }
+</style>
+<!-- === END RESTART BUTTON FIXED INSIDE FRAME === -->
