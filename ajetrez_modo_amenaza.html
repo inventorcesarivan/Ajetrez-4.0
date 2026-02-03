@@ -9247,6 +9247,27 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
 </style>
+<style>
+/* === MOBILE + FULLSCREEN: BAJAR BASE GRIS Y CONTENIDO (EXCEPTO REINICIAR) === */
+@media (max-width: 900px), (display-mode: fullscreen){
+
+  /* mover base gris */
+  .frame{
+    transform: translateY(calc(var(--square) * 0.5)) !important;
+  }
+
+  /* mover todo el contenido dentro de la base gris */
+  .frame > *{
+    transform: translateY(calc(var(--square) * 0.5)) !important;
+  }
+
+  /* EXCEPCIÓN: botón reiniciar queda fijo */
+  #reiniciarLibre{
+    transform: none !important;
+  }
+}
+/* === END BASE GRIS DOWN OFFSET === */
+</style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
