@@ -9247,21 +9247,61 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
 </style>
+
+<style>
+/* === OCULTAR BOTON DUPLICADO "JUGAR ONLINE" SOLO EN PANEL === */
+#megaPanel .mp-content button{
+  }
+#megaPanel .mp-content button:nth-of-type(4){
+  display:none !important;
+}
+</style>
+
+
+<style>
+/* === MOBILE: ACHICAR BASE GRIS MEDIO CASILLERO (ALTURA) === */
+@media (max-width: 900px){
+  .frame{
+    padding-bottom: calc(14px - (var(--square) * 0.5)) !important;
+  }
+}
+</style>
+
+
+<style>
+/* === AJUSTE GENERAL: SUBIR TODO EL CONTENIDO MEDIO CASILLERO === */
+/* Aplica a web, móvil y fullscreen */
+.shell{
+  transform: translateY(calc(var(--square) * -0.5));
+}
+</style>
+
 </head><body>
 
-<!-- === DONATION START PANEL === -->
+<!-- === DONATION PANEL (PERSISTENT) === -->
 <div id="donationPanel" style="
- position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
- background:rgba(0,0,0,.45); z-index:10000;">
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.45);
+  z-index:20000;
+">
   <div style="
-    max-width:520px; background:#fff; padding:20px 22px; border-radius:18px;
-    text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.35);">
+    max-width:520px;
+    background:#fff;
+    padding:20px 22px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  ">
     <h2 style="margin-top:0">Apoyá el proyecto ❤️</h2>
     <p style="font-size:14px; line-height:1.45">
-    Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
-    Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
-    Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
-    <br><br>Desde ya, muchas gracias.
+      Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
+      Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
+      Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
+      <br><br>Desde ya, muchas gracias.
     </p>
     <div style="display:flex; gap:22px; justify-content:center; margin:18px 0">
       <a href="https://link.mercadopago.com.ar/ajetrez" target="_blank">
@@ -9271,14 +9311,20 @@ button[data-mode="online"]:hover{
         <img src="logo paypal ok.png" style="height:42px">
       </a>
     </div>
-    <button onclick="document.getElementById('donationPanel').remove()"
-      style="border:none;border-radius:999px;padding:8px 18px;
-      background:#111;color:#fff;font-weight:800;cursor:pointer">
+    <button id="closeDonationPanel" style="
+      border:none;
+      border-radius:999px;
+      padding:8px 18px;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+    ">
       Continuar al juego
     </button>
   </div>
 </div>
-<!-- === END DONATION START PANEL === -->
+<!-- === END DONATION PANEL === -->
 
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
@@ -15351,19 +15397,30 @@ div[style="height:var(--toolbar-gap)"]{
 
   // Also keep panels synced if different scripts re-attach them to <body>
 
-<!-- === DONATION START PANEL === -->
+<!-- === DONATION PANEL (PERSISTENT) === -->
 <div id="donationPanel" style="
- position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
- background:rgba(0,0,0,.45); z-index:10000;">
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.45);
+  z-index:20000;
+">
   <div style="
-    max-width:520px; background:#fff; padding:20px 22px; border-radius:18px;
-    text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.35);">
+    max-width:520px;
+    background:#fff;
+    padding:20px 22px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  ">
     <h2 style="margin-top:0">Apoyá el proyecto ❤️</h2>
     <p style="font-size:14px; line-height:1.45">
-    Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
-    Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
-    Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
-    <br><br>Desde ya, muchas gracias.
+      Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
+      Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
+      Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
+      <br><br>Desde ya, muchas gracias.
     </p>
     <div style="display:flex; gap:22px; justify-content:center; margin:18px 0">
       <a href="https://link.mercadopago.com.ar/ajetrez" target="_blank">
@@ -15373,14 +15430,20 @@ div[style="height:var(--toolbar-gap)"]{
         <img src="logo paypal ok.png" style="height:42px">
       </a>
     </div>
-    <button onclick="document.getElementById('donationPanel').remove()"
-      style="border:none;border-radius:999px;padding:8px 18px;
-      background:#111;color:#fff;font-weight:800;cursor:pointer">
+    <button id="closeDonationPanel" style="
+      border:none;
+      border-radius:999px;
+      padding:8px 18px;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+    ">
       Continuar al juego
     </button>
   </div>
 </div>
-<!-- === END DONATION START PANEL === -->
+<!-- === END DONATION PANEL === -->
 
   var mo = new MutationObserver(function(muts){
     try{
@@ -22326,6 +22389,55 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- === END FIX === -->
+
+<script>
+(function(){
+  function showDonation(){
+    var p = document.getElementById('donationPanel');
+    if(p){
+      p.style.display = 'flex';
+    }
+  }
+  function hideDonation(){
+    var p = document.getElementById('donationPanel');
+    if(p){
+      p.style.display = 'none';
+    }
+  }
+
+  // cerrar
+  document.addEventListener('click', function(e){
+    if(e.target && e.target.id === 'closeDonationPanel'){
+      hideDonation();
+    }
+  }, true);
+
+  // hook Modo online (delegación real)
+  document.addEventListener('click', function(e){
+    var el = e.target;
+    while(el && el !== document){
+      if(el.tagName === 'BUTTON'){
+        var txt = (el.textContent || '').trim().toLowerCase();
+        if(txt === 'modo online'){
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          showDonation();
+          return;
+        }
+      }
+      el = el.parentElement;
+    }
+  }, true);
+
+  // asegurar apertura inicial
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', showDonation);
+  } else {
+    showDonation();
+  }
+})();
+</script>
+
 </body>
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->
 <style id="aj-replay-glass-css">
