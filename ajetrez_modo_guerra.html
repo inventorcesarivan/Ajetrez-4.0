@@ -9114,6 +9114,51 @@ button[data-mode="online"]:hover{
 }
 </style>
 
+
+<style>
+/* === DESANCLAR UI SUPERIOR + SUBIR MEDIO CASILLERO (GLOBAL) === */
+
+/* Quitar anclajes/posicionamientos forzados */
+.mode-group,
+.mode-indicator,
+#registroPartidas,
+#registro-partidas,
+#btnRegistro,
+#btnRegistroPartidas,
+#gameTimer,
+#clock{
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* Desplazamiento vertical uniforme */
+.mode-group,
+.mode-indicator,
+#registroPartidas,
+#registro-partidas,
+#btnRegistro,
+#btnRegistroPartidas,
+#gameTimer,
+#clock{
+  transform: translateY(calc(var(--square) * -0.5)) !important;
+}
+</style>
+
+
+<style>
+/* === AJUSTE GENERAL: BAJAR SOLO SECCIONES + PIEZAS MEDIO CASILLERO === */
+/* Afecta únicamente al tablero y sus piezas, no UI ni botones */
+#board,
+.board,
+.board-wrap,
+#boardWrap{
+  transform: translateY(calc(var(--square) * 0.5)) !important;
+}
+</style>
+
 </head><body>
 
 <!-- === DONATION PANEL (PERSISTENT) === -->
