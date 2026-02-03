@@ -9736,6 +9736,25 @@ button[data-mode="online"]:hover{
 </style>
 <!-- === END PATCH BAJAR PANEL MENU === -->
 
+
+<!-- === PATCH: OVERLAY MENU AJUSTADO A ALTURA DEL PANEL === -->
+<style id="menuOverlayFix">
+/* Backdrop del panel: igualar altura al tablero (8 casilleros) */
+#panelBackdrop{
+  height: calc(var(--square) * 8) !important;
+  max-height: calc(var(--square) * 8) !important;
+}
+
+/* En mobile asegurar que no herede viewport completo */
+@media (max-width: 900px){
+  #panelBackdrop{
+    height: calc(var(--square) * 8) !important;
+    max-height: calc(var(--square) * 8) !important;
+  }
+}
+</style>
+<!-- === END PATCH OVERLAY MENU === -->
+
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
