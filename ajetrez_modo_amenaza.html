@@ -9009,7 +9009,7 @@ button[data-mode="online"]:hover{
 <style id="baseGreyUpPatch">
 /* Desplazar SOLO la base gris (frame) medio casillero hacia arriba */
 .frame{
-  transform: translateY(calc(var(--square) * -0.5));
+  transform: translateY(calc(var(--square) * -1));
 }
 </style>
 <style id="contentUpOneSquare">
@@ -9213,7 +9213,7 @@ button[data-mode="online"]:hover{
   #btnStartGame,
   #btnMode,
   .mode-indicator{
-    transform: translateY(calc(var(--square) * -0.5)) !important;
+    transform: translateY(calc(var(--square) * -1)) !important;
   }
 
   /* excluir explícitamente menú y reglas */
@@ -9235,7 +9235,7 @@ button[data-mode="online"]:hover{
   #btnStartGame,
   #btnMode,
   .mode-indicator{
-    transform: translateY(calc(var(--square) * -0.5)) !important;
+    transform: translateY(calc(var(--square) * -1)) !important;
   }
 
   /* excluir explícitamente menú y reglas */
@@ -9272,7 +9272,7 @@ button[data-mode="online"]:hover{
 /* === AJUSTE GENERAL: SUBIR TODO EL CONTENIDO MEDIO CASILLERO === */
 /* Aplica a web, móvil y fullscreen */
 .shell{
-  transform: translateY(calc(var(--square) * -0.5));
+  transform: translateY(calc(var(--square) * -1));
 }
 </style>
 
@@ -9326,7 +9326,7 @@ button[data-mode="online"]:hover{
 #clock,
 #btnRegistro,
 #btnRegistroPartidas{
-  transform: translateY(calc(var(--square) * -0.5)) !important;
+  transform: translateY(calc(var(--square) * -1)) !important;
 }
 </style>
 
@@ -9336,14 +9336,14 @@ button[data-mode="online"]:hover{
 
 /* Indicador de modo: -10% tamaño general */
 .mode-indicator{
-  transform: scale(0.9) translateY(calc(var(--square) * -0.5)) !important;
+  transform: scale(0.9) translateY(calc(var(--square) * -1)) !important;
   transform-origin: center center;
 }
 
 /* Reloj: -10% SOLO ancho */
 #gameTimer,
 #clock{
-  transform: scaleX(0.9) translateY(calc(var(--square) * -0.5)) !important;
+  transform: scaleX(0.9) translateY(calc(var(--square) * -1)) !important;
   transform-origin: center center;
 }
 </style>
@@ -9377,7 +9377,7 @@ button[data-mode="online"]:hover{
 #btnRegistroPartidas,
 #gameTimer,
 #clock{
-  transform: translateY(calc(var(--square) * -0.5)) !important;
+  transform: translateY(calc(var(--square) * -1)) !important;
 }
 </style>
 
@@ -9392,6 +9392,67 @@ button[data-mode="online"]:hover{
   transform: translateY(calc(var(--square) * 0.5)) !important;
 }
 </style>
+
+
+<!-- === PATCH: SHIFT GAME SECTIONS UP (0.5 SQUARE) === -->
+<style id="shiftGameSectionsUp">
+  /* Mueve SOLO las secciones del juego con sus piezas */
+  .board-wrap{
+    transform: translateY(calc(var(--square) * -1));
+  }
+</style>
+<!-- === END PATCH === -->
+
+
+<!-- === PATCH: SHIFT BASE GRIS DOWN (0.5 SQUARE) === -->
+<style id="shiftBaseDown">
+  /* Mueve SOLO la base gris */
+  .frame{
+    transform: translateY(calc(var(--square) * 0.5));
+  }
+</style>
+<!-- === END PATCH === -->
+
+
+<!-- === PATCH: CENTER GAME SECTIONS (VERTICAL + HORIZONTAL) === -->
+<style id="centerGameSections">
+  /* Usamos flex solo para centrar el área del juego */
+  .shell{
+    justify-items: center;
+  }
+
+  .board-wrap{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Centrado vertical fino dentro de la base gris */
+  .shell{
+    grid-template-rows: var(--toolbar-h) var(--toolbar-gap) auto var(--toolbar-gap) var(--toolbar-h);
+    align-content: center;
+  }
+</style>
+<!-- === END PATCH === -->
+
+
+<!-- === PATCH: MOVE TOP BUTTONS DOWN (1 SQUARE) === -->
+<style id="moveTopButtonsDown">
+  /* Barra superior completa (botones superiores) */
+  .shell > .bar:first-child{
+    transform: translateY(calc(var(--square) * 1));
+  }
+</style>
+<!-- === END PATCH === -->
+
+
+<!-- === PATCH: MOVE BASE GRIS + TODO EL CONTENIDO UP (1 SQUARE) === -->
+<style id="moveFrameUpAll">
+  /* Sube la base gris y todo su contenido */
+  .frame{
+    transform: translateY(calc(var(--square) * -1));
+  }
+</style>
+<!-- === END PATCH === -->
 
 </head><body>
 
