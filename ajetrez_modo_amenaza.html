@@ -9243,6 +9243,29 @@ button[data-mode="online"]:hover{
 }
 /* === END MOBILE OVERRIDE: RESTART BUTTON === */
 </style>
+<style>
+/* === MOBILE HARD OVERRIDE: RESTART BUTTON ANCHORED TO BOARD === */
+@media (max-width: 900px){
+  /* anclar referencia real del juego */
+  .board-wrap{
+    position: relative !important;
+  }
+
+  /* neutralizar cualquier layout previo */
+  #btnRestartBR{
+    position: absolute !important;
+    top: auto !important;
+    bottom: calc(var(--square) + 3mm) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    inset: auto !important;
+    z-index: 30 !important;
+  }
+}
+/* === END MOBILE HARD OVERRIDE === */
+</style>
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
