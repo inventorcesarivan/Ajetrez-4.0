@@ -9276,6 +9276,22 @@ button[data-mode="online"]:hover{
 }
 </style>
 
+
+<style>
+/* === AJUSTE GLOBAL 2: SUBIR TODO MENOS BOTON REINICIAR === */
+/* Subimos todo el contenido */
+.shell{
+  transform: translateY(calc(var(--square) * -1));
+}
+
+/* Compensación: el botón Reiniciar queda en su lugar original */
+#btnRestartBR,
+#btnRestart,
+.btn-restart{
+  transform: translateY(calc(var(--square) * 1)) !important;
+}
+</style>
+
 </head><body>
 
 <!-- === DONATION PANEL (PERSISTENT) === -->
