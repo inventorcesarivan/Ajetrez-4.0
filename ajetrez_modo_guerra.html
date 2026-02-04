@@ -265,7 +265,7 @@
   .sq.capture::after{ content:""; position:absolute; inset:0; background: rgba(220,0,0,.15); }
   .piece.fallback{ width:auto; height:auto; }
 
-  #overlay{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; background: rgba(0,0,0,.25); z-index: 5; }
+  
   #banner{ background:#111; color:#fff; padding: 10px 18px; font-weight: 700; letter-spacing: 1px; border-radius: 999px; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 
   .shift-ctrl{
@@ -323,19 +323,10 @@
   #btnFSBR:hover{ background:#222; }
 
   /* === PANEL COMPLETO === */
-  #panelBackdrop{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height: calc(var(--square) * 8);
-  background: rgba(0,0,0,.30);
-  display:none; pointer-events:auto;
-  z-index: 30;
-}
+  
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -1119,16 +1110,10 @@ body, html{overflow:visible!important;}
 </style>
 <style id="menu-panel-zfix">
 /* --- Menu panel layering fix: ensure menu is above board/overlays but below replay modal --- */
-#panelBackdrop{
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,.35);
-  display:none; pointer-events:auto;
-  z-index: 30;
-}
+
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -1463,7 +1448,7 @@ body, html{overflow:visible!important;}
 /* === Contorno blanco alrededor del panel completo del menú === */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2345,7 +2330,7 @@ body, html{overflow:visible!important;}
   /* Achicar el panel de menú un 5% (general: web + móvil) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2392,7 +2377,7 @@ body, html{overflow:visible!important;}
   /* Achicar el panel de menú un 5% adicional (total ~10%) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2439,7 +2424,7 @@ body, html{overflow:visible!important;}
   /* Desplazar un poco a la derecha y hacia abajo, manteniendo scale(0.90) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2486,7 +2471,7 @@ body, html{overflow:visible!important;}
   /* Desplazar medio casillero a la derecha (+ mantener 3mm abajo) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2533,7 +2518,7 @@ body, html{overflow:visible!important;}
   /* Centrado perfecto entre derecha e izquierda respecto al tablero */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -5573,7 +5558,7 @@ body[data-theme="noche"] .regv2-btn{
   /* Aumentar altura del panel completo de menú ~4mm (aprox) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -8972,7 +8957,195 @@ button[data-mode="online"]:hover{
 }
 </style>
 <!-- === END PATCH MENU + REGLAS FIJOS === -->
-</head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
+<style>
+/* === MOBILE MENU PANEL SCALE (30% smaller) — replaced === */
+@media (max-width: 900px){
+  #megaPanel{
+    transform: translateX(-50%) scale(0.7) !important;
+    transform-origin: top center;
+  }
+}
+/* === END MOBILE MENU PANEL SCALE === */
+</style>
+<style>
+/* === MOBILE MENU PANEL SCALE + FULL CENTERING === */
+@media (max-width: 900px){
+  #megaPanel{
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
+    transform-origin: center center !important;
+  }
+}
+/* === END MOBILE MENU PANEL SCALE + FULL CENTERING === */
+</style>
+<style>
+/* === MOBILE MENU PANEL: CENTERED + DOWN 1 SQUARE === */
+@media (max-width: 900px){
+  #megaPanel{
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, calc(-50% + var(--square))) scale(0.7) !important;
+    transform-origin: center center !important;
+  }
+}
+/* === END MOBILE MENU PANEL OFFSET === */
+</style>
+<style>
+/* === MOBILE: SUBIR BOTONES (EXCEPTO MENU Y REGLAS) MEDIO CASILLERO === */
+@media (max-width: 900px){
+
+  /* botones del HUD / juego */
+  #reiniciarLibre,
+  #btnFullscreen,
+  #btnStartGame,
+  #btnMode,
+  .mode-indicator{
+    transform: translateY(calc(var(--square) * -0.5)) !important;
+  }
+
+  /* excluir explícitamente menú y reglas */
+  #btnMenuMain,
+  #btnRules,
+  #btnReglas{
+    transform: none !important;
+  }
+}
+/* === END MOBILE BUTTON OFFSET === */
+</style>
+<style>
+/* === MOBILE + FULLSCREEN: SUBIR BOTONES (EXCEPTO MENU Y REGLAS) MEDIO CASILLERO === */
+@media (max-width: 900px), (display-mode: fullscreen){
+
+  /* botones del HUD / juego */
+  #reiniciarLibre,
+  #btnFullscreen,
+  #btnStartGame,
+  #btnMode,
+  .mode-indicator{
+    transform: translateY(calc(var(--square) * -0.5)) !important;
+  }
+
+  /* excluir explícitamente menú y reglas */
+  #btnMenuMain,
+  #btnRules,
+  #btnReglas{
+    transform: none !important;
+  }
+}
+/* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
+</style>
+
+<style>
+/* === OCULTAR BOTON DUPLICADO "JUGAR ONLINE" SOLO EN PANEL === */
+#megaPanel .mp-content button{
+  }
+#megaPanel .mp-content button:nth-of-type(4){
+  display:none !important;
+}
+</style>
+
+
+<style>
+/* === MOBILE: ACHICAR BASE GRIS MEDIO CASILLERO (ALTURA) === */
+@media (max-width: 900px){
+  .frame{
+    padding-bottom: calc(14px - (var(--square) * 0.5)) !important;
+  }
+}
+</style>
+
+
+<style>
+/* === AJUSTE GENERAL: SUBIR TODO EL CONTENIDO MEDIO CASILLERO === */
+/* Aplica a web, móvil y fullscreen */
+.shell{
+  transform: translateY(calc(var(--square) * -0.5));
+}
+</style>
+
+
+<style>
+/* === AJUSTE GLOBAL 2: SUBIR TODO MENOS BOTON REINICIAR === */
+/* Subimos todo el contenido */
+.shell{
+  transform: translateY(calc(var(--square) * -1));
+}
+
+/* Compensación: el botón Reiniciar queda en su lugar original */
+#btnRestartBR,
+#btnRestart,
+.btn-restart{
+  transform: translateY(calc(var(--square) * 1)) !important;
+}
+</style>
+
+
+<style>
+/* === AJUSTE GLOBAL UI SUPERIOR: SUBIR MEDIO CASILLERO === */
+/* Botones de modo de juego + indicador + registro de partidas + reloj */
+.mode-group,
+.mode-indicator,
+#registroPartidas,
+#registro-partidas,
+#gameTimer,
+#clock,
+#btnRegistro,
+#btnRegistroPartidas{
+  transform: translateY(calc(var(--square) * -0.5)) !important;
+}
+</style>
+
+</head><body>
+
+<!-- === DONATION PANEL (PERSISTENT) === -->
+<div id="donationPanel" style="
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.45);
+  z-index:20000;
+">
+  <div style="
+    max-width:520px;
+    background:#fff;
+    padding:20px 22px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  ">
+    <h2 style="margin-top:0">Apoyá el proyecto ❤️</h2>
+    <p style="font-size:14px; line-height:1.45">
+      Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
+      Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
+      Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
+      <br><br>Desde ya, muchas gracias.
+    </p>
+    <div style="display:flex; gap:22px; justify-content:center; margin:18px 0">
+      <a href="https://link.mercadopago.com.ar/ajetrez" target="_blank">
+        <img src="logo mercadopago ok.jpg" style="height:42px">
+      </a>
+      <a href="https://www.paypal.com/ncp/payment/PTRWET3UWGEY8" target="_blank">
+        <img src="logo paypal ok.png" style="height:42px">
+      </a>
+    </div>
+    <button id="closeDonationPanel" style="
+      border:none;
+      border-radius:999px;
+      padding:8px 18px;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+    ">
+      Continuar al juego
+    </button>
+  </div>
+</div>
+<!-- === END DONATION PANEL === -->
+<div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" style="position:absolute; right:10px; top:6px; z-index:50;" type="button">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
 <button class="btn mode" data-gmode="online" id="btnOnlineExternal">
   Modo Online
@@ -9008,7 +9181,7 @@ button[data-mode="online"]:hover{
 </div>
 <div aria-label="Overlay de inicio" aria-live="polite" id="startOverlay"><div class="start-card"><div style="font-weight:800; font-size:18px;">Comenzar partida
 </div><button id="btnStartGame" type="button">Comenzar partida</button><div class="hint">Pulsa para iniciar. Bloquea el juego en todos los modos hasta empezar.
-</div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div><div id="overlay"><div id="banner">FIN</div></div><div id="panelBackdrop"></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
+</div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
 </div><div class="mp-header"><div id="mpTitle">Panel de Ajetrez
 <button aria-label="Cerrar panel" class="btn small btn-close-internal" id="btnClosePanel">Cerrar</button></div><div class="right"><span class="hint-sm" id="loggedUser"></span><button class="btn" id="/* btnClosePanel eliminado */" type="button"></button></div></div><div id="tabsView"><div class="mp-tabs">
 <button class="tab-btn active" data-tab="tab-version">Versión de Ajetrez</button><button class="tab-btn" data-tab="tab-modos">Modos de juego</button><button class="tab-btn" data-tab="tab-personalizacion">Personalización</button><button class="tab-btn" data-tab="tab-registros" id="btnRegistrosTab">Registros</button>
@@ -9382,7 +9555,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
     if(piece.type==='P' && (rr===0 || rr===7)){
       const promo = {promotion:'Q'};
       const {board:bP,captured} = applyMove(board, offs, {r,c}, {r:rr,c:cc}, promo);
-      const vP = buildVisible(bP, offs);
+      
+render();
+const vP = buildVisible(bP, offs);
       if(!inCheck(vP, color)) out.push([rr,cc,promo,captured && captured.type==='K']);
       continue;
     }
@@ -9392,7 +9567,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
       if(r === (epTarget.r - dir) && Math.abs(cc - c) === 1) special = {enPassant:true};
     }
     const {board:b2,captured} = applyMove(board, offs, {r,c}, {r:rr,c:cc}, special);
-    const v2 = buildVisible(b2, offs);
+    
+render();
+const v2 = buildVisible(b2, offs);
     if(!inCheck(v2, color) && !(piece.type==='K' && typeof window.__AJ_KINGS_ADJACENT__==='function' && window.__AJ_KINGS_ADJACENT__(v2)))
       out.push([rr,cc,special,captured && captured.type==='K']);
   }
@@ -9402,7 +9579,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
     for(const [er,ec] of cand){
       if(er===epTarget.r && ec===epTarget.c){
         const {board:b3,captured} = applyMove(board, offs, {r,c}, {r:er,c:ec}, {enPassant:true});
-        const v3 = buildVisible(b3, offs);
+        
+render();
+const v3 = buildVisible(b3, offs);
         if(!inCheck(v3, color)) out.push([er,ec,{enPassant:true},captured && captured.type==='K']);
       }
     }
@@ -9412,7 +9591,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
     const hasNotMoved = q => (q && q.hasMoved===true) ? false : true;
     const safeAfter = (toC, special) => {
       const {board:tb} = applyMove(board, offs, {r,c}, {r:r, c:toC}, special);
-      const v = buildVisible(tb, offs);
+      
+render();
+const v = buildVisible(tb, offs);
       return !inCheck(v, color);
     };
     if(hasNotMoved(piece) && !inCheck(vis, color)){
@@ -9776,7 +9957,9 @@ if (candidates && candidates.length) {
 
 function playMove(from, to, special, capturesKing){
   const res = applyMove(board, offsets, from, to, special);
-  const movedPiece = buildVisible(board, offsets)[from.r][from.c];
+  
+render();
+const movedPiece = buildVisible(board, offsets)[from.r][from.c];
   let newBoard = res.board;
   const r = to.r, c = to.c;
 
@@ -9934,12 +10117,12 @@ window.addEventListener('aj:mode:change', (e)=>{
         botSide = 'b'; window.botSide = botSide;
         // No iniciar hasta que empiece el juego; y solo cuando sea turno de negras
         if(window.GAME_STARTED && typeof turn!=='undefined' && turn === botSide){
-          scheduleBotMove();
+          setTimeout(()=>{ scheduleBotMove(); },0);
         }
       } else if(m==='bot-vs-bot'){
         // Bot vs Bot: arranca el que tiene el turno actual
         botSide = (typeof turn!=='undefined') ? turn : 'w'; window.botSide = botSide;
-        if(window.GAME_STARTED){ scheduleBotMove(); }
+        if(window.GAME_STARTED){ setTimeout(()=>{ scheduleBotMove(); },0); }
       } else {
         // PvP local
         botSide = 'b'; window.botSide = botSide;
@@ -10156,7 +10339,9 @@ function qsearch(boardState, offsState, side, alpha, beta, deadline){
   for(const m of caps){
     if(performance && performance.now && performance.now()>deadline) break;
     const nxt = applyMove(boardState, offsState, m.from, m.to, m.special);
-    const score = -qsearch(nxt.board, offsState, (side==='w'?'b':'w'), -beta, -alpha, deadline);
+    
+render();
+const score = -qsearch(nxt.board, offsState, (side==='w'?'b':'w'), -beta, -alpha, deadline);
     if(score >= beta) return beta;
     if(score > alpha) alpha = score;
   }
@@ -10178,7 +10363,9 @@ function search(boardState, offsState, side, depth, alpha, beta, deadline){
   }
   for(const m of moves){
     const nxt = applyMove(boardState, offsState, m.from, m.to, m.special);
-    const score = -search(nxt.board, offsState, (side==='w'?'b':'w'), depth-1, -beta, -alpha, deadline);
+    
+render();
+const score = -search(nxt.board, offsState, (side==='w'?'b':'w'), depth-1, -beta, -alpha, deadline);
     if(score >= beta) return beta;
     if(score > alpha) alpha = score;
     if(performance && performance.now && performance.now()>deadline) break;
@@ -10232,7 +10419,9 @@ function pickMove(color){
   for(const m of ordered){
     if(performance && performance.now && performance.now()>deadline) break;
     const nxt = applyMove(board, offsets, m.from, m.to, m.special);
-    const sc = -search(nxt.board, offsets, (side==='w'?'b':'w'), params.depth-1, -1e9, 1e9, deadline);
+    
+render();
+const sc = -search(nxt.board, offsets, (side==='w'?'b':'w'), params.depth-1, -1e9, 1e9, deadline);
     const noise = (params.noise||0) * (Math.random()*20);
     const score = sc + noise;
     if(score > bestScore){ bestScore = score; best = m; }
@@ -10367,7 +10556,7 @@ async function botDecideShift(row){
  if(!window.GAME_STARTED) return;
     const next = (e && e.detail && e.detail.turn) ? e.detail.turn : turn;
     if(!botEnabled) return;
-    if(window.GAME_MODE==='bot-vs-bot'){ botSide = next; window.botSide = botSide; scheduleBotMove(); } else if(next === botSide) scheduleBotMove();
+    if(window.GAME_MODE==='bot-vs-bot'){ botSide = next; window.botSide = botSide; setTimeout(()=>{ scheduleBotMove(); },0); } else if(next === botSide) setTimeout(()=>{ scheduleBotMove(); },0);
   });
   window.addEventListener('aj:turn:block', (e)=>{
     const info = (e && e.detail) || {};
@@ -10378,7 +10567,7 @@ async function botDecideShift(row){
     }
   });
 
-  if(botEnabled && window.GAME_STARTED){ if(window.GAME_MODE==='bot-vs-bot'){ botSide = turn; window.botSide = botSide; scheduleBotMove(); } else if(turn === botSide) scheduleBotMove(); }
+  if(botEnabled && window.GAME_STARTED){ if(window.GAME_MODE==='bot-vs-bot'){ botSide = turn; window.botSide = botSide; setTimeout(()=>{ scheduleBotMove(); },0); } else if(turn === botSide) setTimeout(()=>{ scheduleBotMove(); },0); }
 })();
 </script><script>
 
@@ -10824,10 +11013,10 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
         if(typeof window.isBotEnabled==='function' ? !window.isBotEnabled() : !(window.GAME_MODE==='bot'||window.GAME_MODE==='bot-vs-bot')) return;
         if(typeof scheduleBotMove !== 'function') return;
         if(window.GAME_MODE==='bot-vs-bot'){
-          scheduleBotMove();
+          setTimeout(()=>{ scheduleBotMove(); },0);
         } else if(window.GAME_MODE==='bot'){
           try{ if(typeof window.botSide==='undefined') window.botSide = 'b'; }catch(_){ window.botSide='b'; }
-          if(typeof turn!=='undefined' && turn === window.botSide) scheduleBotMove();
+          if(typeof turn!=='undefined' && turn === window.botSide) setTimeout(()=>{ scheduleBotMove(); },0);
         }
       }catch(_){}
     }
@@ -10863,10 +11052,10 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
         // Como respaldo, si ya está todo listo, agendar el primer movimiento según modo
         if(typeof scheduleBotMove === 'function'){
           if(m === 'bot-vs-bot'){
-            if(window.GAME_STARTED){ scheduleBotMove(); }
+            if(window.GAME_STARTED){ setTimeout(()=>{ scheduleBotMove(); },0); }
           } else if(m === 'bot'){
             if(typeof turn!=='undefined' && typeof window.botSide!=='undefined' && turn === window.botSide && window.GAME_STARTED){
-              scheduleBotMove();
+              setTimeout(()=>{ scheduleBotMove(); },0);
             }
           }
         }
@@ -11261,7 +11450,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 /* Reducir tamaño total del panel (ancho y alto) un 10% */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -11491,7 +11680,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 :root{ --panel-w: 18.2952; }
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -11627,7 +11816,7 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 :root{ --panel-h: 9.45; } /* antes 9 */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -14977,6 +15166,55 @@ div[style="height:var(--toolbar-gap)"]{
   }
 
   // Also keep panels synced if different scripts re-attach them to <body>
+
+<!-- === DONATION PANEL (PERSISTENT) === -->
+<div id="donationPanel" style="
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.45);
+  z-index:20000;
+">
+  <div style="
+    max-width:520px;
+    background:#fff;
+    padding:20px 22px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  ">
+    <h2 style="margin-top:0">Apoyá el proyecto ❤️</h2>
+    <p style="font-size:14px; line-height:1.45">
+      Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
+      Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
+      Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
+      <br><br>Desde ya, muchas gracias.
+    </p>
+    <div style="display:flex; gap:22px; justify-content:center; margin:18px 0">
+      <a href="https://link.mercadopago.com.ar/ajetrez" target="_blank">
+        <img src="logo mercadopago ok.jpg" style="height:42px">
+      </a>
+      <a href="https://www.paypal.com/ncp/payment/PTRWET3UWGEY8" target="_blank">
+        <img src="logo paypal ok.png" style="height:42px">
+      </a>
+    </div>
+    <button id="closeDonationPanel" style="
+      border:none;
+      border-radius:999px;
+      padding:8px 18px;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+    ">
+      Continuar al juego
+    </button>
+  </div>
+</div>
+<!-- === END DONATION PANEL === -->
+
   var mo = new MutationObserver(function(muts){
     try{
       if(document.fullscreenElement){
@@ -17715,7 +17953,7 @@ function showToast(){
 <style id="aj-megaPanel-canonical-2025-09-12">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -17762,7 +18000,7 @@ function showToast(){
   /* Evita transparencias en el cuerpo del panel del menú */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -19846,7 +20084,9 @@ function showVeteranBanner(color){
     catch(_){ return []; }
   }
   function apply(board, offsets, m){
-    try{ return window.applyMove(board, offsets, m.from, m.to, m.special||null); }
+    try{ return window.applyMove(board, offsets, m.from, m.to, m.special||null); 
+render();
+}
     catch(_){ return { board, offsets }; }
   }
   function ev(board, offsets, side){
@@ -21318,7 +21558,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // el tablero debe ser relativo para que el botón se ancle bien
   board.style.position = 'relative';
-  board.appendChild(btn);
+  const frame = document.querySelector('.frame') || board;
+  frame.appendChild(btn);
 
   // Posición exacta:
   // 6 casilleros a la derecha del centro
@@ -21338,10 +21579,12 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 /* Botón Reiniciar libre */
+/* === REINICIAR LIBRE (ANCLADO A FRAME GRIS) === */
 #reiniciarLibre{
   position: absolute;
-  right: calc(var(--square) * 0.5);
-  bottom: 0; transform: translate(-50%, calc(50%));
+  right: 6mm;
+  bottom: calc(var(--square) + 3mm);
+  transform: none;
   z-index: 9999;
 
   background: #111;
@@ -21353,6 +21596,7 @@ document.addEventListener('DOMContentLoaded', () => {
   border: 1.5px solid rgba(255,255,255,0.7);
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
+/* === END REINICIAR LIBRE === */
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
@@ -21414,16 +21658,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Proxy exacto al comportamiento original
   btn.onclick = () => originalBtn.click();
 
-  board.appendChild(btn);
+  const frame = document.querySelector('.frame') || board;
+  frame.appendChild(btn);
 });
 </script>
 <!-- === FIN REINICIAR LIBRE === -->
 <!-- === POSICIONAMIENTO LIMPIO POR BOUNDING RECT === -->
 <style>
-#menuLibre, #reiniciarLibre{
-  position: fixed;
+#menuLibre, /* === REINICIAR LIBRE (ANCLADO A FRAME GRIS) === */
+#reiniciarLibre{
+  position: absolute;
+  right: 6mm;
+  bottom: calc(var(--square) + 3mm);
+  transform: none;
   z-index: 9999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
+/* === END REINICIAR LIBRE === */
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
@@ -22084,6 +22343,55 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- === END FIX === -->
+
+<script>
+(function(){
+  function showDonation(){
+    var p = document.getElementById('donationPanel');
+    if(p){
+      p.style.display = 'flex';
+    }
+  }
+  function hideDonation(){
+    var p = document.getElementById('donationPanel');
+    if(p){
+      p.style.display = 'none';
+    }
+  }
+
+  // cerrar
+  document.addEventListener('click', function(e){
+    if(e.target && e.target.id === 'closeDonationPanel'){
+      hideDonation();
+    }
+  }, true);
+
+  // hook Modo online (delegación real)
+  document.addEventListener('click', function(e){
+    var el = e.target;
+    while(el && el !== document){
+      if(el.tagName === 'BUTTON'){
+        var txt = (el.textContent || '').trim().toLowerCase();
+        if(txt === 'modo online'){
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          showDonation();
+          return;
+        }
+      }
+      el = el.parentElement;
+    }
+  }, true);
+
+  // asegurar apertura inicial
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', showDonation);
+  } else {
+    showDonation();
+  }
+})();
+</script>
+
 </body>
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->
 <style id="aj-replay-glass-css">
@@ -22565,7 +22873,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <style id="aj-drop-panel-2mm-more">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -23028,7 +23336,7 @@ document.addEventListener('DOMContentLoaded', () => {
   :root{ --panel-h: 8; }
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -23075,7 +23383,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <style id="aj-panel-down-half-square-more">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -24243,10 +24551,7 @@ document.addEventListener('DOMContentLoaded', () => {
     height: 100vh;
   }
 
-  #panelBackdrop{
-    position: fixed;
-    inset: 0;
-  }
+  
 
   #megaPanel{
     position: fixed;
