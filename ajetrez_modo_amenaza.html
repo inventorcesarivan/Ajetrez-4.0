@@ -9703,82 +9703,10 @@ button[data-mode="online"]:hover{
 <!-- === END PATCH MENU + REGLAS FIJOS === -->
 
 
-<style id="restart-global-floating-fix">
-
-/* Any possible restart/reset button becomes fully floating */
-button[id*="Restart"],
-button[id*="restart"],
-button[id*="Reset"],
-button[id*="reset"],
-button[id*="Reiniciar"],
-button[class*="restart"],
-button[class*="reset"]{
-  position: absolute !important;
-  right: calc(var(--square) * 0.5) !important;
-  bottom: calc(var(--square) * 0.5) !important;
-  left: auto !important;
-  top: auto !important;
-  margin: 0 !important;
-  transform: none !important;
-  z-index: 80 !important;
-  pointer-events: auto !important;
-}
-
-/* Mobile tuning */
-@media (max-width: 900px){
-  button[id*="Restart"],
-  button[id*="restart"],
-  button[id*="Reset"],
-  button[id*="reset"],
-  button[id*="Reiniciar"],
-  button[class*="restart"],
-  button[class*="reset"]{
-    right: calc(var(--square) * 0.35) !important;
-    bottom: calc(var(--square) * 0.35) !important;
-  }
-}
-</style>
 
 
-<style id="restart-global-floating-fix-v2">
-/* === GLOBAL FLOATING RESTART BUTTON – INSIDE GRAY BASE (WEB + MOBILE) === */
 
-/* Board is the absolute reference */
-.board-wrap{
-  position: relative !important;
-}
 
-/* Any restart/reset button */
-button[id*="Restart"],
-button[id*="restart"],
-button[id*="Reset"],
-button[id*="reset"],
-button[id*="Reiniciar"],
-button[class*="restart"],
-button[class*="reset"]{
-  position: absolute !important;
-  right: calc(var(--square) * 0.5) !important;
-  bottom: calc(var(--square) * 0.5) !important;
-  left: auto !important;
-  top: auto !important;
-  transform: none !important;
-  z-index: 80 !important;
-  pointer-events: auto !important;
-}
-
-/* MOBILE: clamp bottom so it never exits gray base */
-@media (max-width: 900px){
-  button[id*="Restart"],
-  button[id*="restart"],
-  button[id*="Reset"],
-  button[id*="reset"],
-  button[id*="Reiniciar"],
-  button[class*="restart"],
-  button[class*="reset"]{
-    bottom: calc(var(--square) * 0.25) !important;
-  }
-}
-</style>
 
 
 
@@ -9790,6 +9718,38 @@ button[class*="reset"]{
   transform: translateY(calc(var(--square) * -1)) !important;
 }
 /* === END BASE GRIS OFFSET UP === */
+</style>
+
+
+
+
+
+<style id="restart-fixed-inside-gray">
+/* === RESTART BUTTON: FIXED INSIDE GRAY BASE (NO FLOATING) === */
+
+/* Gray base as reference */
+.frame{
+  position: relative !important;
+}
+
+/* Explicit restart button only */
+#btnRestartBR{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Place inside gray base, under last board section */
+  bottom: calc(var(--square) * 0.9);
+
+  z-index: 10;
+}
+
+/* Mobile fine tune */
+@media (max-width: 900px){
+  #btnRestartBR{
+    bottom: calc(var(--square) * 0.8);
+  }
+}
 </style>
 
 </head><body>
