@@ -9097,26 +9097,23 @@ button[data-mode="online"]:hover{
 </style>
 
 
-<style id="mobile-restart-up-1square">
+<style id="mobile-restart-floating-final">
 @media (max-width: 900px){
-  /* Subir 1 casillero el botón de reiniciar */
-  #btnRestartBR{
-    bottom: calc(var(--square) * 1) !important;
-  }
-}
-</style>
 
-
-<style id="mobile-content-up-1square-except-restart">
-@media (max-width: 900px){
-  /* Subir todo el contenido sobre la base gris */
-  .shell{
-    transform: translateY(calc(var(--square) * -1));
+  /* Referencia: secciones del tablero */
+  .board-wrap{
+    position: relative !important;
   }
 
-  /* Excluir explícitamente el botón de reiniciar */
+  /* Botón Reiniciar flotante (solo móvil) */
   #btnRestartBR{
+    position: absolute !important;
+    right: calc(var(--square) * 0.5);
+    bottom: calc(var(--square) * -0.25);
+    left: auto !important;
+    top: auto !important;
     transform: none !important;
+    z-index: 40;
   }
 }
 </style>
