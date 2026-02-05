@@ -9340,6 +9340,21 @@ button[data-mode="online"]:hover{
 }
 </style>
 
+
+<style id="mobile-content-up-1square-except-restart">
+@media (max-width: 900px){
+  /* Subir todo el contenido sobre la base gris */
+  .shell{
+    transform: translateY(calc(var(--square) * -1));
+  }
+
+  /* Excluir explícitamente el botón de reiniciar */
+  #btnRestartBR{
+    transform: none !important;
+  }
+}
+</style>
+
 </head><body>
 
 <!-- === DONATION PANEL (PERSISTENT) === -->
