@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="es"><head>
-
 <!-- === MOBILE GAME OFFSET PATCH === -->
 <style id="mobileGameOffset">
 @media (max-width: 900px){
@@ -16,8 +15,6 @@
 
 </style>
 <!-- === END MOBILE GAME OFFSET PATCH === -->
-
-
 <style id="bottomBarSizingFix">
 #bottomBar{ display:none !important; }
 
@@ -100,11 +97,6 @@
 }
 
 /* Evitar que algún contenedor lo afecte */
-.right-ctrls,
-.mode-group,
-.bar *{
-  pointer-events: auto;
-}
 
 /* === AJETREZ PATCH: BOTÓN REGISTROS FLOTANTE ABAJO DERECHA === */
 
@@ -213,7 +205,6 @@
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Ajetrez — Panel con Login, Pestañas + Info Partidas (v3-fix2)</title><style>
   :root{
     --square-menu: 56px; /* tamaño base menú desktop */
@@ -274,7 +265,7 @@
   .sq.capture::after{ content:""; position:absolute; inset:0; background: rgba(220,0,0,.15); }
   .piece.fallback{ width:auto; height:auto; }
 
-  #overlay{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; background: rgba(0,0,0,.25); z-index: 5; }
+  
   #banner{ background:#111; color:#fff; padding: 10px 18px; font-weight: 700; letter-spacing: 1px; border-radius: 999px; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 
   .shift-ctrl{
@@ -332,19 +323,10 @@
   #btnFSBR:hover{ background:#222; }
 
   /* === PANEL COMPLETO === */
-  #panelBackdrop{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height: calc(var(--square) * 8);
-  background: rgba(0,0,0,.30);
-  display:none; pointer-events:auto;
-  z-index: 30;
-}
+  
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -621,7 +603,6 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style>
   /* Start overlay centered on board */
   #startOverlay{
@@ -678,7 +659,6 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="no-bot-hud-css">
   /* Ocultar por completo cualquier HUD del bot */
   #botHUD, .bot-hud { display: none !important; visibility: hidden !important; }
@@ -711,7 +691,6 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="overlayPatch">
   /* Overlay centrado sobre el tablero 8×8 (sin bloquear controles) */
   #boardWrap{ position: relative !important;  position:relative;}
@@ -767,7 +746,6 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="startBlinkPatch">
   /* Animación de atención más notoria para el botón de Comenzar partida */
   @keyframes btnGlow {
@@ -810,7 +788,6 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="onlineToastPatch">
   #ajToast{
     position: fixed;
@@ -863,7 +840,6 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="rpFloatStyles">
 #rpBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:999998;display:none;}
 #replayPanel.rp-float{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -901,7 +877,6 @@ body[data-theme="madera"] .board-wrap{ position: relative; }
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="rpEnforcerStyles">
 /* Enforce top-most modal */
 #rpBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.40)!important;z-index:2147483000!important;display:none;}
@@ -941,7 +916,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="rpTopStyles">
 /* Panel flotante independiente arriba del panel del juego (sobre todo), con separación ~3mm */
 #replayPanel.rp-top {
@@ -990,7 +964,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- AJETREZ: centrar bloque de dificultad en Modos de juego --><!-- AJETREZ: Reubicar bloque de dificultad debajo del texto de reinicio (solo Modos de juego) --><!-- AJETREZ: estilo uniforme para botón de Sonido --><!-- LEGACY AUDIO CSS REMOVED --><!-- AJETREZ: contorno blanco también para botón superior izquierdo "Modo de juego" --><style>
   /* Asegurar que los tabs del panel tengan borde blanco como los demás botones */
   #menu-panel .tabs .btn,
@@ -1029,7 +1002,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- AJETREZ PATCH: Reajuste de posición de la barra inferior --><style id="aj-bottombar-fix">
   /* Sube la barra ~1 casillero sin afectar layout */
   #bottomBar{ display:none !important; }
@@ -1066,7 +1038,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style>
 
 /* === REGISTROS (flotante) — estilos === */
@@ -1137,19 +1108,12 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="menu-panel-zfix">
 /* --- Menu panel layering fix: ensure menu is above board/overlays but below replay modal --- */
-#panelBackdrop{
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,.35);
-  display:none; pointer-events:auto;
-  z-index: 30;
-}
+
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -1192,7 +1156,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="menu-panel-pointerfix">
 /* --- Menú: asegurar clickeabilidad y capas dentro del panel --- */
 #megaPanel, #megaPanel *{ pointer-events: auto !important; }
@@ -1227,7 +1190,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="bot-chooser-zfix">
 /* --- Bot Chooser above Menu: z-index override --- */
 #botChooserBackdrop{ z-index: 2147483700 !important; }
@@ -1261,7 +1223,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style>
 /* --- Ayuda de modos --- */
 #modeHelp{
@@ -1308,7 +1269,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="mode-active-style">
 /* --- Active state for mode buttons (incl. Online) --- */
 #tab-modos .btn.mode.active{
@@ -1346,7 +1306,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="menuTextColorLock">
 /* Fijar color base del texto dentro del panel del menú, independientemente del tema visual */
 #megaPanel #tabsView { color: #111; }
@@ -1489,7 +1448,7 @@ body, html{overflow:visible!important;}
 /* === Contorno blanco alrededor del panel completo del menú === */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -1532,7 +1491,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-bottombar-height-patch">
   /* Achicar altura del contenedor de botones inferior ~1 casillero (desde abajo hacia arriba) */
   #bottomBar{ display:none !important; }
@@ -1569,7 +1527,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-contraste-selector-bot">
   /* Legibilidad del Selector de Bot (panel blanco) en cualquier tema */
   #botChooserPanel { color:#111 !important; }
@@ -1621,7 +1578,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-bottombar-buttons-offset">
 /* Levanta los botones inferiores aprox 3 mm sin afectar layout */
 #bottomBar .btn,
@@ -1657,7 +1613,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><!-- LEGACY AUDIO CSS REMOVED --><style id="aj-bottombar-minus4mm">
 #bottomBar{ display:none !important; }
 
@@ -1689,7 +1644,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-topbar-down-3mm">
   /* Bajar ~3mm los controles superiores (modo + indicador) sin afectar layout */
   :root{ --mode-y: calc(6px + 3mm); } /* mantiene alineado el dropdown del modo */
@@ -1727,7 +1681,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-container-symmetric-3mm">
   /* Achicar 3mm arriba y 3mm abajo el "contenedor" del juego
      reduciendo los separadores que están antes y después del tablero. */
@@ -1769,7 +1722,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-bottomBase-trim-2mm">
   /* Base de color de la barra inferior: recorta visualmente 2mm desde abajo
      sin mover los botones (no altera la altura ni el layout del contenedor). */
@@ -1815,7 +1767,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><style id="aj-bottomBar-buttons-up-2mm">
   /* Sube los botones inferiores 2mm sin alterar el layout del contenedor */
   #bottomBar .btn{
@@ -1851,7 +1802,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><style id="aj-bottomBase-trim-6mm">
   /* Achica el alto total de la base de color: -6mm en total (3mm arriba + 3mm abajo) */
   #bottomBar{ display:none !important; }
@@ -1888,7 +1838,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><!-- LEGACY AUDIO CSS REMOVED --><style id="aj-topbar-tidy">
   /* Quitar empuje vertical extra en la barra superior */
   #topBar{
@@ -1939,7 +1888,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-frame-trim-6mm">
   /* Achicar visualmente el 'fondo de color del juego' (.frame) 6mm en total (3mm arriba y 3mm abajo) */
   .frame{
@@ -1987,7 +1935,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-frame-border-trim-6mm">
   /* Quita el borde real de .frame y dibuja el borde sobre el ::before recortado */
   .frame{ border: none !important; }
@@ -2024,7 +1971,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-frame-shadow-trim-6mm">
   /* Mover la sombra al ::before recortado para que acompañe el nuevo alto visual */
   .frame{ box-shadow: none !important; }
@@ -2058,7 +2004,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><style id="aj-topbar-buttons-down-3mm">
   /* Bajar 3mm TODOS los botones de la parte superior (regla general) */
   #topBar .btn{
@@ -2094,7 +2039,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-topbar-others-down-3mm">
   /* Bajar también lo demás en la parte superior (indicadores, HUD y reloj) */
   /* Reloj */
@@ -2146,7 +2090,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-topbar-align-bottom">
   /* Alinear EXACTAMENTE con el borde inferior del top bar */
   #topBar{ position: relative !important; }
@@ -2205,7 +2148,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><style id="aj-bottombar-align-to-dashed">
   /* Subir la barra inferior para que su borde superior toque la línea punteada del área del tablero */
   #bottomBar{ display:none !important; }
@@ -2238,7 +2180,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-frame-trim-top-plus-2mm">
   /* Achica la base que contiene todo el juego 2mm SOLO desde arriba */
   .frame::before{
@@ -2274,7 +2215,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-mobile-bottombar-inside">
   /* En móvil, extiende el contorno/fondo hasta el borde inferior
      para que la barra inferior quede claramente "dentro" del contenedor. */
@@ -2314,7 +2254,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><style id="aj-frame-trim-plus4mm">
   /* Achicar 4mm en total la base que contiene todo (2mm arriba + 2mm abajo) */
   .frame::before{
@@ -2350,7 +2289,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-mobile-frame-trim-plus4mm">
   /* En móvil, mantener el mismo recorte que web (evita que la barra parezca fuera) */
   @media (max-width: 900px), (pointer: coarse){
@@ -2388,12 +2326,11 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><style id="aj-megaPanel-scale-95">
   /* Achicar el panel de menú un 5% (general: web + móvil) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2436,12 +2373,11 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-megaPanel-scale-90">
   /* Achicar el panel de menú un 5% adicional (total ~10%) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2484,12 +2420,11 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-megaPanel-shift">
   /* Desplazar un poco a la derecha y hacia abajo, manteniendo scale(0.90) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2532,12 +2467,11 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-megaPanel-shift-half-square">
   /* Desplazar medio casillero a la derecha (+ mantener 3mm abajo) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2580,12 +2514,11 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-megaPanel-centered-to-board">
   /* Centrado perfecto entre derecha e izquierda respecto al tablero */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -2628,7 +2561,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-registro-minus-1_5-square">
   /* Achicar altura del panel de registros ~1.5 casilleros */
   /* 1) Versión flotante del panel de registros */
@@ -2672,7 +2604,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-replayPanel-scale-90">
   /* Achicar tamaño TOTAL del panel de registros un 10% */
   #replayPanel.rp-float{
@@ -2712,7 +2643,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- AJETREZ: Alineación fina de barra inferior (vFINAL) --><!-- LEGACY AUDIO CSS REMOVED --><!-- AJETREZ: Mobile tight-fix — barra inferior más cerca del tablero --><style id="aj-bottomBar-mobile-tightfix-0909">
   /* En móvil, algunas reglas previas mueven #bottomBar con 'top:-1*var(--square)'.
      Eso puede producir una separación aparente por redondeo/altura disponible.
@@ -2749,7 +2679,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- AJETREZ: Mobile — subir barra inferior ~1 casillero --><style id="aj-bottomBar-mobile-up-1square-0909">
   @media (max-width: 900px), (pointer: coarse){
     #bottomBar{ display:none !important; }
@@ -2783,7 +2712,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- AJETREZ: UNIFICACIÓN DE CONFIGURACIÓN (web = todas las versiones) --><!-- LEGACY AUDIO CSS REMOVED -->
 <style id="aj-e-buttons-0910">
   /* Contenedor de ones, independiente de otros botones */
@@ -2891,8 +2819,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-replay-red-btn">
   /* Botón Reproducir en tablero: rojo cuando habilitado, negro cuando deshabilitado */
   #reg-replay-start{
@@ -2939,8 +2865,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-reg-hint-style">
   #regHintSelect, .reg-hint-select{
     /* Layout */
@@ -2999,8 +2923,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topbar-order-replayer-reg-clock">
   /* Orden deseado dentro del reloj (timeIndicator):
      1) Reproductor, 2) Botón "Registro de partidas", 3) Reloj, 4) Pausa */
@@ -3039,8 +2961,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-replayer-compact-85">
   /* Achicar el tamaño del reproductor */
   #regv2-replayer{ gap: 6px !important; padding: 4px 8px !important; }
@@ -3077,8 +2997,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-pause-right-and-timeindicator-transparent">
   /* Fondo del bloque del reloj transparente */
   #timeIndicator{ background: transparent !important; box-shadow: none !important; }
@@ -3111,8 +3029,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-shift-buttons-left-2c">
   /* Tamaño base de un casillero */
   :root{ --aj-casillero: 40px; }
@@ -3150,8 +3066,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-black-bg-replayer-clock">
   /* Reproductor con fondo negro */
   #regv2-replayer{ background: #000 !important; color: #fff !important; border-radius: 10px !important; padding: 4px 8px !important; }
@@ -3192,8 +3106,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-replayer-solid-black-override">
   /* Anula gradientes globales y sombras para asegurar negro sólido */
   #regv2-replayer,
@@ -3234,8 +3146,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-shift-reg-btn-plus-0_5c">
   /* Mueve el botón "Registro de partidas" medio casillero a la derecha (de -2c a -1.5c) */
   :root{ --aj-casillero: 40px; }
@@ -3269,8 +3179,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-shift-reg-btn-plus-1_0c-and-replayer-black">
   /* Registro +0.5c adicional a la derecha (ahora total -1.0c) */
   :root{ --aj-casillero: 40px; }
@@ -3320,8 +3228,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-replayer-hidden-by-default">
   #regv2-replayer{ display: none !important; }
 
@@ -3353,8 +3259,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-replayer-visibility-logic">
 (function(){
   function $(s,root=document){ return root.querySelector(s); }
@@ -3461,8 +3365,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-clockwrap-script">
 (function(){
   function $(s,root=document){ return root.querySelector(s); }
@@ -3545,8 +3447,6 @@ body, html{overflow:visible!important;}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-textarea-shrink">
 /* Reduce tester textarea height to ~half */
 #regv2-input{ height: 160px !important; min-height: 140px !important; }
@@ -3580,8 +3480,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-grid-5050">
 /* Make bottom info panels split 50/50 */
 #rv2 .grid{ grid-template-columns: 1fr 1fr !important; }
@@ -3614,8 +3512,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-leftheader-stack">
 /* En el panel izquierdo ("Partidas guardadas"), pone el título arriba y los botones debajo */
 #rv2 .grid > section.card:first-of-type > div{
@@ -3660,8 +3556,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-play-heartbeat-css">
 /* Topbar with three zones: left (demo+velocidad), center (play), right (spacer/extra) */
 #rv2-topbar{ display:flex; align-items:center; gap:12px; margin:8px 0 6px; }
@@ -3720,8 +3614,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-pulse-css">
 #rv2-topbar .center button.rv2-pulse{
   animation: rv2-heartbeat-x 1.25s ease-in-out infinite !important;
@@ -3768,8 +3660,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-topbar-tweak-css">
 /* Mover "Cargar demo" + "Velocidad" unos 3mm a la derecha */
 #rv2-topbar .left{ padding-left: 3mm; }
@@ -3808,8 +3698,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-panel-8-casilleros-css">
 /* Variables: altura total del panel y altura de las tarjetas inferiores */
 #rv2{ --rv2-panel-h: 480px; --rv2-cards-h: 280px; }
@@ -3843,8 +3731,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="rv2-rounded-modal-css">
 /* Redondear las esquinas del contenedor que desplaza (aunque tenga scroll) */
 .rv2-modal{
@@ -3886,8 +3772,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-right-black-cover-dot-0911">
   /* Mueve el bloque negro de la DERECHA (tiempo y pausa) para cubrir el punto verde */
   #timeIndicator #timeTxt,
@@ -3930,8 +3814,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-right-black-cover-dot-0911-v2">
   /* +5% EXTRA al botón de Registro de partidas (total ~10%) */
   #timeIndicator #regv2-clock-btn{
@@ -3987,8 +3869,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-timer-pill-container-2025-09-11">
   #timeIndicator{
     background: #000 !important;
@@ -4037,8 +3917,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-timer-corner-fix-2025-09-11">
   #timeIndicator > * { margin-left: 0 !important; transform-origin: center; }
 
@@ -4070,8 +3948,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-hide-registros-in-menu-2025-09-11">
   .mp-tabs .tab-btn[data-tab="tab-registros"]{ display:none !important; }
   #tab-registros{ display:none !important; }
@@ -4104,8 +3980,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-top-right-compact-2025-09-11">
   /* En el topbar, empuja el timer hacia la derecha */
   #topBar{ position: relative !important; }
@@ -4147,8 +4021,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topright-height-reduce-2025-09-11">
   /* Achicar el ALTO del contenedor superior derecho */
   #topBar #timeIndicator{
@@ -4198,8 +4070,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topright-height-strong-2025-09-11">
   /* Fuerza altura total menor del contenedor negro del reloj */
   #topBar #timeIndicator{
@@ -4258,8 +4128,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topright-shift-down-3mm-2025-09-11">
   /* Bajar el contenedor negro (reloj) ~3 mm */
   #topBar #timeIndicator{
@@ -4294,8 +4162,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topright-shift-down-5mm-2025-09-11">
   /* Bajar el contenedor negro (reloj) ~5 mm total */
   #topBar #timeIndicator{
@@ -4330,8 +4196,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topright-shift-down-7mm-2025-09-11">
   /* Bajar el contenedor negro (reloj) ~7 mm total */
   #topBar #timeIndicator{
@@ -4366,8 +4230,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topright-shift-right-4mm-2025-09-11">
   /* Desplazar ~4 mm hacia la derecha (más pegado al borde) */
   #topBar #timeIndicator{
@@ -4402,8 +4264,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj--spacing-balance-2025-09-11">
   /* Uniformar separaciones y balancear visualmente el bloque de ón */
   
@@ -4438,8 +4298,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-e-label-down-4mm-2025-09-11">
   
 
@@ -4471,8 +4329,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-e-label-down-6mm-2025-09-11">
   
 
@@ -4504,8 +4360,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-left-shifts-2025-09-11">
   
 
@@ -4546,8 +4400,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-mobile-match-web-2025-09-11">
   /* === Igualar versión móvil a la web === */
   @media (max-width: 820px){
@@ -4608,8 +4460,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="ajetrez-mobile-topright-8cols">
 /* === Ajetrez Mobile: Top-Right group width = 8 casilleros === */
 @media (max-width: 900px) {
@@ -4658,8 +4508,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="verDevToast-styles">
 #verDevToast .btn{ 
   display:inline-flex; align-items:center; justify-content:center; 
@@ -4700,8 +4548,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Ajetrez: WakeLock toggle (flex item al lado de Reiniciar) === */
@@ -4739,8 +4585,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Ajetrez: Centrar botón Menú en bottomBar SIN fijar posiciones === */
@@ -4794,8 +4638,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Reset fuerte para Menú: eliminar offsets previos (sin fijarlo) === */
@@ -4849,8 +4691,6 @@ textarea[placeholder*="UCI"], textarea[placeholder*="uci"]{ height: 160px !impor
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Tema-safe: texto oscuro sobre fondos claros en "noche" y "pizarra" === */
@@ -4920,8 +4760,6 @@ body[data-theme="pizarra"]#regv2-panel *{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Texto legible en temas "noche" y "pizarra" (sin !important) === */
@@ -4958,8 +4796,6 @@ body[data-theme="pizarra"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Botones legibles en temas "noche" y "pizarra" === */
@@ -4998,8 +4834,6 @@ body[data-theme="pizarra"] .tab-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Fix específico para "noche": texto blanco en botones sobre fondos oscuros === */
@@ -5039,8 +4873,6 @@ body[data-theme="noche"] #regv2-panel .btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Noche: asegurar iconos/✕ de cerrar visibles en blanco === */
@@ -5082,8 +4914,6 @@ body[data-theme="noche"] #verDevToastClose{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === Noche: asegurar que "Cargar demo" (#regv2-demo) muestre texto blanco === */
@@ -5120,8 +4950,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-menu-restart-adjacency">
   /* Place restart right next to Menu with a small gap */
   #btnMegaMenu + 
@@ -5154,8 +4982,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-restart-left-4">
   /* Desplaza el botón Reiniciar 4 casilleros a la izquierda */
   
@@ -5188,8 +5014,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-menu-size-match-restart">
   /* Hacer que el botón Menú tenga el mismo tamaño visual que Reiniciar (.btn.small) */
   #btnMegaMenu{
@@ -5243,8 +5067,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topright-separated-styles">
   /* Alinear los 3 controles superiores (registro, pausa, reloj) como items individuales */
   #regv2-clock-btn, #pauseBtn {
@@ -5302,8 +5124,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-menu-registro-tab-style">
   /* Asegurar que el botón nuevo herede el look de las tabs */
   #megaPanel .tabs .tab-btn#regv2-open-menu,
@@ -5344,8 +5164,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="regv2-head-actions-style">
   #regv2-panel header{
     display:flex; align-items:center; justify-content:space-between; gap:10px;
@@ -5383,8 +5201,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-night-btn-contrast-fix">
   /* Forzar contraste en temas oscuros: texto blanco en botones del panel de registros */
   body[data-theme="noche"]  #regv2-panel .btn,
@@ -5435,8 +5251,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-registro-open-btn-style">
   /* Estilo del botón dentro de la pestaña Registros (v2) */
   #tab-registros-v2 #regv2-open-from-tab{
@@ -5493,8 +5307,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-regv2-play-pulse-slow">
   /* Hacer más lento el latido del botón "Reproducir en tablero" en el panel de registros */
   #regv2-play,
@@ -5534,8 +5346,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-fit-bars-css">
   /* Ajusta ancho de barras para que coincidan con el ancho del tablero visible */
   #topBar.bar, #bottomBar.bar{
@@ -5578,8 +5388,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-right-controls-shift-4mm">
   /* Desplazar 4mm hacia la izquierda los controles derechos (abajo y arriba) */
   #bottomBar #rightControls{
@@ -5617,8 +5425,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-top-shift-pause-clock-4mm">
   /* Solo reloj y pausa: 4mm a la izquierda */
   #topBar #timeIndicator,
@@ -5658,8 +5464,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-bottom-menu-center">
   /* Centrar el botón Menú (horizontalmente) en la barra inferior */
   #bottomBar{ display:none !important; }
@@ -5711,8 +5515,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="patch-regv2-open-from-tab-2025-09-12">
   /* Ajuste solicitado: subir ~1 casillero y achicar 15% el botón "Abrir panel de registros" del menú principal */
   #regv2-open-from-tab{
@@ -5752,13 +5554,11 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-megaPanel-height-plus4mm">
   /* Aumentar altura del panel completo de menú ~4mm (aprox) */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -5801,8 +5601,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="regv2-open-bottombar-css">
   /* Estilo del botón 'Registros' cuando está en la barra inferior */
   #bottomBar #regv2-open{
@@ -5849,8 +5647,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="regv2-offset-3mm">
   /* Desplazar el panel de Registros 3mm hacia abajo para centrar mejor */
   #regv2-overlay{
@@ -5891,8 +5687,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="regv2-overlay-pointer-events-fix">
   /* Permitir usar botones debajo (ej. Pantalla completa) cuando el panel está abierto */
   #regv2-overlay{
@@ -5930,8 +5724,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="regv2-fs-zindex">
   /* Asegurar que el overlay flote por encima también en fullscreen */
   #regv2-overlay{
@@ -5972,8 +5764,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-free-megaMenu-vars">
   /* Variables para mover el botón libremente (modificables después) */
   :root{
@@ -6009,8 +5799,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-free-megaMenu">
   /* Liberar completamente el botón de Menú para moverlo sin anclajes ni "rebotes" */
   #btnMegaMenu{
@@ -6079,8 +5867,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Menú +0.5 casillero a la derecha (nudge) - 2025-09-13 -->
 <style id="aj-menu-nudge-right-0_5sq-2025-09-13">
   /* Ajusta la variable --menu-x sumando medio casillero al centro */
@@ -6117,8 +5903,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Registros botón -2mm a la izquierda (2025-09-13) -->
 <style id="aj-regv2-open-left-2mm-2025-09-13">
   /* Nudge fino respecto a su posición actual junto al reloj */
@@ -6155,8 +5939,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Registros botón -5% adicional (2025-09-13) -->
 <style id="aj-regv2-open-scale-95plus5-2025-09-13">
   /* Achica el botón de Registros un 5% adicional sobre el estado actual */
@@ -6193,8 +5975,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Registros botón +2mm a la derecha (2025-09-13) -->
 <style id="aj-regv2-open-right-2mm-2025-09-13">
   /* Cancela el -2mm previo y lo mueve 2mm a la derecha respecto de ese estado */
@@ -6231,8 +6011,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-shift-reg-btn-plus-2mm-right">
   /* Mover el botón "Registro de partidas" 2mm a la derecha respecto a su posición actual (-1c) */
   /* Esta regla sobrescribe la posición previa (p.ej., -1 * var(--aj-casillero)) sumando +2mm */
@@ -6269,40 +6047,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
-<style id="rulesVersionStyle">
-#rulesContent .rules-version{ display:none; }
-
-/* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
-
-/* === END RESTART FREE VISUAL POSITION === */
-
-/* === NEW MAIN MENU BUTTON (STABLE) === */
-#btnMenuMain{
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--square) * -1.2);
-  transform: translateX(-50%);
-  z-index: 999;
-
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  border: 1.5px solid rgba(255,255,255,0.75);
-}
-#btnMenuMain:hover{ background:#222; }
-/* === END NEW MAIN MENU BUTTON === */
-
-/* === AJETREZ_PAY_FIX === */
-.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
-/* === END AJETREZ_PAY_FIX === */
-</style>
-
 
 <!-- AJETREZ: Uniformar contornos blancos de botones externos + mover 'Registro de partidas' 2mm (2025-09-13) -->
 <style id="aj-external-btns-border-uniform-2025-09-13">
@@ -6349,8 +6093,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-shift-reg-btn-plus-2mm-2025-09-13">
   /* Desplaza 2 mm a la DERECHA el botón "Registro de partidas" dentro del reloj */
   /* Parte de su estado actual (aprox -1 casillero) y compensa +2mm */
@@ -6387,8 +6129,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Resaltar selects de Versión y Reglas dentro del menú (2025-09-13) -->
 <style id="aj-menu-selects-highlight-2025-09-13">
   /* Estilo visible para los selectores del menú */
@@ -6438,8 +6178,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: 'Reproducir en tablero' rojo con latido (2025-09-13) -->
 <style id="aj-replay-heartbeat-2025-09-13">
   /* Latido solo cuando el botón está habilitado */
@@ -6492,8 +6230,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Control de opacidad/brillo por zona (central vs laterales) 2025-09-13 -->
 <style id="aj-zone-appearance-2025-09-13">
   :root{
@@ -6540,8 +6276,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13">
   /* Panel flotante para brillo/opacidad */
   #zonesFloat.zf-top{
@@ -6593,8 +6327,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-override-half">
   /* Reducir altura total del panel flotante a la mitad del alto de pantalla */
   #zonesFloat.zf-top{
@@ -6630,8 +6362,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-override-layout">
   /* Botonera del header: Reset a la izquierda de la cruz */
   #zonesFloat .zf-right{ display:flex; align-items:center; gap:8px; }
@@ -6673,8 +6403,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-override-quarter-wide">
   /* Panel: 1/4 del alto de pantalla y un poco más ancho */
   #zonesFloat.zf-top{
@@ -6711,8 +6439,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-override-quarter-wide-plus20">
   /* ~20% más ancho respecto al tope anterior (960px -> 1152px) y casi todo el viewport */
   #zonesFloat.zf-top{
@@ -6747,8 +6473,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-center-and-reset-dark">
   /* Centrar el panel verticalmente */
   #zonesFloat.zf-top{
@@ -6794,8 +6518,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-transparent-bg">
   /* Fondo del panel totalmente transparente; mantener z-index y layout */
   #zonesFloat.zf-top{
@@ -6832,8 +6554,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-revert-bg-and-shrink15">
   /* Revertir transparencia y achicar ~15% manteniendo centrado y layout interno */
   #zonesFloat.zf-top{
@@ -6874,8 +6594,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-inner-scale-85">
   /* Reducir 15% ancho de cada campo y tipografía solo dentro del contenido del panel */
   #zonesContent #fg-zonas-appearance .zf-field{
@@ -6920,8 +6638,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-tight-spacings">
   /* Reducir separación general entre campos */
   #zonesContent #fg-zonas-appearance{
@@ -6973,8 +6689,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-hide-under-text">
   /* Mantener solo el título de arriba y el control; ocultar textos/indicadores debajo */
   #zonesContent #fg-zonas-appearance .zf-field input[type="range"] ~ * {
@@ -7022,8 +6736,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-width-minus10">
   /* Ancho total del panel -10% */
   #zonesFloat.zf-top{
@@ -7058,8 +6770,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-fs-support">
   /* Asegurar visibilidad por encima de todo en fullscreen */
   :fullscreen #zonesFloat.zf-top{ z-index: 2147483640 !important; }
@@ -7093,8 +6803,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-fs-center-vfix">
   /* Forzar centrado perfecto en fullscreen (vertical y horizontal) */
   :fullscreen #zonesFloat.zf-top,
@@ -7134,8 +6842,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-fs-flex-anchor">
   /* Wrapper a pantalla completa que centra con flex y no interfiere con clics fuera del panel */
   :fullscreen #zonesFSAnchor,
@@ -7186,8 +6892,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-float-css-2025-09-13-fs-top-align">
   /* En fullscreen: wrapper con flex arriba (no centrado vertical) */
   :fullscreen #zonesFSAnchor,
@@ -7234,8 +6938,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-piece-style-width-80">
   /* Regla general para achicar 20% el selector de estilo de piezas */
   #tab-personalizacion .aj-piece-style-select{ width:80% !important; }
@@ -7274,8 +6976,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topbar-visual-styles-2025-09-13">
   /* Barra superior con el título y la botonera a la derecha */
   #tab-personalizacion .aj-topbar{
@@ -7324,8 +7024,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-piece-below-visual-css-2025-09-13">
   /* Fila para ubicar el selector de piezas debajo de la botonera de estilos */
   #tab-personalizacion .aj-piece-row{
@@ -7374,8 +7072,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-piece-under-zones-css-2025-09-13">
   /* Fila debajo de la tarjeta de brillo/opacidad */
   #tab-personalizacion .aj-piece-row-under-zones{
@@ -7423,8 +7119,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-visual-buttons-relocate-2025-09-13">
   /* Bloque visual bajo el título, con un poco de respiro arriba */
   #tab-personalizacion .aj-visual-block{
@@ -7472,8 +7166,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-piece-top-right-css-2025-09-13">
   /* Topbar robusta (si aún no está) */
   #tab-personalizacion .aj-topbar{
@@ -7524,8 +7216,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-piece-align-with-visual-row-2025-09-13">
   /* Fila dentro del bloque de Estilo visual: botones a la izquierda, selector de piezas a la derecha */
   #tab-personalizacion .aj-visual-block .aj-visual-row{
@@ -7579,8 +7269,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-topbar-center-title-2025-09-13">
   /* Convertir topbar en grid para centrar el título sin mover el selector derecho */
   #tab-personalizacion .aj-topbar{
@@ -7644,8 +7332,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-remove-title-and-verticalize-piece-2025-09-13">
   /* Compactar la parte superior del tab: eliminar espacio del topbar */
   #tab-personalizacion .aj-topbar{ display:none !important; }
@@ -7691,8 +7377,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-visual-header-align-pieces-2025-09-13">
   /* Header del bloque: título "Estilo visual" a la izquierda y selector de piezas a la derecha */
   #tab-personalizacion .aj-visual-block{
@@ -7768,8 +7452,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zonescard-right-below-piece-2025-09-13">
   /* Colocar la tarjeta de Brillo/Opacidad en la columna derecha del header, debajo del selector */
   #tab-personalizacion .aj-visual-block .aj-visual-header #zonesOpenCard{
@@ -7822,8 +7504,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-visual-fix-zones-title-and-buttons-2025-09-13">
   /* 1) Ocultar el título dentro de la tarjeta de zonas, conservando el espacio */
   #tab-personalizacion #zonesOpenCard .card-title{
@@ -7893,8 +7573,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-button-red-2025-09-13">
   /* Botón principal dentro de la tarjeta de brillo y opacidad */
   #zonesOpenCard #openZonesFloat{
@@ -7941,8 +7619,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-button-black-pulse-2025-09-13">
   /* Botón en negro con efecto de latido y leve desplazamiento a la derecha */
   #zonesOpenCard #openZonesFloat{
@@ -7996,8 +7672,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-zones-button-stronger-pulse-legend-center-2025-09-13">
   /* Heartbeat: más marcado y un poco más rápido */
   #zonesOpenCard #openZonesFloat{
@@ -8055,8 +7729,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 #promoOverlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:2147483647;padding:16px 18px;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5);border:1px solid #333;color:#eee;min-width:280px}
 #promoCard h3{margin:0 0 10px;font:700 18px/1.2 system-ui,Segoe UI,Roboto,Arial}
@@ -8094,8 +7766,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-no-login-final">
 #tabsView{ display:block !important; }
 #loginView{ display:none !important; } 
@@ -8129,8 +7799,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 /* === Mejora de visibilidad de títulos dentro del panel === */
 #megaPanel .mp-content h1,
@@ -8187,8 +7855,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-tight-brightness-panel">
 /* Reducir padding superior del bloque crema de brillo/opacidad */
 #tab-personalizacion .aj-brightness-block,
@@ -8233,8 +7899,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-move-visual-style-buttons-down">
 /* Desplazar hacia abajo los botones de estilos visuales ~5mm */
 #tab-personalizacion .aj-style-buttons-top,
@@ -8271,8 +7935,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-move-visual-style-buttons-down-more">
 /* Desplazar aún más abajo los botones de estilos visuales (~10mm total) */
 #tab-personalizacion .aj-style-buttons-top,
@@ -8309,8 +7971,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-fix-brightness-preview-cut">
 /* Permitir que la imagen ilustrativa se muestre completa sin scroll horizontal */
 #tab-personalizacion .aj-brightness-block,
@@ -8360,8 +8020,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-panel-root-overflow-fix">
 /* Solución de raíz: el recorte NO es del bloque interno sino del contenedor del panel */
 
@@ -8416,8 +8074,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 /* === Ajuste fino: Reglas por versiones en Guía === */
 #rulesByVersion{
@@ -8459,8 +8115,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 /* === Ajustes finales Guía del juego === */
 
@@ -8520,8 +8174,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-hide-bot-vs-bot-safe">
 (function(){
   function hideBotVsBot(){
@@ -8535,7 +8187,6 @@ body[data-theme="noche"] .regv2-btn{
   document.addEventListener('DOMContentLoaded', hideBotVsBot);
 })();
 </script>
-
 <script id="aj-hide-bottom-container-on-menu">
 (function(){
   function hideAll(hide){
@@ -8579,7 +8230,6 @@ body[data-theme="noche"] .regv2-btn{
   document.addEventListener('DOMContentLoaded', hook);
 })();
 </script>
-
 <style id="aj-main-menu-button-style-v2">
 .frame{ position: relative; }
 #btnMenuPrincipalTop{
@@ -8622,8 +8272,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-dom-guard">
 (function(){
   const PROTECTED_IDS = ['frame','shell','board','bottomBar','megaPanel'];
@@ -8648,7 +8296,6 @@ body[data-theme="noche"] .regv2-btn{
   mo.observe(document.documentElement,{childList:true});
 })();
 </script>
-
 <script id="aj-hide-registros-safe">
 (function(){
   function hide(){
@@ -8677,57 +8324,6 @@ body[data-theme="noche"] .regv2-btn{
 })();
 </script>
 
-<script id="aj-menu-and-rules-close-restore">
-(function(){
-  function ready(fn){
-    if(document.readyState!=='loading') fn();
-    else document.addEventListener('DOMContentLoaded', fn);
-  }
-
-  ready(function(){
-    // === MENU CLOSE (RESTORED) ===
-    const panel = document.getElementById('megaPanel');
-    const backdrop = document.getElementById('panelBackdrop');
-    const btnClose = document.getElementById('/* btnClosePanel eliminado */');
-
-    function closeMenu(){
-      if(backdrop) backdrop.style.display = 'none';
-      if(panel) panel.style.display = 'none';
-      document.body.classList.remove('menu-open');
-    }
-
-    if(btnClose){
-      btnClose.onclick = function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        closeMenu();
-      };
-    }
-
-    if(backdrop){
-      backdrop.onclick = function(){
-        closeMenu();
-      };
-    }
-
-    // === RULES / FLOATING PANELS CLOSE ===
-    document.querySelectorAll('button').forEach(btn=>{
-      const t = (btn.textContent||'').trim().toLowerCase();
-      if(t === 'cerrar'){
-        btn.addEventListener('click', function(e){
-          const p = btn.closest('.rule-panel, .floating-panel, #rulesPanel, #rulePanel');
-          if(p){
-            e.preventDefault();
-            e.stopPropagation();
-            p.style.display = 'none';
-          }
-        });
-      }
-    });
-  });
-})();
-</script>
-
 <style id="fix-visible-close-btn">
 #btnClosePanel{
   all: unset;
@@ -8747,8 +8343,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="fix-close-btn-right">
 /* Botón cerrar SIEMPRE a la derecha */
 .mp-header{
@@ -8789,8 +8383,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-text-x-overlay">
 /* === TEXT-ONLY CIRCULAR X OVERLAY (RULE PANELS) === */
 .rule-panel, .modal, .floating-panel, #megaPanel { position: relative; }
@@ -8837,7 +8429,6 @@ body[data-theme="noche"] .regv2-btn{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <script id="aj-text-x-overlay-js">
 (function(){
   function addOverlay(){
@@ -8861,7 +8452,6 @@ body[data-theme="noche"] .regv2-btn{
   setTimeout(addOverlay, 50);
 })();
 </script>
-
 <script>
 /* === IONS HARD DISABLE PATCH === */
 const IONS_ENABLED = false;
@@ -8898,7 +8488,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   });
 });
 </script>
-
 <style id="amenazaRulesStyles">
 #btnReglasAmenaza{
   all: unset;
@@ -8961,8 +8550,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="amenazaRulesForceVisible">
 #btnReglasAmenaza{
   all: unset !important;
@@ -8990,8 +8577,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="amenazaRulesCleanStyles">
 #rulesBackdropAmenaza{
   position:fixed;
@@ -9033,8 +8618,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="amenazaPanelRoundFix">
 #amenazaPanel{
   border-radius: 18px !important;
@@ -9044,8 +8627,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-external-buttons-unify">
 /* === AJETREZ: UNIFICAR TAMAÑO DE BOTONES EXTERNOS === */
 /* Basado en el indicador "Player vs player (local)" */
@@ -9072,8 +8653,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-btn-mode-size-fix">
 /* Ajuste específico: Botón "Modo de juego" ligeramente más compacto */
 #btnMode{
@@ -9096,8 +8675,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-btn-online-size-fix">
 /* Ajuste específico: Botón "Jugar Online" un poco más compacto */
 #btnOnline, .btn-online{
@@ -9120,8 +8697,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-menu-button-raise">
 /* === BOTÓN MENÚ — SUBIR LIGERAMENTE (TODOS LOS MODOS) === */
 /* Se eleva para quedar más cerca de las secciones desplazables */
@@ -9145,39 +8720,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
-
-<style id="aj-reglas-align-with-menu">
-/* === BOTÓN REGLAS — ALINEADO EN ALTURA CON MENÚ (NO FLOTANTE) === */
-/* Ajuste leve y reversible, sin anclajes duros */
-
-#btnReglasSimple,
-#amenazaRulesBtn,
-#guerraRulesBtn,
-#btnReglas{
-  position: absolute;
-  bottom: calc(var(--square) * -0.9);
-  left: 18px;
-  animation: none !important;   /* desactiva flotación */
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-}
-
-/* Mobile: mismo criterio, leve ajuste */
-@media (max-width: 900px){
-  #btnReglasSimple,
-  #amenazaRulesBtn,
-  #guerraRulesBtn,
-  #btnReglas{
-    bottom: calc(var(--square) * -0.7);
-    left: 12px;
-  }
-}
-
-/* === AJETREZ_PAY_FIX === */
-.aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
-/* === END AJETREZ_PAY_FIX === */
-</style>
-
-
 <style id="aj-top-clean-center-fix">
 /* Barra superior como contenedor relativo */
 #topBar, .bar{
@@ -9200,9 +8742,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
-
 <style id="baseHeightReduce">
 /* Reduce base container height by ~1 square (web & mobile) */
 .shell{
@@ -9214,8 +8753,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     calc(var(--toolbar-h) - var(--square));
 }
 </style>
-
-
 <style id="mobileWebParity">
 /* === MOBILE = WEB VISUAL PARITY === */
 @media (max-width: 980px){
@@ -9240,8 +8777,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 }
 </style>
-
-
 <style id="mobileBaseTrim2">
 /* === MOBILE: REDUCIR BASE GRIS ~2 CASILLEROS DESDE ABAJO === */
 @media (max-width: 980px){
@@ -9263,8 +8798,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 }
 </style>
-
-
 <!-- === MOBILE BASE SIZE UNIFICATION PATCH === -->
 <style id="mobileBaseUnify">
 @media (max-width: 900px){
@@ -9284,8 +8817,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 }
 </style>
 <!-- === END MOBILE BASE SIZE UNIFICATION PATCH === -->
-
-
 <!-- === MOBILE MENU & RULES BUTTONS BOTTOM PATCH === -->
 <style id="mobileMenuRulesBottom">
 @media (max-width: 900px){
@@ -9323,8 +8854,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 }
 </style>
 <!-- === END MOBILE MENU & RULES BUTTONS BOTTOM PATCH === -->
-
-
 <!-- === MOBILE FRAME TOP EXPANSION PATCH === -->
 <style id="mobileFrameTopExpand">
 @media (max-width: 900px){
@@ -9337,8 +8866,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 }
 </style>
 <!-- === END MOBILE FRAME TOP EXPANSION PATCH === -->
-
-
 <!-- === WEB FRAME TOP EXPANSION PATCH === -->
 <style id="webFrameTopExpand">
 @media (min-width: 901px){
@@ -9351,8 +8878,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 }
 </style>
 <!-- === END WEB FRAME TOP EXPANSION PATCH === -->
-
-
 <style id="aj-mobile-online-btn-position">
 @media (max-width: 900px){
   /* Colocar botón externo Jugar Online encima del botón Modo */
@@ -9393,30 +8918,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   .btn-reglas{
     bottom: 64px !important;
   }
-}
-</style>
-
-
-<style id="aj-floating-menu-rules-raise">
-/* === SUBIR BOTONES FLOTANTES MEDIO CASILLERO (WEB + MÓVIL) === */
-:root{
-  --aj-half-square: calc(var(--square, 56px) * 0.5);
-}
-
-/* Botón Menú */
-#btnMenuMain,
-#btnMegaMenu,
-#btnMenu,
-.btn-menu{
-  bottom: calc(18px + var(--aj-half-square)) !important;
-}
-
-/* Botones Reglas */
-#btnReglasSimple,
-#guerraRulesBtn,
-#amenazaRulesBtn,
-.btn-reglas{
-  bottom: calc(18px + var(--aj-half-square)) !important;
 }
 </style>
 
@@ -9472,7 +8973,6 @@ button[data-mode="online"]:hover{
 /* === END PATCH === */
 
 </style>
-
 <!-- === OPTION A: MODE GROUP CLEAN (MATCH GOOD HTML) === -->
 <style id="modeOptionA">
 
@@ -9506,24 +9006,18 @@ button[data-mode="online"]:hover{
 
 </style>
 <!-- === END OPTION A === -->
-
-
 <style id="baseGreyUpPatch">
 /* Desplazar SOLO la base gris (frame) medio casillero hacia arriba */
 .frame{
   transform: translateY(calc(var(--square) * -0.5));
 }
 </style>
-
-
 <style id="contentUpOneSquare">
 /* Desplazar TODO el contenido sobre la base gris 1 casillero hacia arriba */
 .frame > *{
   transform: translateY(calc(var(--square) * -1));
 }
 </style>
-
-
 <!-- === AJETREZ: SINGLE CLEAN RESTART BUTTON === -->
 <style id="aj-single-restart-style">
 /* Base gris como referencia */
@@ -9559,7 +9053,6 @@ button[data-mode="online"]:hover{
   }
 }
 </style>
-
 <script id="aj-single-restart-script">
 (function(){
   function removeOldRestartButtons(){
@@ -9605,32 +9098,9 @@ button[data-mode="online"]:hover{
 })();
 </script>
 <!-- === END SINGLE CLEAN RESTART === -->
-
-
 <!-- === PATCH: BOTON REGLAS LIBRE Y DESANCLADO === -->
-<style id="rulesButtonFree">
-#btnRules{
-  all: unset;
-  position: absolute !important;
-  left: 50% !important;
-  top: calc(100% + (var(--square) * 0.5)) !important; /* medio casillero hacia abajo */
-  transform: translateX(-50%) !important;
-  z-index: 60 !important;
-  pointer-events: auto !important;
 
-  background: #111;
-  color: #fff;
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
-  border: 1.5px solid rgba(255,255,255,0.7);
-}
-</style>
 <!-- === END PATCH BOTON REGLAS === -->
-
-
 <!-- === PATCH: BOTON MENU LIBRE Y DESANCLADO === -->
 <style id="menuButtonFree">
 #btnMegaMenu, #btnMenuMain{
@@ -9653,8 +9123,6 @@ button[data-mode="online"]:hover{
 }
 </style>
 <!-- === END PATCH BOTON MENU === -->
-
-
 <!-- === PATCH: MENU + REGLAS FIJOS EN BARRA SUPERIOR === -->
 <style id="menuRulesFixedTop">
 /* Contenedor lógico superior */
@@ -9701,12 +9169,230 @@ button[data-mode="online"]:hover{
 }
 </style>
 <!-- === END PATCH MENU + REGLAS FIJOS === -->
+<style>
+/* === MOBILE MENU PANEL SCALE (30% smaller) — replaced === */
+@media (max-width: 900px){
+  #megaPanel{
+    transform: translateX(-50%) scale(0.7) !important;
+    transform-origin: top center;
+  }
+}
+/* === END MOBILE MENU PANEL SCALE === */
+</style>
+<style>
+/* === MOBILE MENU PANEL SCALE + FULL CENTERING === */
+@media (max-width: 900px){
+  #megaPanel{
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
+    transform-origin: center center !important;
+  }
+}
+/* === END MOBILE MENU PANEL SCALE + FULL CENTERING === */
+</style>
+<style>
+/* === MOBILE MENU PANEL: CENTERED + DOWN 1 SQUARE === */
+@media (max-width: 900px){
+  #megaPanel{
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, calc(-50% + var(--square))) scale(0.7) !important;
+    transform-origin: center center !important;
+  }
+}
+/* === END MOBILE MENU PANEL OFFSET === */
+</style>
+<style>
+/* === MOBILE: SUBIR BOTONES (EXCEPTO MENU Y REGLAS) MEDIO CASILLERO === */
+@media (max-width: 900px){
+
+  /* botones del HUD / juego */
+  #reiniciarLibre,
+  #btnFullscreen,
+  #btnStartGame,
+  #btnMode,
+  .mode-indicator{
+    transform: translateY(calc(var(--square) * -0.5)) !important;
+  }
+
+  /* excluir explícitamente menú y reglas */
+  #btnMenuMain,
+  #btnRules,
+  #btnReglas{
+    transform: none !important;
+  }
+}
+/* === END MOBILE BUTTON OFFSET === */
+</style>
+<style>
+/* === MOBILE + FULLSCREEN: SUBIR BOTONES (EXCEPTO MENU Y REGLAS) MEDIO CASILLERO === */
+@media (max-width: 900px), (display-mode: fullscreen){
+
+  /* botones del HUD / juego */
+  #reiniciarLibre,
+  #btnFullscreen,
+  #btnStartGame,
+  #btnMode,
+  .mode-indicator{
+    transform: translateY(calc(var(--square) * -0.5)) !important;
+  }
+
+  /* excluir explícitamente menú y reglas */
+  #btnMenuMain,
+  #btnRules,
+  #btnReglas{
+    transform: none !important;
+  }
+}
+/* === END MOBILE + FULLSCREEN BUTTON OFFSET === */
+</style>
+
+<style>
+/* === OCULTAR BOTON DUPLICADO "JUGAR ONLINE" SOLO EN PANEL === */
+#megaPanel .mp-content button{
+  }
+#megaPanel .mp-content button:nth-of-type(4){
+  display:none !important;
+}
+</style>
+
+
+<style>
+/* === MOBILE: ACHICAR BASE GRIS MEDIO CASILLERO (ALTURA) === */
+@media (max-width: 900px){
+  .frame{
+    padding-bottom: calc(14px - (var(--square) * 0.5)) !important;
+  }
+}
+</style>
+
+
+<style>
+/* === AJUSTE GENERAL: SUBIR TODO EL CONTENIDO MEDIO CASILLERO === */
+/* Aplica a web, móvil y fullscreen */
+.shell{
+  transform: translateY(calc(var(--square) * -0.5));
+}
+</style>
+
+
+<style>
+/* === AJUSTE GLOBAL 2: SUBIR TODO MENOS BOTON REINICIAR === */
+/* Subimos todo el contenido */
+.shell{
+  transform: translateY(calc(var(--square) * -1));
+}
+
+/* Compensación: el botón Reiniciar queda en su lugar original */
+#btnRestartBR,
+#btnRestart,
+.btn-restart{
+  transform: translateY(calc(var(--square) * 1)) !important;
+}
+</style>
+
+
+<style>
+/* === FIX MODO AMENAZA: BLINDA BOTON MERCADOPAGO === */
+#donationPanel a[href*="mercadopago"],
+#donationPanel a[href*="mercado"],
+#donationPanel img[src*="mercado"]{
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Anular cualquier regla vieja que lo oculte */
+#donationPanel .aj-pay-bg,
+#donationPanel .mp,
+#donationPanel .mercado,
+#donationPanel img{
+  mix-blend-mode: normal !important;
+}
+</style>
+
+
+<style>
+/* === AJUSTE GLOBAL UI SUPERIOR: SUBIR MEDIO CASILLERO === */
+/* Botones de modo de juego + indicador + registro de partidas + reloj */
+.mode-group,
+.mode-indicator,
+#registroPartidas,
+#registro-partidas,
+#gameTimer,
+#clock,
+#btnRegistro,
+#btnRegistroPartidas{
+  transform: translateY(calc(var(--square) * -0.5)) !important;
+}
+</style>
+
+
+<style id="mobile-restart-up-1square">
+@media (max-width: 900px){
+  /* Subir 1 casillero el botón de reiniciar */
+  #btnRestartBR{
+    bottom: calc(var(--square) * 1) !important;
+  }
+}
+</style>
 
 </head><body>
+
+<!-- === DONATION PANEL (PERSISTENT) === -->
+<div id="donationPanel" style="
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.45);
+  z-index:20000;
+">
+  <div style="
+    max-width:520px;
+    background:#fff;
+    padding:20px 22px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  ">
+    <h2 style="margin-top:0">Apoyá el proyecto ❤️</h2>
+    <p style="font-size:14px; line-height:1.45">
+      Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
+      Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
+      Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
+      <br><br>Desde ya, muchas gracias.
+    </p>
+    <div style="display:flex; gap:22px; justify-content:center; margin:18px 0">
+      <a href="https://link.mercadopago.com.ar/ajetrez" target="_blank">
+        <img src="logo mercadopago ok.jpg" style="height:42px">
+      </a>
+      <a href="https://www.paypal.com/ncp/payment/PTRWET3UWGEY8" target="_blank">
+        <img src="logo paypal ok.png" style="height:42px">
+      </a>
+    </div>
+    <button id="closeDonationPanel" style="
+      border:none;
+      border-radius:999px;
+      padding:8px 18px;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+    ">
+      Continuar al juego
+    </button>
+  </div>
+</div>
+<!-- === END DONATION PANEL === -->
+
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
-<button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
-
+<button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" style="position:absolute; right:10px; top:6px; z-index:50;" type="button">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
 <button class="btn mode" data-gmode="online" id="btnOnlineExternal">
   Modo Online
 </button>
@@ -9741,225 +9427,64 @@ button[data-mode="online"]:hover{
 </div>
 <div aria-label="Overlay de inicio" aria-live="polite" id="startOverlay"><div class="start-card"><div style="font-weight:800; font-size:18px;">Comenzar partida
 </div><button id="btnStartGame" type="button">Comenzar partida</button><div class="hint">Pulsa para iniciar. Bloquea el juego en todos los modos hasta empezar.
-</div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div><div id="overlay"><div id="banner">FIN</div></div><div id="panelBackdrop"></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
+</div></div></div><div aria-label="Ajetrez base limpia" id="board"></div><div aria-label="Decidir desplazamiento de fila" class="shift-ctrl" id="shiftCtrl" role="group"><span class="lbl" id="shiftLbl">Fila</span><span id="chooseWrap"><button aria-label="Mantener" id="btnKeep" type="button">Mantener</button><button aria-label="Desplazar sección" id="btnShift" type="button">Desplazar sección</button></span><span id="confirmWrap" style="display:none"><span id="choiceTxt" style="font-size:12px;font-weight:700;margin-right:6px;opacity:.85">Confirmar:</span><button aria-label="Confirmar" class="confirm" id="btnConfirm" type="button">Confirmar</button><button aria-label="Volver a elegir" id="btnBack" type="button">Cambiar elección</button></span></div></div><div aria-labelledby="mpTitle" aria-modal="true" id="megaPanel" role="dialog"><div class="apply-toast" id="applyToast">✔ Cambios guardados
 </div><div class="mp-header"><div id="mpTitle">Panel de Ajetrez
-<button class="btn small btn-close-internal" id="btnClosePanel" aria-label="Cerrar panel">Cerrar</button></div><div class="right"><span class="hint-sm" id="loggedUser"></span><button class="btn" id="/* btnClosePanel eliminado */" type="button"></button></div></div><div id="tabsView"><div class="mp-tabs">
-    <button class="tab-btn active" data-tab="tab-version">Versión de Ajetrez</button><button class="tab-btn" data-tab="tab-modos">Modos de juego</button><button class="tab-btn" data-tab="tab-personalizacion">Personalización</button><button class="tab-btn" data-tab="tab-registros" id="btnRegistrosTab">Registros</button>
+<button aria-label="Cerrar panel" class="btn small btn-close-internal" id="btnClosePanel">Cerrar</button></div><div class="right"><span class="hint-sm" id="loggedUser"></span><button class="btn" id="/* btnClosePanel eliminado */" type="button"></button></div></div><div id="tabsView"><div class="mp-tabs">
+<button class="tab-btn active" data-tab="tab-version">Versión de Ajetrez</button><button class="tab-btn" data-tab="tab-modos">Modos de juego</button><button class="tab-btn" data-tab="tab-personalizacion">Personalización</button><button class="tab-btn" data-tab="tab-registros" id="btnRegistrosTab">Registros</button>
 </div><div class="mp-content">
-
-    <div class="tab" id="tab-personalizacion" style="display:none"><h3>Personalización del juego</h3><div class="row"><div class="field"><label>Estilo de piezas</label><select id="selSprites"><option value="auto">Auto (usar sprites si están disponibles)</option><option value="sprites">Sprites (imágenes)</option><option value="unicode">Unicode (símbolos)</option></select>
-
+<div class="tab" id="tab-personalizacion" style="display:none"><h3>Personalización del juego</h3><div class="row"><div class="field"><label>Estilo de piezas</label><select id="selSprites"><option value="auto">Auto (usar sprites si están disponibles)</option><option value="sprites">Sprites (imágenes)</option><option value="unicode">Unicode (símbolos)</option></select>
 <!-- Controles: Apariencia por zonas -->
 <div class="fieldGroup" id="fg-zonas-appearance">
-  <h4>Apariencia de zonas</h4>
-  <div class="row" style="gap: 12px; align-items: center;">
-    <div class="field">
-      <label for="centralOpacity">Opacidad centro</label>
-      <input id="centralOpacity" type="range" min="0.3" max="1.0" step="0.05" value="1">
-      <small>Transparencia del recuadro central (0.3–1.0)</small>
-    </div>
-    <div class="field">
-      <label for="centralBrightness">Brillo centro</label>
-      <input id="centralBrightness" type="range" min="0.6" max="1.6" step="0.05" value="1">
-      <small>Brillo del recuadro central (60%–160%)</small>
-    </div>
-  </div>
-  <div class="row" style="gap: 12px; align-items: center; margin-top: 10px;">
-    <div class="field">
-      <label for="lateralOpacity">Opacidad laterales</label>
-      <input id="lateralOpacity" type="range" min="0.2" max="1.0" step="0.05" value="1">
-      <small>Transparencia de secciones laterales (0.2–1.0)</small>
-    </div>
-    <div class="field">
-      <label for="lateralBrightness">Brillo laterales</label>
-      <input id="lateralBrightness" type="range" min="0.5" max="1.6" step="0.05" value="1">
-      <small>Brillo de secciones laterales (50%–160%)</small>
-    </div>
-  </div>
-  <div class="row" style="gap: 10px; margin-top: 12px;">
-    <button class="btn small btn-close-internal" id="btnZonasReset" type="button">Restablecer</button>
-  </div>
+<h4>Apariencia de zonas</h4>
+<div class="row" style="gap: 12px; align-items: center;">
+<div class="field">
+<label for="centralOpacity">Opacidad centro</label>
+<input id="centralOpacity" max="1.0" min="0.3" step="0.05" type="range" value="1"/>
+<small>Transparencia del recuadro central (0.3–1.0)</small>
 </div>
-
+<div class="field">
+<label for="centralBrightness">Brillo centro</label>
+<input id="centralBrightness" max="1.6" min="0.6" step="0.05" type="range" value="1"/>
+<small>Brillo del recuadro central (60%–160%)</small>
+</div>
+</div>
+<div class="row" style="gap: 12px; align-items: center; margin-top: 10px;">
+<div class="field">
+<label for="lateralOpacity">Opacidad laterales</label>
+<input id="lateralOpacity" max="1.0" min="0.2" step="0.05" type="range" value="1"/>
+<small>Transparencia de secciones laterales (0.2–1.0)</small>
+</div>
+<div class="field">
+<label for="lateralBrightness">Brillo laterales</label>
+<input id="lateralBrightness" max="1.6" min="0.5" step="0.05" type="range" value="1"/>
+<small>Brillo de secciones laterales (50%–160%)</small>
+</div>
+</div>
+<div class="row" style="gap: 10px; margin-top: 12px;">
+<button class="btn small btn-close-internal" id="btnZonasReset" type="button">Restablecer</button>
+</div>
+</div>
 </div><div class="field"><label>Estilo visual</label><div aria-label="Elegir estilo visual" class="row" id="themePicker" role="group"><button class="btn theme" data-theme="dia" title="Tonos claros, suaves" type="button">Día</button><button class="btn theme" data-theme="noche" title="Tonos oscuros, suaves" type="button">Noche</button><button class="btn theme" data-theme="madera" title="Tonos madera, suaves" type="button">Madera</button><button class="btn theme" data-theme="arena" title="Arena suave" type="button">Arena</button><button class="btn theme" data-theme="pizarra" title="Pizarra / gris" type="button">Pizarra</button><button class="btn theme" data-theme="oliva" title="Verde oliva suave" type="button">Oliva</button></div><span class="hint-sm">Los estilos son suaves para no distraer durante la partida.</span></div></div></div><div class="tab" id="tab-version" style="display:block"><h3>Versión de Ajetrez</h3><p>Versión actual del juego: <strong id="verActual">2.5 (Estable)</strong></p><div class="field"><label>Seleccionar versión</label><select id="selVersion"><option selected="" value="3_0_simple">Versión 3.0 (modo simple)</option><option value="3_0_amenaza">Versión 3.0 (modo amenaza)</option><option value="3_0_guerra">Versión 3.0 (modo guerra)</option></select></div><div class="hint-sm">La selección futura podrá cargar configuraciones específicas por versión.
 </div></div><div class="tab" id="tab-modos" style="display:none"><h3>Modos de juego</h3><div class="row"><button class="btn mode" data-gmode="pvp-local">Player vs player (local)</button>
-
 <button class="btn mode" data-gmode="online" id="btnOnlineExternal">
   Modo Online
 </button>
 <button class="btn mode" data-gmode="bot">Player Vs Bot</button></div><div aria-live="polite" id="modeHelp" role="note"><span class="title">¿Cómo funciona este modo?</span><div class="body">Elegí un modo para ver una breve explicación.</div></div><p class="hint-sm">
 <!-- === DONACIONES INLINE (JUGAR ONLINE) === -->
 <div class="aj-don-inline">
-  <div class="aj-don-title">Apoya el proyecto</div>
-  <div class="aj-don-btns">
-    <a href="#" class="aj-pay-bg mp" title="Donar con MercadoPago"></a>
-    <a href="#" class="aj-pay-bg pp" title="Donar con PayPal"></a>
-  </div>
+<div class="aj-don-title">Apoya el proyecto</div>
+<div class="aj-don-btns">
+<a class="aj-pay-bg mp" href="#" title="Donar con MercadoPago"></a>
+<a class="aj-pay-bg pp" href="#" title="Donar con PayPal"></a>
+</div>
 </div>
 <!-- === FIN DONACIONES INLINE === -->
-</p></div><div class="tab aj-reglas-ver" id="tab-reglas" style="display:none"><h3></h3><div class="field"><label for="selRulesVersion">Ver reglas según versión</label><select id="selRulesVersion"><option selected="selected" value="3_0">3.0 (Modo simple)</option><option value="3_0_amenaza">3.0 (Modo amenaza)</option><option value="3_0_guerra">3.0 (Modo guerra)</option></select><div class="hint-sm">Este selector es independiente del de “Versión de Ajetrez”. Cambiarlo solo afecta el texto mostrado aquí.</div></div><div id="rulesContent" style="margin-top:8px;"><div class="rules-version" data-version="3_0"><h4>Ajetrez Version 3.0 (Modo simple) — Reglas Básicas del juego</h4><div><p>En este modo, sólo el recuadro central del tablero es jugable. Las partes sobrantes (aunque contengan piezas) no participan hasta que sean ingresadas mediante el desplazamiento de secciones.</p><h5><span class="subtitulo">Distribución de las piezas</span></h5><p>Por color, el tablero contiene:</p><ul><li>2 reyes</li><li>2 reinas</li><li>4 alfiles, 4 caballos, 4 torres</li><li>16 peones</li></ul><p>Las piezas son distribuidas en el recuadro central de la misma manera que en el ajedrez clásico. En los laterales, (si bien ocupan las mismas posiciones entre ellas). Las piezas se colocan desplazadas, 2 secciones hacia abajo en negras y 2 hacia arriba en blancas.</p><ul><li>Ajetrez respeta todas las reglas del clásico ajedrez, por lo tanto, se debe jugar de la misma manera y respetando las reglas generales del ajedrez clásico.</li><li>A su vez, añade nuevas reglas, que dependen del modo de juego que se utilice.</li><li>En este modo de juego (Modo simple). Luego de capturar, se puede elegir entre desplazar o mantener la sección del tablero donde ahora se ubica la pieza que realizó la captura.</li><li>Si decide desplazar. Se desplaza (hacia el lado opuesto al que se encuentra y solo una vez).</li><li>Luego de la elección de mantener, o desplazar la sección, queda cedido el turno al contrincante.</li><li>El desplazamiento de la sección, puede sacar, o introducir piezas del área jugable.</li></ul><h5>Función del desplazamiento de las secciones</h5><ul><li>Escapar de una captura.</li><li>Alterar las posibles estrategias del oponente.</li><li>Sacar piezas rivales del área jugable.</li><li>Ingresar piezas propias al área jugable.</li><li>También ingresar piezas del oponente para luego intentar capturarlas.</li></ul><p>Importante: Si una pieza sale del recuadro central, esto no significa que queda fuera de juego definitivamente; podría reingresar tras nuevos desplazamientos.</p><h5>⚠️ Imposibilidad de desplazamiento de secciones</h5><ul><li>En jaque/mate no hay desplazamientos de las secciones (aun cuando se haya capturado una pieza del oponente que se encuentre en la sección donde está el rey).</li><li>No se pueden desplazar secciones cuando esa acción implica que el recuadro central jugable quede sin piezas disponibles de alguno de los dos participantes.</li></ul></div></div>
-<div class="rules-version" data-version="3_0_guerra">
-  <h4>Ajetrez — Modo Guerra (Reglas generales)</h4>
-  <ol>
-    <li><b>Conflicto permanente:</b> todas las capturas disponibles son obligatorias.</li>
-    <li><b>Prioridad ofensiva:</b> si existe una jugada de ataque, no se permiten movimientos defensivos pasivos.</li>
-    <li><b>Encadenamiento de capturas:</b> una captura que habilita otra debe continuarse mientras sea legal.</li>
-    <li><b>Sin tregua:</b> no se permiten movimientos que solo busquen ganar tiempo si existe acción directa.</li>
-    <li><b>Jaque agresivo:</b> el jaque se considera una amenaza prioritaria y debe ejecutarse si está disponible.</li>
-    <li><b>Colapso táctico:</b> si un jugador no puede cumplir una jugada obligatoria de guerra, pierde la partida.</li>
-    <li><b>Reglas clásicas:</b> el ajedrez tradicional se mantiene salvo conflicto con estas reglas.</li>
-  </ol>
-</div>
-
-<div class="rules-version" data-version="3_0_amenaza"></div>
-
-<div class="rules-version" data-version="3_0_guerra">
-  <h4>Ajetrez — Modo Guerra (Reglas generales)</h4>
-  <ol>
-    <li><b>Conflicto permanente:</b> todas las capturas disponibles son obligatorias.</li>
-    <li><b>Prioridad ofensiva:</b> si existe una jugada de ataque, no se permiten movimientos defensivos pasivos.</li>
-    <li><b>Encadenamiento de capturas:</b> una captura que habilita otra debe continuarse mientras sea legal.</li>
-    <li><b>Sin tregua:</b> no se permiten movimientos que solo busquen ganar tiempo si existe acción directa.</li>
-    <li><b>Jaque agresivo:</b> el jaque se considera una amenaza prioritaria y debe ejecutarse si está disponible.</li>
-    <li><b>Colapso táctico:</b> si un jugador no puede cumplir una jugada obligatoria de guerra, pierde la partida.</li>
-    <li><b>Reglas clásicas:</b> el ajedrez tradicional se mantiene salvo conflicto con estas reglas.</li>
-  </ol>
-</div>
-
-<div class="rules-version" data-version="3_0_amenaza">
-  <h4>Ajetrez — Modo Amenaza (Reglas generales)</h4>
-  <ol>
-    <li><b>Amenaza obligatoria:</b> si existe una jugada que genere una amenaza directa (jaque o captura forzada), el jugador debe realizarla.</li>
-    <li><b>Prioridad de amenaza:</b> no se permiten jugadas neutrales si existe al menos una jugada de amenaza válida.</li>
-    <li><b>Captura forzada:</b> toda captura disponible tiene prioridad sobre movimientos no capturantes.</li>
-    <li><b>Jaque reforzado:</b> un jaque no puede ser ignorado ni reemplazado por una jugada que no elimine la amenaza.</li>
-    <li><b>Bloqueo limitado:</b> solo se permite bloquear una amenaza si el peligro se elimina por completo.</li>
-    <li><b>Cadena de amenazas:</b> si una amenaza genera otra consecutiva, la obligación se mantiene turno a turno.</li>
-    <li><b>Victoria por imposibilidad:</b> si un jugador no dispone de jugadas legales que cumplan estas reglas, pierde la partida.</li>
-    <li><b>Reglas clásicas:</b> el ajedrez tradicional se mantiene salvo conflicto con estas reglas.</li>
-  </ol>
-</div>
-
-<div class="rules-version" data-version="3_0_guerra">
-  <h4>Ajetrez — Modo Guerra (Reglas generales)</h4>
-
-  <h5>1) Tablero y secciones</h5>
-  <ul>
-    <li>El tablero está formado por 8 secciones horizontales (16×8) que pueden desplazarse; el recuadro central 8×8 es el único jugable al inicio.</li>
-    <li>Las piezas ubicadas en los laterales no participan hasta que ingresan al 8×8 mediante un desplazamiento de secciones (según las reglas estándar del proyecto Ajetrez).</li>
-    <li>El turno alterna blancas / negras de forma normal. Jaque y jaque mate se aplican como en ajedrez clásico (salvo lo indicado para piezas especiales).</li>
-  </ul>
-
-  <h5>2) Disposición inicial (qué cambia en los laterales)</h5>
-  <p>En los laterales (no en el 8×8 central) se reemplazan las piezas clásicas por piezas “de guerra”:</p>
-  <ul>
-    <li>Rey (K) → <strong>General (G)</strong></li>
-    <li>Dama (Q) → <strong>Verdugo (V)</strong> <em>(se mantienen sus reglas vigentes; no se modificaron en esta pasada)</em></li>
-    <li>Alfiles (B) → <strong>Mago (M)</strong> y <strong>Maga (W)</strong></li>
-    <li>Caballos (N) → <strong>Bufones (J)</strong></li>
-    <li>Torres (R) → <strong>Arqueros (A)</strong></li>
-    <li>Peones (P) de los laterales → <strong>Guerreros con espada (S)</strong></li>
-  </ul>
-  <p><strong>Importante:</strong> los peones del 8×8 central permanecen normales (P) con sus reglas clásicas.</p>
-
-  <h5>3) Piezas especiales y sus reglas</h5>
-  <p><strong>General (G)</strong></p>
-  <ul>
-    <li><strong>Alcance máximo:</strong> hasta 3 casilleros por movimiento (ajuste actual).</li>
-    <li><strong>Direcciones:</strong> ortogonales y diagonales (como “dama corta”).</li>
-    <li><strong>Notas:</strong> conserva la lógica de salto corto si estaba activa en tu build (no modificada aquí).</li>
-  </ul>
-
-  <p><strong>Mago (M) / Maga (W)</strong></p>
-  <ul>
-    <li><strong>Movimiento:</strong> exactamente 2 casilleros en cualquiera de las 8 direcciones.</li>
-    <li><strong>No saltan:</strong> la casilla intermedia debe estar vacía.</li>
-    <li><strong>Transformación al capturar:</strong> si capturan una pieza que no sea el Rey, se transforman en esa pieza (y no pueden volver a M/W en toda la partida).</li>
-  </ul>
-
-  <p><strong>Bufón (J)</strong></p>
-  <ul>
-    <li><strong>Movimiento:</strong> patrón de caballo, pero no puede capturar (solo aterriza en casillas vacías).</li>
-    <li><strong>“Entretener” (stun) 2 turnos:</strong> al finalizar su movimiento, todas las piezas rivales adyacentes (8 direcciones) quedan sin poder moverse durante 2 turnos del rival.</li>
-    <li><strong>Levantar el efecto:</strong> si el Bufón es capturado, se anula el efecto que provenía de la casilla de ese Bufón.</li>
-  </ul>
-
-  <p><strong>Arquero (A)</strong></p>
-  <ul>
-    <li><strong>Direcciones:</strong> solo hacia adelante y diagonales hacia adelante (según color).</li>
-    <li><strong>Distancias:</strong> exactamente 2 o 4 casilleros (no 1 ni 3).</li>
-    <li><strong>Salto:</strong> puede saltar piezas intermedias sin capturarlas (como el caballo).</li>
-    <li><strong>Captura:</strong> solo en las casillas de destino de 2 o 4 pasos.</li>
-  </ul>
-
-  <p><strong>Guerrero con espada (S) — solo laterales</strong></p>
-  <ul>
-    <li><strong>Antes de “veterano”:</strong>
-      <ul>
-        <li><strong>Mover:</strong> 1 casillero hacia adelante o en diagonal hacia adelante (también si está vacío).</li>
-        <li><strong>Capturar:</strong> 1 casillero hacia adelante y diagonales hacia adelante.</li>
-        <li><strong>Sin doble paso y sin captura al paso.</strong></li>
-      </ul>
-    </li>
-    <li><strong>Al llegar a la última fila rival:</strong> no promociona; se vuelve “veterano” y, desde ese momento, puede mover y capturar 1 casillero en cualquiera de las 8 direcciones (también hacia atrás).
-      <ul>
-        <li><em>Aviso en pantalla:</em> al adquirir el estado veterano aparece un cartel informando sus nuevas habilidades.</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h5>4) Piezas clásicas (8×8 central)</h5>
-  <ul>
-    <li>En el recuadro central el juego se rige por las reglas clásicas: peones con doble paso inicial, captura al paso, promoción, enroques, etc.</li>
-    <li>Las piezas que ingresan desde los laterales lo hacen con sus reglas especiales (o clásicas, si corresponde).</li>
-  </ul>
-
-  <h5>5) Interacciones y consideraciones</h5>
-  <ul>
-    <li><strong>Congelamiento por Bufón:</strong> una pieza “entretenida” no puede moverse hasta que se cumplan sus 2 turnos o se capture al Bufón que generó ese efecto.</li>
-    <li><strong>Transformaciones de M/W:</strong> al transformarse por captura, pierden para siempre su condición de Mago/Maga.</li>
-    <li><strong>Secciones:</strong> el ingreso de laterales al 8×8 se realiza con las normas de desplazamiento ya establecidas en Ajetrez para evitar jugadas ilegales o estados imposibles.</li>
-  </ul>
-
-  <hr/>
-
-  <h5>6) Resumen rápido</h5>
-  <ul>
-    <li>Solo el 8×8 central es jugable; los laterales entran con desplazamientos.</li>
-    <li>En los laterales hay piezas de guerra (G, V, M/W, J, A, S).</li>
-    <li>Peones del centro: clásicos. Peones laterales: Guerreros (S).</li>
-    <li>Cartel cuando un S se vuelve veterano.</li>
-    <li>Bufón no captura pero inmoviliza rivales adyacentes 2 turnos.</li>
-    <li>Mago/Maga mueven 2 y se transforman al capturar (salvo Rey).</li>
-    <li>Arquero avanza/capta solo adelante/diagonales adelante a 2 o 4 y salta intermedias.</li>
-    <li>General: máx. 3 casilleros por movimiento.</li>
-  </ul>
-</div></div>
-<script id="rulesVersionHook">
-(function(){
-  function setRulesVersion(v){
-    document.querySelectorAll('#rulesContent .rules-version').forEach(function(el){
-      el.style.display = (el.getAttribute('data-version') === v) ? 'block' : 'none';
-    });
-  }
-  try{
-    var sel = document.getElementById('selRulesVersion');
-    var initial = sel && sel.value ? sel.value : '3_0';
-    setRulesVersion(initial);
-    if(sel){
-      sel.addEventListener('change', function(){ setRulesVersion(sel.value); });
-    }
-  }catch(_){}
-})();
-</script>
-
-</div><div class="tab" id="tab-info" style="display:none"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3mm;"><h3 style="margin:0;"></h3><button class="btn small danger" id="btnClearLogs" style="margin-left:12px;">Borrar historial</button></div><div class="hint-sm">Se guarda <strong>localmente</strong> en este navegador.
+</p></div><div class="tab" id="tab-info" style="display:none"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3mm;"><h3 style="margin:0;"></h3><button class="btn small danger" id="btnClearLogs" style="margin-left:12px;">Borrar historial</button></div><div class="hint-sm">Se guarda <strong>localmente</strong> en este navegador.
 </div><div class="row"><div class="field"><label>Total jugadas</label><div class="pill" id="statTotal">0
 </div></div><div class="field"><label>Victorias Blancas</label><div class="pill" id="statW">0
 </div></div><div class="field"><label>Victorias Negras</label><div class="pill" id="statB">0
 </div></div><div class="field"><label>Tablas</label><div class="pill" id="statD">0
 </div></div></div><div id="infoSplit"><div id="infoLeft"><div style="margin-top:10px;max-height:120px;overflow:auto;border:1px solid #eee;border-radius:10px;"><table class="simple" id="logsTable"><thead><tr><th>Fecha</th><th>Modo</th><th>Resultado</th><th>Ganador</th><th>Movs</th></tr></thead><tbody></tbody></table></div><div id="replayDock" style="display:none"></div><!-- Replay panel will be injected here --><div id="replayDock"></div></div></div></div><div class="row" style="margin-top:8px;"></div></div><div class="tab" id="tab-mas" style="display:none"><h3>Más funciones</h3><p>Acá vamos a agregar: estilos claros/oscuros, selector de temas, perfiles, estadísticas detalladas, etc.</p></div></div></div></div></div><div style="height:var(--toolbar-gap)"></div><div aria-label="Barra inferior" class="bar" id="bottomBar">
-
 <div class="right-ctrls" id="rightControls"></div></div></div><script>
 // --- Audio FX setup ---
 (function(){
@@ -10178,7 +9703,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
     if(piece.type==='P' && (rr===0 || rr===7)){
       const promo = {promotion:'Q'};
       const {board:bP,captured} = applyMove(board, offs, {r,c}, {r:rr,c:cc}, promo);
-      const vP = buildVisible(bP, offs);
+      
+render();
+const vP = buildVisible(bP, offs);
       if(!inCheck(vP, color)) out.push([rr,cc,promo,captured && captured.type==='K']);
       continue;
     }
@@ -10188,7 +9715,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
       if(r === (epTarget.r - dir) && Math.abs(cc - c) === 1) special = {enPassant:true};
     }
     const {board:b2,captured} = applyMove(board, offs, {r,c}, {r:rr,c:cc}, special);
-    const v2 = buildVisible(b2, offs);
+    
+render();
+const v2 = buildVisible(b2, offs);
     if(!inCheck(v2, color) && !(piece.type==='K' && typeof window.__AJ_KINGS_ADJACENT__==='function' && window.__AJ_KINGS_ADJACENT__(v2)))
       out.push([rr,cc,special,captured && captured.type==='K']);
   }
@@ -10198,7 +9727,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
     for(const [er,ec] of cand){
       if(er===epTarget.r && ec===epTarget.c){
         const {board:b3,captured} = applyMove(board, offs, {r,c}, {r:er,c:ec}, {enPassant:true});
-        const v3 = buildVisible(b3, offs);
+        
+render();
+const v3 = buildVisible(b3, offs);
         if(!inCheck(v3, color)) out.push([er,ec,{enPassant:true},captured && captured.type==='K']);
       }
     }
@@ -10208,7 +9739,9 @@ function legalMovesFor(vis, board, offs, r, c, color, epTarget){
     const hasNotMoved = q => (q && q.hasMoved===true) ? false : true;
     const safeAfter = (toC, special) => {
       const {board:tb} = applyMove(board, offs, {r,c}, {r:r, c:toC}, special);
-      const v = buildVisible(tb, offs);
+      
+render();
+const v = buildVisible(tb, offs);
       return !inCheck(v, color);
     };
     if(hasNotMoved(piece) && !inCheck(vis, color)){
@@ -10602,7 +10135,9 @@ const next = candidates[0];
 function playMove(from, to, special, capturesKing){
     window.__LAST_MOVED_BASE = { r: to.r, bc: toBaseCol(to.c, to.r, offsets), color: turn };
   const res = applyMove(board, offsets, from, to, special);
-  const movedPiece = buildVisible(board, offsets)[from.r][from.c];
+  
+render();
+const movedPiece = buildVisible(board, offsets)[from.r][from.c];
   let newBoard = res.board;
   const r = to.r, c = to.c;
 
@@ -10891,12 +10426,12 @@ window.addEventListener('aj:mode:change', (e)=>{
         botSide = 'b'; window.botSide = botSide;
         // No iniciar hasta que empiece el juego; y solo cuando sea turno de negras
         if(window.GAME_STARTED && typeof turn!=='undefined' && turn === botSide){
-          scheduleBotMove();
+          setTimeout(()=>{ scheduleBotMove(); },0);
         }
       } else if(m==='bot-vs-bot'){
         // Bot vs Bot: arranca el que tiene el turno actual
         botSide = (typeof turn!=='undefined') ? turn : 'w'; window.botSide = botSide;
-        if(window.GAME_STARTED){ scheduleBotMove(); }
+        if(window.GAME_STARTED){ setTimeout(()=>{ scheduleBotMove(); },0); }
       } else {
         // PvP local
         botSide = 'b'; window.botSide = botSide;
@@ -11113,7 +10648,9 @@ function qsearch(boardState, offsState, side, alpha, beta, deadline){
   for(const m of caps){
     if(performance && performance.now && performance.now()>deadline) break;
     const nxt = applyMove(boardState, offsState, m.from, m.to, m.special);
-    const score = -qsearch(nxt.board, offsState, (side==='w'?'b':'w'), -beta, -alpha, deadline);
+    
+render();
+const score = -qsearch(nxt.board, offsState, (side==='w'?'b':'w'), -beta, -alpha, deadline);
     if(score >= beta) return beta;
     if(score > alpha) alpha = score;
   }
@@ -11135,7 +10672,9 @@ function search(boardState, offsState, side, depth, alpha, beta, deadline){
   }
   for(const m of moves){
     const nxt = applyMove(boardState, offsState, m.from, m.to, m.special);
-    const score = -search(nxt.board, offsState, (side==='w'?'b':'w'), depth-1, -beta, -alpha, deadline);
+    
+render();
+const score = -search(nxt.board, offsState, (side==='w'?'b':'w'), depth-1, -beta, -alpha, deadline);
     if(score >= beta) return beta;
     if(score > alpha) alpha = score;
     if(performance && performance.now && performance.now()>deadline) break;
@@ -11189,7 +10728,9 @@ function pickMove(color){
   for(const m of ordered){
     if(performance && performance.now && performance.now()>deadline) break;
     const nxt = applyMove(board, offsets, m.from, m.to, m.special);
-    const sc = -search(nxt.board, offsets, (side==='w'?'b':'w'), params.depth-1, -1e9, 1e9, deadline);
+    
+render();
+const sc = -search(nxt.board, offsets, (side==='w'?'b':'w'), params.depth-1, -1e9, 1e9, deadline);
     const noise = (params.noise||0) * (Math.random()*20);
     const score = sc + noise;
     if(score > bestScore){ bestScore = score; best = m; }
@@ -11324,7 +10865,7 @@ async function botDecideShift(row){
  if(!window.GAME_STARTED) return;
     const next = (e && e.detail && e.detail.turn) ? e.detail.turn : turn;
     if(!botEnabled) return;
-    if(window.GAME_MODE==='bot-vs-bot'){ botSide = next; window.botSide = botSide; scheduleBotMove(); } else if(next === botSide) scheduleBotMove();
+    if(window.GAME_MODE==='bot-vs-bot'){ botSide = next; window.botSide = botSide; setTimeout(()=>{ scheduleBotMove(); },0); } else if(next === botSide) setTimeout(()=>{ scheduleBotMove(); },0);
   });
   window.addEventListener('aj:turn:block', (e)=>{
     const info = (e && e.detail) || {};
@@ -11335,7 +10876,7 @@ async function botDecideShift(row){
     }
   });
 
-  if(botEnabled && window.GAME_STARTED){ if(window.GAME_MODE==='bot-vs-bot'){ botSide = turn; window.botSide = botSide; scheduleBotMove(); } else if(turn === botSide) scheduleBotMove(); }
+  if(botEnabled && window.GAME_STARTED){ if(window.GAME_MODE==='bot-vs-bot'){ botSide = turn; window.botSide = botSide; setTimeout(()=>{ scheduleBotMove(); },0); } else if(turn === botSide) setTimeout(()=>{ scheduleBotMove(); },0); }
 })();
 </script><script>
 
@@ -11781,10 +11322,10 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
         if(typeof window.isBotEnabled==='function' ? !window.isBotEnabled() : !(window.GAME_MODE==='bot'||window.GAME_MODE==='bot-vs-bot')) return;
         if(typeof scheduleBotMove !== 'function') return;
         if(window.GAME_MODE==='bot-vs-bot'){
-          scheduleBotMove();
+          setTimeout(()=>{ scheduleBotMove(); },0);
         } else if(window.GAME_MODE==='bot'){
           try{ if(typeof window.botSide==='undefined') window.botSide = 'b'; }catch(_){ window.botSide='b'; }
-          if(typeof turn!=='undefined' && turn === window.botSide) scheduleBotMove();
+          if(typeof turn!=='undefined' && turn === window.botSide) setTimeout(()=>{ scheduleBotMove(); },0);
         }
       }catch(_){}
     }
@@ -11820,10 +11361,10 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
         // Como respaldo, si ya está todo listo, agendar el primer movimiento según modo
         if(typeof scheduleBotMove === 'function'){
           if(m === 'bot-vs-bot'){
-            if(window.GAME_STARTED){ scheduleBotMove(); }
+            if(window.GAME_STARTED){ setTimeout(()=>{ scheduleBotMove(); },0); }
           } else if(m === 'bot'){
             if(typeof turn!=='undefined' && typeof window.botSide!=='undefined' && turn === window.botSide && window.GAME_STARTED){
-              scheduleBotMove();
+              setTimeout(()=>{ scheduleBotMove(); },0);
             }
           }
         }
@@ -12086,7 +11627,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="sizePatch">
 /* +10% size for start button */
 #startOverlay #btnStartGame{
@@ -12122,7 +11662,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="mobileFit">
 /* --- Mobile responsive fit: mantiene posiciones respetando contenedores --- */
 @media (max-width: 900px){
@@ -12172,7 +11711,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="menuHeaderShrink">
 /* Reducir altura de cabecera del panel (~15%) y su tipografía/botones */
 #megaPanel .mp-header{
@@ -12217,12 +11755,11 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="panelMinus10">
 /* Reducir tamaño total del panel (ancho y alto) un 10% */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -12265,7 +11802,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="loginTighten">
 /* Subir login 1 casillero y compactar espaciados */
 #megaPanel #loginView{
@@ -12313,7 +11849,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="loginUp3mm">
 /* Posicionar login dejando ~3mm desde la cabecera negra */
 #megaPanel #loginView{
@@ -12349,7 +11884,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="uiShrink10">
 #btnMegaMenu{
   all: unset;
@@ -12396,7 +11930,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="panelBtnsMinus10">
 /* Reducir -10% los botones dentro del panel */
 #megaPanel .tab-btn{
@@ -12452,12 +11985,11 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="panelWidthVar">
 :root{ --panel-w: 18.2952; }
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -12500,7 +12032,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="panelCompact">
 /* Compacción vertical general en el panel (todas las secciones) */
 #megaPanel .mp-header{
@@ -12589,13 +12120,12 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="panelTaller5">
 /* Altura del panel +~5% y ajuste simétrico (sube y baja por igual) */
 :root{ --panel-h: 9.45; } /* antes 9 */
 #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -12638,7 +12168,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="panelTopTighten">
 /* Acerca el contenido de todas las secciones al borde crema (mitad de margen) */
 #megaPanel .mp-tabs{
@@ -12683,7 +12212,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- LEGACY AUDIO CSS REMOVED --><!-- LEGACY AUDIO CSS REMOVED --><!-- LEGACY AUDIO CSS REMOVED --><script>
 (function(){
   // ======= Util seguro =======
@@ -13750,7 +13278,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <script>
 (function(){
   if(window.__AJ_LOGIN_HINT_FIX__) return;
@@ -13819,7 +13346,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- === Bot Chooser Floating Panel (per-color for Bot vs Bot) === --><style>
   #botChooserBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:saturate(120%) blur(1px);display:none;z-index:9998;}
   #botChooserPanel{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);min-width:340px;max-width:92vw;background:#fff;border:2px solid #222;border-radius:14px;padding:14px 14px 12px;box-shadow:0 18px 50px rgba(0,0,0,.25);display:none;z-index:9999;}
@@ -13862,15 +13388,14 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <div aria-hidden="true" id="botChooserBackdrop"></div><div aria-labelledby="botChooserTitle" aria-modal="true" id="botChooserPanel" role="dialog"><div class="row" style="margin-bottom:6px;"><h3 id="botChooserTitle">Elegí la dificultad del bot</h3><button aria-label="Cerrar" class="btn secondary" id="botChooserClose" type="button"></button></div><!-- Single-select (Player vs Bot) --><div id="bcSingle"><label for="botChooserSelect" style="font-weight:700;display:block;margin-bottom:6px;">Dificultad</label><select id="botChooserSelect"><option value="easy">Fácil</option>
-<option value="normal" selected>Normal</option>
+<option selected="" value="normal">Normal</option>
 <option value="hard">Difícil</option>
 </select></div><!-- Dual-select (Bot vs Bot) --><div id="bcDual"><div class="cols"><div class="col"><label for="botChooserSelectW" style="font-weight:700;">Blancas</label><select id="botChooserSelectW"><option value="easy">Fácil</option>
-<option value="normal" selected>Normal</option>
+<option selected="" value="normal">Normal</option>
 <option value="hard">Difícil</option>
 </select></div><div class="col"><label for="botChooserSelectB" style="font-weight:700;">Negras</label><select id="botChooserSelectB"><option value="easy">Fácil</option>
-<option value="normal" selected>Normal</option>
+<option selected="" value="normal">Normal</option>
 <option value="hard">Difícil</option>
 </select></div></div><div id="bcHelp">En <strong>Bot vs Bot</strong> podés setear una dificultad distinta para cada color.</div></div><div class="actions"><button class="btn" id="botChooserApply" type="button">Usar configuración</button></div></div><!-- === In-menu dual bot difficulty selectors (visible only in Bot vs Bot) === --><style>
   /* Containers inside menu */
@@ -13909,7 +13434,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <script>
 (function(){
   if(window.__AJ_DD_INTEGRATION__) return; window.__AJ_DD_INTEGRATION__=true;
@@ -14034,7 +13558,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <script>
 (function(){
   if(window.__AJ_TIMER__) return; window.__AJ_TIMER__=true;
@@ -14187,7 +13710,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <script>
 (function(){
   if(window.__AJ_TIMER_PAUSE_BTN__) return; window.__AJ_TIMER_PAUSE_BTN__=true;
@@ -14260,7 +13782,6 @@ window.AJ_RULES.legalShift = function(row, target, boardRef, offsRef){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <script>
 (function(){
   if(window.__AJ_PAUSE_BLOCK__) return; window.__AJ_PAUSE_BLOCK__=true;
@@ -15712,7 +15233,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-mode-controls-size">
 /* Reducir 15% el tamaño del selector de modo y del indicador de modo (arriba a la izquierda) */
 #btnMode, #gameModeBtn, #modeToggle, #btnGameMode, #modeBtn,
@@ -15756,7 +15276,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-replayPanel-override-final">
   /* Override final para que el tamaño del panel de registros sí cambie (gana al rpEnforcerStyles). */
   /* Flotante centrado */
@@ -15804,8 +15323,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-bottomBar-mobile-up-1more-square-0909b">
   /* Subir TODOS los botones inferiores +1 casillero en versión móvil */
   @media (max-width: 900px), (pointer: coarse){
@@ -15840,8 +15357,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-frame-mobile-taller-bottom-2sq-0909">
   /* Versión móvil: aumentar la altura de la base hacia abajo en +2 casilleros */
   @media (max-width: 900px), (pointer: coarse){
@@ -15883,8 +15398,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-bottomBar-mobile-down-half-square-0909c">
   /* Versión móvil: bajar los botones inferiores medio casillero */
   @media (max-width: 900px), (pointer: coarse){
@@ -15919,8 +15432,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- === Ajetrez: Panels follow fullscreen (bot chooser + registros + replay) === -->
 <script id="aj-fs-panels-follow">
 (function(){
@@ -15965,6 +15476,55 @@ div[style="height:var(--toolbar-gap)"]{
   }
 
   // Also keep panels synced if different scripts re-attach them to <body>
+
+<!-- === DONATION PANEL (PERSISTENT) === -->
+<div id="donationPanel" style="
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.45);
+  z-index:20000;
+">
+  <div style="
+    max-width:520px;
+    background:#fff;
+    padding:20px 22px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  ">
+    <h2 style="margin-top:0">Apoyá el proyecto ❤️</h2>
+    <p style="font-size:14px; line-height:1.45">
+      Estamos trabajando para que puedas jugar de manera online contra otros usuarios y además otras mejoras.
+      Para ello, necesitamos que colabores con el proyecto. Cualquier monto que puedas donar, nos ayuda a alcanzar la meta.
+      Quienes colaboren, recibirán premios y tendrán además, la posibilidad de probar nuevas funciones, antes de que sean publicadas oficialmente.
+      <br><br>Desde ya, muchas gracias.
+    </p>
+    <div style="display:flex; gap:22px; justify-content:center; margin:18px 0">
+      <a href="https://link.mercadopago.com.ar/ajetrez" target="_blank">
+        <img src="logo mercadopago ok.jpg" style="height:42px">
+      </a>
+      <a href="https://www.paypal.com/ncp/payment/PTRWET3UWGEY8" target="_blank">
+        <img src="logo paypal ok.png" style="height:42px">
+      </a>
+    </div>
+    <button id="closeDonationPanel" style="
+      border:none;
+      border-radius:999px;
+      padding:8px 18px;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+    ">
+      Continuar al juego
+    </button>
+  </div>
+</div>
+<!-- === END DONATION PANEL === -->
+
   var mo = new MutationObserver(function(muts){
     try{
       if(document.fullscreenElement){
@@ -16301,8 +15861,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-replay-fab-js">
 (function(){
   const $ = s => document.querySelector(s);
@@ -16509,8 +16067,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-regpanel-size-strong">
 (function(){
   function getSquarePx(){
@@ -16572,8 +16128,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-regpanel-shift-css-js">
 (function(){
   function getSquarePx(){
@@ -16635,8 +16189,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <button id="regv2-open" type="button">Registro de partidas</button>
 <div aria-hidden="true" id="regv2-overlay">
 <div aria-labelledby="regv2-title" aria-modal="true" id="regv2-panel" role="dialog">
@@ -16645,8 +16197,8 @@ div[style="height:var(--toolbar-gap)"]{
 <button class="regv2-btn small" id="regv2-import" type="button">Importar JSON</button>
 <button class="regv2-btn small" id="regv2-export" type="button">Exportar JSON</button>
 <button class="regv2-btn small" id="regv2-exit" type="button"></button>
-<input accept=".json,application/json" id="regv2-file" style="display:none" type="file"/>
-</div>
+<input accept=".json,application/json" id="regv2-file" style="display:none" type="file">
+</input></div>
 <button id="regv2-close" type="button">✕</button></header>
 <div id="regv2-body">
 <div class="regv2-row">
@@ -16858,8 +16410,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="regv2-clock-btn-script">
 (function(){
   function moveBtn(){
@@ -16930,8 +16480,6 @@ div[style="height:var(--toolbar-gap)"]{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="regv2-boardmask-script">
 (function(){
   function ensureMask(){
@@ -17340,8 +16888,6 @@ catch(_){}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="regv2-esc-exit">
 (function(){
   function isPaneVisible(){
@@ -17453,8 +16999,6 @@ catch(_){}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="regv2-replayer-script">
 (function(){
   function $(s,root=document){ return root.querySelector(s); }
@@ -18126,14 +17670,9 @@ catch(_){}
 <button aria-label="Cerrar" id="verDevToastClose" style="position:absolute;top:8px;right:10px;background:transparent;border:none;
   color:#fff;font-weight:800;font-size:18px;cursor:pointer;line-height:1">✕</button>Versión en desarrollo. Muy pronto estará disponible.<br/>Por favor apoya el proyecto, para que podamos seguir mejorando todos los aspectos del juego. Muchas gracias.
 </div>
-
-<button id="comoJugarCloseFloat"
-        type="button"
-        aria-label="Cerrar guía"
-        onclick="document.getElementById('comoJugarBackdrop').style.display='none'">
+<button aria-label="Cerrar guía" id="comoJugarCloseFloat" onclick="document.getElementById('comoJugarBackdrop').style.display='none'" type="button">
   ✕
 </button>
-
 <style>
 #comoJugarCloseFloat{
   position: fixed;
@@ -18163,8 +17702,6 @@ catch(_){}
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 (function(){
   const backdrop = document.getElementById('comoJugarBackdrop');
@@ -18179,7 +17716,6 @@ catch(_){}
   obs.observe(backdrop, { attributes:true, attributeFilter:['style'] });
 })();
 </script>
-
 <script>
 function showToast(){
   var el = document.getElementById('verDevToast');
@@ -18487,7 +18023,6 @@ function showToast(){
   });
 })();
 </script>
-
 <script id="aj-menu-registros-tab-v2-patch">
 (function(){
   if(window.__AJ_MENU_REG_TAB_V2__) return; window.__AJ_MENU_REG_TAB_V2__=true;
@@ -18728,7 +18263,7 @@ function showToast(){
 <style id="aj-megaPanel-canonical-2025-09-12">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -18771,13 +18306,11 @@ function showToast(){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-megapanel-bg-white-fix-2025-09-12">
   /* Evita transparencias en el cuerpo del panel del menú */
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -18833,8 +18366,6 @@ function showToast(){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style id="aj-regv2-open-from-tab-up4mm-2025-09-12">
   /* Sube el botón "Abrir panel de registros" ~4mm */
   #regv2-open-from-tab{
@@ -18870,8 +18401,6 @@ function showToast(){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="regv2-move-left-of-fs">
 (function(){
   if(window.__regv2MoveFS__) return; window.__regv2MoveFS__=true;
@@ -19002,8 +18531,6 @@ function showToast(){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-center-reg-fs-js">
 (function(){
   if(window.__AJ_CENTER_REG_FS__) return; window.__AJ_CENTER_REG_FS__ = true;
@@ -19144,8 +18671,6 @@ function showToast(){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-kings-adjacency-guard">
 (function(){
   function kingsAdjacent(vis){
@@ -19226,7 +18751,6 @@ function showToast(){
   window.ajSyncVersionLabel = syncVersionLabel;
 })();
 </script>
-
 <script id="aj-zone-appearance-js-2025-09-13">
 (function(){
   const root = document.documentElement;
@@ -19294,7 +18818,6 @@ function showToast(){
   if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", init); } else { init(); }
 })();
 </script>
-
 <script id="aj-zones-float-js-2025-09-13">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19393,7 +18916,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-zones-float-js-2025-09-13-override-layout">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19454,7 +18976,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-zones-float-js-2025-09-13-clean-dup-title">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19519,7 +19040,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-zones-float-js-2025-09-13-fs-support">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19553,7 +19073,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-zones-float-js-2025-09-13-fs-flex-anchor">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19607,7 +19126,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-piece-style-width-80-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19655,7 +19173,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-topbar-visual-styles-2025-09-13-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19744,7 +19261,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-piece-below-visual-js-2025-09-13">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19831,7 +19347,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-piece-under-zones-js-2025-09-13">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -19943,7 +19458,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-visual-buttons-relocate-2025-09-13-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20017,7 +19531,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-piece-top-right-js-2025-09-13">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20131,7 +19644,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-piece-align-with-visual-row-2025-09-13-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20171,7 +19683,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-remove-title-and-verticalize-piece-2025-09-13-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20273,7 +19784,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-visual-header-align-pieces-2025-09-13-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20337,7 +19847,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-zonescard-right-below-piece-2025-09-13-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20367,7 +19876,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-visual-fix-zones-title-and-buttons-2025-09-13-js">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20407,7 +19915,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script id="aj-legend-center-script-2025-09-13">
 (function(){
   function $(sel, root){ return (root||document).querySelector(sel); }
@@ -20456,7 +19963,6 @@ function showToast(){
   }
 })();
 </script>
-
 <script>
 (function(){
   var __AJ_VERSION_MAP__ = {
@@ -20561,7 +20067,6 @@ function showToast(){
   });
 })();
 </script>
-
 <script>
 // === Enrutador de versiones (selector del panel) — modo actual: amenaza ===
 (function(){
@@ -20592,15 +20097,10 @@ function showToast(){
   });
 })();
 </script>
-
 <!-- === AJETREZ: Reglas codificables + evaluador mejorado + ganchos de bot (solo lógica, sin tocar estilos) === -->
-
 <!-- === AJETREZ: Perfiles de bot por color + Mini Opening Book === -->
-
 <!-- === AJETREZ: Stockfish NNUE (opcional) como 'oráculo' de evaluación 8×8 === -->
-
 <!-- === AJETREZ: Variación de apertura + Fomento de desplazamiento de secciones === -->
-
 <!-- === AJETREZ: BOT CORE LIMPIO (2 perfiles) — refuerzo anti-caballo y pro-shift === -->
 <script id="aj-bot-core-clean">
 (function(){
@@ -20614,7 +20114,9 @@ function showToast(){
     catch(_){ return []; }
   }
   function apply(board, offsets, m){
-    try{ return window.applyMove(board, offsets, m.from, m.to, m.special||null); }
+    try{ return window.applyMove(board, offsets, m.from, m.to, m.special||null); 
+render();
+}
     catch(_){ return { board, offsets }; }
   }
   function ev(board, offsets, side){
@@ -20725,7 +20227,6 @@ function showToast(){
   console.log('[AJ] Bot core limpio reforzado cargado.');
 })();
 </script>
-
 <!-- === AJETREZ: Option C — 3 perfiles + libro ampliado + variación === -->
 <script id="aj-option-c">
 (function(){
@@ -20799,21 +20300,16 @@ function showToast(){
 
   console.log('[AJ] Option C activada: 3 perfiles + libro + variación.');
 })();
-</script><div id="promoOverlay" role="dialog" aria-modal="true" aria-label="Elegir pieza de promoción">
-  <div id="promoCard">
-    <h3>Elegí pieza de promoción</h3>
-    <div id="promoChoices"></div>
-    <div id="promoClose">Esc o click afuera para cancelar</div>
-  </div>
+</script><div aria-label="Elegir pieza de promoción" aria-modal="true" id="promoOverlay" role="dialog">
+<div id="promoCard">
+<h3>Elegí pieza de promoción</h3>
+<div id="promoChoices"></div>
+<div id="promoClose">Esc o click afuera para cancelar</div>
 </div>
-
-<button id="comoJugarCloseFloat"
-        type="button"
-        aria-label="Cerrar guía"
-        onclick="document.getElementById('comoJugarBackdrop').style.display='none'">
+</div>
+<button aria-label="Cerrar guía" id="comoJugarCloseFloat" onclick="document.getElementById('comoJugarBackdrop').style.display='none'" type="button">
   ✕
 </button>
-
 <style>
 #comoJugarCloseFloat{
   position: fixed;
@@ -20843,8 +20339,6 @@ function showToast(){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 (function(){
   const backdrop = document.getElementById('comoJugarBackdrop');
@@ -20859,7 +20353,6 @@ function showToast(){
   obs.observe(backdrop, { attributes:true, attributeFilter:['style'] });
 })();
 </script>
-
 <script>
 function showPromotionDialog(color, onChoose){
   try{
@@ -20970,8 +20463,6 @@ function showVeteranBanner(color){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- Ajetrez: Opening Book + Bot style wrapper (synchronous) -->
 <script id="aj-opening-book">
 (function(){
@@ -21139,12 +20630,9 @@ function showVeteranBanner(color){
 
 })();
 </script>
-
-  <script src="<script>window.AJ_SF_URL = '/engine/stockfish.js';</script>
+<script src="&lt;script&gt;window.AJ_SF_URL = '/engine/stockfish.js';&lt;/script&gt;
   engine/aj-oraculo.js"></script>
-
 <!-- ================= AJETREZ: override Versiones + cambio de versión estable ================= -->
-
 <style id="aj-hide-versions-tab-strong">
   .mp-tabs .tab-btn.aj-hide-versions {
     display: none !important;
@@ -21178,8 +20666,6 @@ function showVeteranBanner(color){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-versions-override">
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -21204,9 +20690,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 <!-- aj-remove-online-mode-root DISABLED -->
-
 <script id="aj-disable-piece-style-selector">
 (function(){
   function killPieceStyle(){
@@ -21233,7 +20717,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(killPieceStyle, 150);
 })();
 </script>
-
 <script id="aj-align-brightness-panel">
 (function(){
   function align(){
@@ -21269,7 +20752,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(align, 50);
 })();
 </script>
-
 <script>
 /* === Reglas por versiones SOLO cuando la pestaña Guía está activa === */
 (function(){
@@ -21454,7 +20936,6 @@ document.addEventListener('DOMContentLoaded', () => {
   obs.observe(document.body,{childList:true,subtree:true});
 })();
 </script>
-
 <script>
 (function(){
   const sel = document.querySelector('#tab-version select');
@@ -21469,24 +20950,18 @@ document.addEventListener('DOMContentLoaded', () => {
   sync();
 })();
 </script>
-
 <div id="comoJugarBackdrop" style="display:none; position:absolute; inset:0; background:rgba(0,0,0,.45); z-index:80; align-items:center; justify-content:center;">
-  <div style="background:#fff; padding:18px; border-radius:14px; width:420px; border:2px solid #111;">
-    <h3 id="comoJugarTitulo">Cómo jugar Ajetrez</h3>
-    <p id="comoJugarTexto">Texto de referencia</p>
-    <div style="text-align:right;">
-      <button class="btn small btn-close-internal" type="button" onclick="document.getElementById('comoJugarBackdrop').style.display='none'"></button>
-    </div>
-  </div>
+<div style="background:#fff; padding:18px; border-radius:14px; width:420px; border:2px solid #111;">
+<h3 id="comoJugarTitulo">Cómo jugar Ajetrez</h3>
+<p id="comoJugarTexto">Texto de referencia</p>
+<div style="text-align:right;">
+<button class="btn small btn-close-internal" onclick="document.getElementById('comoJugarBackdrop').style.display='none'" type="button"></button>
 </div>
-
-<button id="comoJugarCloseFloat"
-        type="button"
-        aria-label="Cerrar guía"
-        onclick="document.getElementById('comoJugarBackdrop').style.display='none'">
+</div>
+</div>
+<button aria-label="Cerrar guía" id="comoJugarCloseFloat" onclick="document.getElementById('comoJugarBackdrop').style.display='none'" type="button">
   ✕
 </button>
-
 <style>
 #comoJugarCloseFloat{
   position: fixed;
@@ -21516,8 +20991,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 (function(){
   const backdrop = document.getElementById('comoJugarBackdrop');
@@ -21532,7 +21005,6 @@ document.addEventListener('DOMContentLoaded', () => {
   obs.observe(backdrop, { attributes:true, attributeFilter:['style'] });
 })();
 </script>
-
 <script>
 document.addEventListener('click', function(e){
   var btn = e.target && e.target.closest && e.target.closest('[data-how]');
@@ -21562,98 +21034,6 @@ Final: jaque mate o tablas (ahogado, 3 repeticiones, 50 jugadas, material insufi
   document.getElementById('comoJugarBackdrop').style.display='flex';
 }, false);
 </script>
-
-<template id="rulesModoSimpleTemplate">
-<div class="rules-scroll">
-
-  <h2>Modo simple — Reglas básicas del juego</h2>
-
-  <p>
-    En este modo, sólo el recuadro central del tablero es jugable.
-    Las partes sobrantes (aunque contengan piezas) no participan hasta que sean ingresadas
-    mediante el desplazamiento de secciones.
-  </p>
-
-  <h3>Distribución de las piezas</h3>
-  <p>Por color, el tablero contiene:</p>
-  <ul>
-    <li>2 reyes</li>
-    <li>2 reinas</li>
-    <li>4 alfiles, 4 caballos, 4 torres</li>
-    <li>16 peones</li>
-  </ul>
-
-  <p>
-    Las piezas son distribuidas en el recuadro central de la misma manera
-    que en el ajedrez clásico.
-  </p>
-
-  <p>
-    En los laterales, las piezas se colocan desplazadas:
-    <strong>2 secciones hacia abajo en negras</strong> y
-    <strong>2 hacia arriba en blancas</strong>.
-  </p>
-
-  <p>
-    Ajetrez respeta todas las reglas del ajedrez clásico
-    (incluye enroque y captura al paso).
-  </p>
-
-  <p>
-    Además, añade nuevas reglas que dependen del modo de juego.
-  </p>
-
-  <h3>Regla especial del Modo simple</h3>
-
-  <p>
-    Luego de capturar, se puede elegir entre:
-  </p>
-
-  <ul>
-    <li><strong>Mantener</strong> la sección</li>
-    <li><strong>Desplazar</strong> la sección donde quedó la pieza capturadora</li>
-  </ul>
-
-  <p>
-    Si se decide desplazar, la sección se mueve una sola vez
-    hacia el lado opuesto al que se encuentra.
-  </p>
-
-  <p>
-    Luego de la elección, el turno pasa automáticamente al oponente.
-  </p>
-
-  <h3>Función del desplazamiento de secciones</h3>
-
-  <ul>
-    <li>Escapar de una captura</li>
-    <li>Alterar estrategias del oponente</li>
-    <li>Sacar piezas rivales del área jugable</li>
-    <li>Ingresar piezas propias al área jugable</li>
-    <li>Ingresar piezas del oponente para intentar capturarlas</li>
-  </ul>
-
-  <p>
-    <strong>Importante:</strong><br>
-    Si una pieza sale del recuadro central, no queda fuera de juego definitivamente;
-    puede reingresar mediante nuevos desplazamientos.
-  </p>
-
-  <h3>⚠️ Imposibilidad de desplazamiento</h3>
-
-  <ul>
-    <li>
-      En jaque o jaque mate no se pueden desplazar secciones,
-      incluso si hubo captura en la sección del rey.
-    </li>
-    <li>
-      No se pueden desplazar secciones si el recuadro central
-      quedara sin piezas de alguno de los jugadores.
-    </li>
-  </ul>
-
-</div>
-</template>
 
 <style>
 .rules-scroll{
@@ -21697,8 +21077,6 @@ Final: jaque mate o tablas (ahogado, 3 repeticiones, 50 jugadas, material insufi
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 function openRulesModoSimple(){
   openMegaPanel({
@@ -21707,7 +21085,6 @@ function openRulesModoSimple(){
   });
 }
 </script>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   // Buscar botón por texto exacto
@@ -21727,7 +21104,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
-
 <script>
 // Reimplementación usando el MISMO sistema que los otros botones funcionales
 function openRulesModoSimple(){
@@ -21760,7 +21136,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
-
 <script>
 /* === Integración correcta: reutilizar panel activo === */
 function showRulesModoSimpleInsideMenu(){
@@ -21789,7 +21164,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
-
 <style>
 /* === Panel flotante interno (igual a Guía rápida) === */
 .internal-float-backdrop{
@@ -21856,17 +21230,6 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
-
-<div class="internal-float-backdrop" id="rulesSimpleFloat">
-  <div class="internal-float">
-    <header>
-      <span>Reglas modo amenaza</span>
-      <button class="btn small btn-close-internal" onclick="closeRulesModoSimple()"></button>
-    </header>
-    <div class="content" id="rulesSimpleContent"></div>
-  </div>
-</div>
-
 <script>
 function openRulesModoSimple(){
   const backdrop = document.getElementById("rulesSimpleFloat");
@@ -21894,7 +21257,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
-
 <style>
 /* === Ajuste de altura: igual al panel principal === */
 .internal-float{
@@ -21931,90 +21293,6 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === END AJETREZ_PAY_FIX === */
 </style>
 
-
-<template id="rulesModoAmenazaTemplate">
-<div class="rules-scroll">
-
-<h2>Modo Amenaza — Príncipe & Princesa</h2>
-
-<h3>1) Objetivo</h3>
-<p>Ganar de dos maneras posibles:</p>
-<ul>
-  <li><strong>Jaque mate</strong> al rey rival (regla clásica).</li>
-  <li><strong>Liberación:</strong> que cualquier pieza propia termine su jugada en una casilla adyacente
-  (en cualquiera de las 8 direcciones) a tu <strong>Príncipe (I)</strong> o <strong>Princesa (S)</strong>.
-  Si ocurre, ganás inmediatamente por <strong>LIBERACIÓN</strong>.</li>
-</ul>
-
-<h3>2) Preparación y colocación</h3>
-<p>
-El tablero tiene un sector central (8×8) y dos secciones laterales por lado (las “alas”).
-</p>
-<p>En esta versión, las piezas laterales que antes eran rey y reina se reemplazan por:</p>
-<ul>
-  <li><strong>Princesa (S)</strong></li>
-  <li><strong>Príncipe (I)</strong></li>
-</ul>
-<p>
-Temática: ambas piezas están prisioneras en el territorio enemigo
-(quedan del lado contrario, en la sección lateral del oponente).
-</p>
-<p>
-Visibilidad: no se mueven, pero cuando desplazás las secciones laterales al centro,
-podés verlas y alcanzarlas.
-</p>
-
-<h3>3) Comportamiento de Príncipe (I) y Princesa (S)</h3>
-<ul>
-  <li><strong>Inmóviles:</strong> no pueden moverse durante toda la partida.</li>
-  <li><strong>No capturables:</strong> ninguna pieza puede capturarlas.</li>
-  <li><strong>Casilla prohibida:</strong> cualquier intento de mover a su casilla es ilegal.</li>
-  <li><strong>No atacan:</strong> no amenazan casillas ni dan jaque.</li>
-  <li><strong>Bloquean paso:</strong> ocupan su casilla como una pieza propia
-  (no se puede pasar por encima, salvo un caballo).</li>
-</ul>
-
-<h3>4) Regla de Liberación</h3>
-<ul>
-  <li>Se comprueba al terminar cada jugada.</li>
-  <li>Tu bando libera si una pieza propia finaliza adyacente (horizontal, vertical o diagonal)
-  a la I o S de tu color.</li>
-  <li>No hace falta liberar a ambas: basta con una.</li>
-  <li>La liberación termina la partida de inmediato y tiene prioridad absoluta.</li>
-  <li>Estar junto a las piezas del rival no genera ningún efecto.</li>
-</ul>
-
-<h3>5) Resto de reglas</h3>
-<ul>
-  <li>Movimiento y capturas: ajedrez estándar.</li>
-  <li>Jaque, jaque mate y tablas funcionan normalmente.</li>
-  <li>Promociones, enroque y en passant se aplican según las reglas base del modo 3.0.</li>
-</ul>
-
-<h3>6) Interacciones y casos especiales</h3>
-<ul>
-  <li>Cuenta la posición final de la jugada, incluso tras desplazar secciones.</li>
-  <li>Sólo se evalúa la liberación del jugador que acaba de mover.</li>
-  <li>Intentos de captura sobre I/S son rechazados por el motor.</li>
-</ul>
-
-<h3>7) Notación e iconos</h3>
-<ul>
-  <li><strong>S</strong> = Princesa</li>
-  <li><strong>I</strong> = Príncipe</li>
-  <li>Si falta un sprite, se muestra la letra como respaldo.</li>
-</ul>
-
-<h3>8) Resumen rápido</h3>
-<ul>
-  <li>I/S de cada color están como rehenes en el lateral del oponente.</li>
-  <li>No se mueven ni se capturan.</li>
-  <li>Ganás por jaque mate o por <strong>LIBERACIÓN</strong>.</li>
-</ul>
-
-</div>
-</template>
-
 <script>
 function openRulesModoAmenaza(){
   const backdrop = document.getElementById("rulesSimpleFloat");
@@ -22038,98 +21316,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<template id="rulesModoGuerraTemplate">
-<div class="rules-scroll">
-
-<h2>Modo Guerra — Reglas generales</h2>
-
-<h3>1) Tablero y secciones</h3>
-<ul>
-  <li>El tablero está formado por 8 secciones horizontales (16×8) que pueden desplazarse.</li>
-  <li>El recuadro central 8×8 es el único jugable al inicio.</li>
-  <li>Las piezas de los laterales no participan hasta ingresar al 8×8 mediante desplazamiento.</li>
-  <li>El turno alterna blancas / negras con jaque y jaque mate clásicos.</li>
-</ul>
-
-<h3>2) Disposición inicial (laterales)</h3>
-<p>En los laterales se reemplazan las piezas clásicas por piezas de guerra:</p>
-<ul>
-  <li><strong>General (G)</strong> reemplaza al Rey (K)</li>
-  <li><strong>Verdugo (V)</strong> reemplaza a la Dama (Q)</li>
-  <li><strong>Mago (M)</strong> y <strong>Maga (W)</strong> reemplazan a los Alfiles (B)</li>
-  <li><strong>Bufón (J)</strong> reemplaza a los Caballos (N)</li>
-  <li><strong>Arquero (A)</strong> reemplaza a las Torres (R)</li>
-  <li><strong>Guerrero con espada (S)</strong> reemplaza a los Peones laterales</li>
-</ul>
-
-<p><strong>Importante:</strong> los peones del 8×8 central permanecen clásicos.</p>
-
-<h3>3) Piezas especiales y reglas</h3>
-
-<h4>General (G)</h4>
-<ul>
-  <li>Alcance máximo: hasta 3 casilleros.</li>
-  <li>Direcciones: ortogonales y diagonales.</li>
-  <li>Conserva la lógica de salto corto si estaba activa.</li>
-</ul>
-
-<h4>Mago (M) / Maga (W)</h4>
-<ul>
-  <li>Movimiento: exactamente 2 casilleros en cualquiera de las 8 direcciones.</li>
-  <li>No saltan: la casilla intermedia debe estar vacía.</li>
-  <li>Transformación: al capturar (salvo Rey) se convierten en la pieza capturada.</li>
-</ul>
-
-<h4>Bufón (J)</h4>
-<ul>
-  <li>Movimiento de caballo.</li>
-  <li>No puede capturar.</li>
-  <li>Entretiene: inmoviliza piezas rivales adyacentes durante 2 turnos.</li>
-  <li>Si es capturado, el efecto se anula.</li>
-</ul>
-
-<h4>Arquero (A)</h4>
-<ul>
-  <li>Direcciones: hacia adelante y diagonales hacia adelante.</li>
-  <li>Distancia: exactamente 2 o 4 casilleros.</li>
-  <li>Puede saltar piezas intermedias.</li>
-  <li>Captura solo en casillas finales.</li>
-</ul>
-
-<h4>Guerrero con espada (S)</h4>
-<ul>
-  <li>Antes de veterano: mueve y captura 1 casillero hacia adelante o diagonal.</li>
-  <li>No tiene doble paso ni captura al paso.</li>
-  <li>Al llegar a la última fila rival se vuelve veterano.</li>
-  <li>Veterano: mueve y captura 1 casillero en cualquiera de las 8 direcciones.</li>
-  <li>Aparece un aviso en pantalla al volverse veterano.</li>
-</ul>
-
-<h3>4) Piezas clásicas (8×8 central)</h3>
-<ul>
-  <li>Reglas de ajedrez estándar.</li>
-  <li>Piezas que ingresan desde laterales mantienen sus reglas especiales.</li>
-</ul>
-
-<h3>5) Interacciones y consideraciones</h3>
-<ul>
-  <li>Congelamiento por Bufón: se mantiene hasta cumplir 2 turnos o capturar al Bufón.</li>
-  <li>Transformación de M/W es permanente.</li>
-  <li>Los desplazamientos siguen las normas de Ajetrez.</li>
-</ul>
-
-<h3>6) Resumen rápido</h3>
-<ul>
-  <li>Solo el 8×8 central es jugable.</li>
-  <li>Laterales con piezas de guerra.</li>
-  <li>Peones centrales clásicos; laterales Guerreros.</li>
-  <li>Bufón inmoviliza; M/W se transforman; Arquero salta.</li>
-  <li>General: máximo 3 casilleros.</li>
-</ul>
-
-</div>
-</template>
-
 <script>
 function openRulesModoGuerra(){
   const backdrop = document.getElementById("rulesSimpleFloat");
@@ -22152,7 +21338,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
-
 <!-- ================= AJETREZ ONLINE (SYNCED FROM MODO SIMPLE) ================= -->
 <script id="aj-online-synced">
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -22270,7 +21455,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 });
 </script>
-
 <style>
 @keyframes onlinePulse{
   0%{transform:scale(1);box-shadow:0 0 0 rgba(200,16,46,0);}
@@ -22306,10 +21490,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- ================= END AJETREZ ONLINE ================= -->
-
 <!-- AJETREZ SAFE HIDE BOT VS BOT (MENU ONLY) -->
 <script id="aj-hide-bot-vs-bot-safe">
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -22329,7 +21510,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   panel.addEventListener('click', ()=>setTimeout(hide, 30));
 });
 </script>
-
 <!-- AJETREZ REMOVE EXTERNAL BOT VS BOT -->
 <script id="aj-remove-external-bot-vs-bot">
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -22344,7 +21524,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 });
 </script>
-
 <script id="aj-main-menu-button-js-v2">
 (function(){
   function openMenu(){
@@ -22361,7 +21540,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 })();
 </script>
-
 <script id="aj-remove-ion-safe">
 document.addEventListener('DOMContentLoaded', () => {
   const ids = [
@@ -22373,7 +21551,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 <script id="aj-fix-registros-position">
 (function(){
   function fixRegistros(){
@@ -22410,7 +21587,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(fixRegistros, 350);
 })();
 </script>
-
 <script id="aj-remove-fullscreen">
 (function(){
   function removeFS(){
@@ -22433,7 +21609,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 </script>
-
 <!-- === MENU LIBRE (SOLUCIÓN LIMPIA DEFINITIVA) === -->
 <style>
 /* Ocultar SOLO el botón de menú del HUD */
@@ -22498,8 +21673,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -22532,7 +21705,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // el tablero debe ser relativo para que el botón se ancle bien
   board.style.position = 'relative';
-  board.appendChild(btn);
+  const frame = document.querySelector('.frame') || board;
+  frame.appendChild(btn);
 
   // Posición exacta:
   // 6 casilleros a la derecha del centro
@@ -22543,7 +21717,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- === FIN MENU LIBRE === -->
-
 <!-- === REINICIAR LIBRE (SOLUCIÓN LIMPIA) === -->
 <style>
 /* Ocultar botón original de Reiniciar del HUD */
@@ -22553,10 +21726,12 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 /* Botón Reiniciar libre */
+/* === REINICIAR LIBRE (ANCLADO A FRAME GRIS) === */
 #reiniciarLibre{
   position: absolute;
-  right: calc(var(--square) * 0.5);
-  bottom: 0; transform: translate(-50%, calc(50%));
+  right: 6mm;
+  bottom: calc(var(--square) + 3mm);
+  transform: none;
   z-index: 9999;
 
   background: #111;
@@ -22568,6 +21743,7 @@ document.addEventListener('DOMContentLoaded', () => {
   border: 1.5px solid rgba(255,255,255,0.7);
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
+/* === END REINICIAR LIBRE === */
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
@@ -22597,8 +21773,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -22631,17 +21805,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Proxy exacto al comportamiento original
   btn.onclick = () => originalBtn.click();
 
-  board.appendChild(btn);
+  const frame = document.querySelector('.frame') || board;
+  frame.appendChild(btn);
 });
 </script>
 <!-- === FIN REINICIAR LIBRE === -->
-
 <!-- === POSICIONAMIENTO LIMPIO POR BOUNDING RECT === -->
 <style>
-#menuLibre, #reiniciarLibre{
-  position: fixed;
+#menuLibre, /* === REINICIAR LIBRE (ANCLADO A FRAME GRIS) === */
+#reiniciarLibre{
+  position: absolute;
+  right: 6mm;
+  bottom: calc(var(--square) + 3mm);
+  transform: none;
   z-index: 9999;
+
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
+/* === END REINICIAR LIBRE === */
 
 /* === RESTART BUTTON: FREE VISUAL POSITION (NO ANCHOR) === */
 
@@ -22671,8 +21859,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 (function(){
 
@@ -22712,7 +21898,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 <!-- === FIN POSICIONAMIENTO === -->
-
 <script>
 /* === MOVE_RESTART_INTO_BOARD (hard fix) === */
 document.addEventListener('DOMContentLoaded', () => {
@@ -22724,11 +21909,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 /* === END MOVE_RESTART_INTO_BOARD === */
 </script>
-
 <script>
-
 </script>
-
 <script>
 /* === HARD MENU DEDUPLICATION (FINAL) === */
 (function(){
@@ -22757,15 +21939,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 /* === END HARD MENU DEDUPLICATION === */
 </script>
-
 <script>
-
 </script>
-
 <script>
-
 </script>
-
 <script>
 /* === MENU BUTTON: TOGGLE + FULL CLOSE SUPPORT === */
 document.addEventListener('DOMContentLoaded', () => {
@@ -22819,7 +21996,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 /* === END MENU BUTTON LOGIC === */
 </script>
-
 <script>
 (function(){
   function closeMegaPanel(){
@@ -22863,7 +22039,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.closeMegaPanel = closeMegaPanel;
 })();
 </script>
-
 <script>
 (function(){
   const btn = document.getElementById('btnMegaMenu');
@@ -22880,7 +22055,6 @@ document.addEventListener('DOMContentLoaded', () => {
   btn.addEventListener('click', toggle);
 })();
 </script>
-
 <script>
 /* === PATCH CIERRE ROBUSTO === */
 (function(){
@@ -22946,7 +22120,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 /* === FIN LIMPIEZA === */
 </script>
-
 <style id="amenazaRulesUltraSafeCSS">
 #amenazaRulesBtn{
   position: fixed;
@@ -23001,8 +22174,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -23064,7 +22235,6 @@ document.addEventListener('DOMContentLoaded', function(){
   panel.querySelector('.close').addEventListener('click', close);
 });
 </script>
-
 <!-- === AJETREZ: BOTONES SUPERIORES LIMPIOS (DESACOPLADOS) === -->
 <style id="aj-top-clean-buttons">
 /* Botones nuevos, totalmente aislados */
@@ -23097,8 +22267,6 @@ document.addEventListener('DOMContentLoaded', function(){
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -23149,7 +22317,6 @@ document.addEventListener('DOMContentLoaded', function(){
   group.appendChild(rulesBtn);
 });
 </script>
-
 <script id="aj-fix-external-online-button">
 document.addEventListener('DOMContentLoaded', ()=>{
   const btn = document.getElementById('btnOnlineExternal');
@@ -23182,8 +22349,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 });
 </script>
-
-
 <script>
 /* === AJETREZ_PAY_FIX JS === */
 document.addEventListener('click', function(e){
@@ -23202,8 +22367,6 @@ document.addEventListener('click', function(e){
 }, true);
 /* === END AJETREZ_PAY_FIX JS === */
 </script>
-
-
 <script id="aj-force-float-position-fix">
 /*
   FIX DEFINITIVO:
@@ -23245,8 +22408,6 @@ document.addEventListener('click', function(e){
   }
 })();
 </script>
-
-
 <!-- === ROOT FIX: MOVE (NOT DUPLICATE) MENU & RULES === -->
 <style>
 #floatingTopControls{
@@ -23264,7 +22425,6 @@ document.addEventListener('click', function(e){
   margin-top: calc(var(--square) * 1);
 }
 </style>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn =
@@ -23289,8 +22449,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <!-- === END ROOT FIX === -->
-
-
 <!-- === FIX: FORCE EXTERNAL ONLINE BUTTON LABEL === -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -23314,8 +22472,55 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <!-- === END FIX === -->
 
-</body>
+<script>
+(function(){
+  function showDonation(){
+    var p = document.getElementById('donationPanel');
+    if(p){
+      p.style.display = 'flex';
+    }
+  }
+  function hideDonation(){
+    var p = document.getElementById('donationPanel');
+    if(p){
+      p.style.display = 'none';
+    }
+  }
 
+  // cerrar
+  document.addEventListener('click', function(e){
+    if(e.target && e.target.id === 'closeDonationPanel'){
+      hideDonation();
+    }
+  }, true);
+
+  // hook Modo online (delegación real)
+  document.addEventListener('click', function(e){
+    var el = e.target;
+    while(el && el !== document){
+      if(el.tagName === 'BUTTON'){
+        var txt = (el.textContent || '').trim().toLowerCase();
+        if(txt === 'modo online'){
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          showDonation();
+          return;
+        }
+      }
+      el = el.parentElement;
+    }
+  }, true);
+
+  // asegurar apertura inicial
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', showDonation);
+  } else {
+    showDonation();
+  }
+})();
+</script>
+
+</body>
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->
 <style id="aj-replay-glass-css">
   #aj-replay-glass-pane{
@@ -23369,8 +22574,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-replay-glass-logic">
 (function(){
   if(window.__AJ_REPLAY_GLASS_V6__) return; window.__AJ_REPLAY_GLASS_V6__=true;
@@ -23660,7 +22863,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-bars-trim-system">
   /* Sistema de recorte para barras superior e inferior
      Problemas detectados que impedían achicar más:
@@ -23726,7 +22928,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-regpanel-trim-1sq">
   /* Recorte simétrico del panel de Registros: -1 casillero arriba y -1 abajo */
   #regPanel.rg-top{
@@ -23763,7 +22964,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <style id="aj-bottombar-extra-minus-3mm">
   /* Recorte adicional del contenedor inferior: -3mm desde abajo hacia arriba */
   #bottomBar{ display:none !important; }
@@ -23796,13 +22996,12 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
 <!-- Ajetrez: move ALL bottom bar buttons DOWN by 1mm --><!-- LEGACY AUDIO CSS REMOVED -->
 <!-- AJETREZ: Drop megaPanel an additional 2mm and allow Menu button to be movable -->
 <style id="aj-drop-panel-2mm-more">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -23863,8 +23062,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Flexible bottom bar & centered, narrower Menu button -->
 <style id="aj-bottomBar-flex-center-menu">
   /* Use a flexible layout (not grid) to avoid 'forced' positioning */
@@ -23916,8 +23113,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Menu button down 3mm + centered -->
 <style id="aj-menu-btn-down-3mm-center">
   #btnMegaMenu{
@@ -23966,8 +23161,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ CLEAN: Standardize bottom bar layout, center Menu, keep narrow width -->
 <style id="aj-clean-bottombar-flex">
   #bottomBar{ display:none !important; }
@@ -24026,8 +23219,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Move Menu button 2 squares to the right -->
 <style id="aj-menu-btn-right-2squares">
   #btnMegaMenu{
@@ -24076,8 +23267,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Center bottom bar buttons vertically inside the container -->
 <style id="aj-bottomBar-center-vert">
   #bottomBar{ display:none !important; }
@@ -24115,8 +23304,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Subir botones inferiores 2mm (quedan en 8mm) -->
 <style id="aj-bottomBar-up-2mm">
   /* Todos los botones de la barra */
@@ -24171,8 +23358,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Subir botones inferiores 2mm más (quedan en 6mm) -->
 <style id="aj-bottomBar-up-2mm-more">
   #bottomBar .btn{
@@ -24225,8 +23410,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Menú +3mm a la derecha (mantiene +2 casilleros) -->
 <style id="aj-menu-right-plus-3mm">
   #btnMegaMenu{
@@ -24275,15 +23458,13 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Panel menú con altura REAL igual a 8 casilleros (mismo alto que las secciones del juego) -->
 <style id="aj-panel-equal-sections">
   /* Altura objetivo: 8 × --square */
   :root{ --panel-h: 8; }
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -24326,13 +23507,11 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Bajar panel de menú 0.5 casillero más -->
 <style id="aj-panel-down-half-square-more">
   #megaPanel{
   position:absolute;
-  top: 0;
+  top: calc(var(--square) + 4mm);
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--square) * 16);
@@ -24375,8 +23554,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Registros con altura REAL igual a las secciones (8 casilleros) -->
 <style id="aj-regpanel-equal-sections">
   :root{ --reg-h: 8; } /* puedes ajustar finamente (p.ej., 7.9) */
@@ -24414,8 +23591,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Bajar Registros 2mm (refuerzo) -->
 <style id="aj-regpanel-down-2mm">
   #regPanel.rg-top{ top: calc(3mm + 2mm) !important; }
@@ -24448,8 +23623,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Registros +2mm (sumado al -1 casillero previo) y esquinas redondeadas visibles -->
 <style id="aj-regpanel-down2mm-rounded">
   /* Posición: respeta el offset previo de -1 casillero y añade +2mm */
@@ -24488,8 +23661,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Bajar reproductor (replayBar) medio casillero -->
 <style id="aj-replaybar-down-half-square">
   /* Mantiene centrado con left:50% y ajuste X, añadiendo desplazamiento Y */
@@ -24525,8 +23696,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Replay compacto + velocidad con desplegable -->
 <style id="aj-replay-compact">
   /* Limitar ancho del reproductor: aprox 12 casilleros */
@@ -24569,8 +23738,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-replay-speed-shim">
 (function(){
   var el = document.getElementById('rp-speed');
@@ -24620,8 +23787,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Reproductor ancho 8 casilleros -->
 <style id="aj-replay-8squares">
   #replayBar{
@@ -24658,8 +23823,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Ajuste de ancho: selector más angosto + todo cabe dentro -->
 <style id="aj-replay-fit-8sq">
   /* Contenedor: que calcule padding/borde dentro del width y reduzca separaciones */
@@ -24703,8 +23866,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Botón de cierre (✕) compacto -->
 <style id="aj-replay-exit-compact">
   #rp-exit{
@@ -24744,8 +23905,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Menú +0.5 casillero extra a la derecha (2025-09-13) -->
 <style id="aj-menu-right-plus-0_5sq-2025-09-13">
   /* Desplaza el botón de Menú medio casillero adicional a la derecha
@@ -24796,8 +23955,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Reiniciar +1 casillero a la derecha (2025-09-13) -->
 <style id="aj-restart-right-plus-1sq-2025-09-13">
   /* Desplaza el botón Reiniciar 1 casillero a la derecha */
@@ -24831,8 +23988,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Reiniciar ajustar -0.5 casillero desde el último cambio (2025-09-13) -->
 <style id="aj-restart-left-minus-0_5sq-2025-09-13">
   /* Ahora, respecto al ajuste previo de +1c, lo movemos 0.5c a la izquierda => queda +0.5c */
@@ -24866,8 +24021,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Reiniciar ajustar -0.5 casillero adicional (2025-09-13) -->
 <style id="aj-restart-left-minus-0_5sq-ADICIONAL-2025-09-13">
   /* Desde +0.5c, movemos 0.5c más a la izquierda => 0c neto */
@@ -24901,8 +24054,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Reiniciar neto -0.5 casillero a la izquierda (2025-09-13) -->
 <style id="aj-restart-left-net-minus-0_5sq-2025-09-13">
   /* Mueve el botón Reiniciar medio casillero a la izquierda con respecto a su posición original */
@@ -24936,8 +24087,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Menú +0.5 casillero adicional (ahora +3c + 3mm) - 2025-09-13 -->
 <style id="aj-menu-right-plus-ANOTHER-0_5sq-2025-09-13">
   /* Mueve el botón de Menú medio casillero más a la derecha respecto del estado actual */
@@ -24987,8 +24136,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Menú +3 mm adicionales (quedan +3c + 6mm) - 2025-09-13 -->
 <style id="aj-menu-right-plus-3mm-2025-09-13">
   /* Desde +3c + 3mm, sumamos +3mm más */
@@ -25038,8 +24185,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Achicar botón 'Registro de partidas' en 5% (2025-09-13) -->
 <style id="aj-regv2-open-scale-95-2025-09-13">
   /* Reduce visualmente el botón flotante de Registros sin afectar layout */
@@ -25076,8 +24221,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <!-- AJETREZ: Centrar horizontalmente el botón de Pausa (#pauseBtn) sobre el tablero (2025-09-13) -->
 <style id="aj-pause-center-css-2025-09-13">
   /* Neutralizar orden/márgenes previos cuando esté centrado */
@@ -25119,8 +24262,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-pause-center-js-2025-09-13">
 (function(){
   if(window.__AJ_PAUSE_CENTERED__) return; window.__AJ_PAUSE_CENTERED__ = true;
@@ -25218,8 +24359,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script id="aj-pause-center-hardening-js-2025-09-13">
 (function(){
   if(window.__AJ_PAUSE_CENTER_HARDENED__) return; window.__AJ_PAUSE_CENTER_HARDENED__=true;
@@ -25299,7 +24438,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 </script>
-
 <style>
 
 /* === FORZAR VISIBILIDAD DE TITULOS (override fuerte) === */
@@ -25361,8 +24499,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === SUBTITULOS (ej: 'Distribución de las piezas') === */
@@ -25418,8 +24554,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 /* === FIX: evitar duplicado visual del modo seleccionado === */
@@ -25465,8 +24599,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 
 @media (max-width: 900px){
@@ -25503,8 +24635,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 @media (max-width: 900px){
   .mp-content{
@@ -25541,8 +24671,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <style>
 /* ===== MOBILE FULLSCREEN MENU (OPTION A) ===== */
 @media (max-width: 900px){
@@ -25551,10 +24679,7 @@ document.addEventListener('DOMContentLoaded', () => {
     height: 100vh;
   }
 
-  #panelBackdrop{
-    position: fixed;
-    inset: 0;
-  }
+  
 
   #megaPanel{
     position: fixed;
@@ -25618,8 +24743,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .aj-pay-bg{ cursor:pointer; pointer-events:auto !important; }
 /* === END AJETREZ_PAY_FIX === */
 </style>
-
-
 <script>
 (function(){
   const panel = document.getElementById('megaPanel');
@@ -25637,4 +24760,3 @@ document.addEventListener('DOMContentLoaded', () => {
   update();
 })();
 </script>
-
