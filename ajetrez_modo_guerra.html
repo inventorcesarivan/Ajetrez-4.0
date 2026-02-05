@@ -9561,12 +9561,51 @@ button[data-mode="online"]:hover{
 </style>
 
 
-<style id="mobile-frame-inner-offset">
-/* === MOBILE: MOVE ALL CONTENT DOWN HALF SQUARE (EXCEPT RESTART) === */
+
+
+
+<style id="frame-inner-offset-mobile-fullscreen">
+/* === MOBILE + FULLSCREEN: MOVE ALL CONTENT DOWN HALF SQUARE (EXCEPT RESTART) === */
+
+/* Mobile */
 @media (max-width: 900px){
   .frame-inner{
     transform: translateY(calc(var(--square) * 0.5));
   }
+}
+
+/* Fullscreen (standards + fallbacks) */
+:fullscreen .frame-inner,
+:-webkit-full-screen .frame-inner,
+:-moz-full-screen .frame-inner,
+:-ms-fullscreen .frame-inner{
+  transform: translateY(calc(var(--square) * 0.5));
+}
+</style>
+
+
+<style id="global-ui-scale-15">
+/* === GLOBAL UI SCALE: -15% === */
+
+/* Restart button */
+#btnRestartBR{
+  transform: translateX(-50%) scale(0.85);
+}
+
+/* Game mode indicator (pill / label) */
+.mode-indicator,
+#modeIndicator{
+  transform: scale(0.85);
+  transform-origin: left center;
+}
+
+/* Match log & clock buttons */
+#btnRecords,
+#btnClock,
+button[id*="record"],
+button[id*="clock"]{
+  transform: scale(0.85);
+  transform-origin: center;
 }
 </style>
 
