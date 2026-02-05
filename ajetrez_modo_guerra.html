@@ -9583,12 +9583,15 @@ button[class*="reset"]{
 </style>
 
 
-<style id="base-gris-offset-global">
-/* === BASE GRIS OFFSET: +1 CASILLERO HACIA ABAJO (GLOBAL) === */
+
+
+
+<style id="base-gris-offset-up-global">
+/* === BASE GRIS + CONTENIDO: -1 CASILLERO (SUBIR TODO) === */
 .frame{
-  transform: translateY(var(--square)) !important;
+  transform: translateY(calc(var(--square) * -1)) !important;
 }
-/* === END BASE GRIS OFFSET === */
+/* === END BASE GRIS OFFSET UP === */
 </style>
 
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
