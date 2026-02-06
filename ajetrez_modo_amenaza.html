@@ -9807,6 +9807,20 @@ button[id*="clock"]{
 }
 </style>
 
+
+<!-- === GLOBAL BUTTON OFFSET PATCH === -->
+<style id="globalButtonUp">
+  .btn,
+  #btnMegaMenu,
+  #btnMenuMain,
+  .shift-ctrl,
+  .mode-group,
+  .right-ctrls {
+    transform: translateY(calc(var(--square) * -1));
+  }
+</style>
+<!-- === END GLOBAL BUTTON OFFSET PATCH === -->
+
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot">
