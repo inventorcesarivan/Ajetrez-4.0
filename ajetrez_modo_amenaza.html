@@ -9807,17 +9807,6 @@ button[id*="clock"]{
 }
 </style>
 
-
-<style id="menu-bottom-left-of-reset">
-/* Place MENU button next to REINICIAR (left side), all views */
-#menuBtn, #btnMenu, .btn-menu {
-  position: fixed !important;
-  bottom: 16px !important;
-  right: 120px !important; /* left of reset */
-  z-index: 9999 !important;
-}
-</style>
-
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot">
@@ -23448,26 +23437,6 @@ document.addEventListener('DOMContentLoaded', () => {
     childList: true,
     subtree: true
   });
-})();
-</script>
-
-
-<script>
-/* Ensure MENU button is positioned next to REINICIAR after dynamic renders */
-(function(){
-  function placeMenu(){
-    const menu = document.querySelector('#menuBtn, #btnMenu, .btn-menu');
-    const reset = document.querySelector('#btnReiniciar, #reiniciarBtn, .btn-reiniciar');
-    if(menu && reset){
-      const r = reset.getBoundingClientRect();
-      menu.style.position = 'fixed';
-      menu.style.bottom = (window.innerHeight - r.bottom) + 'px';
-      menu.style.right = (window.innerWidth - r.left + 8) + 'px';
-    }
-  }
-  document.addEventListener('DOMContentLoaded', placeMenu);
-  new MutationObserver(placeMenu).observe(document.body,{childList:true,subtree:true});
-  window.addEventListener('resize', placeMenu);
 })();
 </script>
 
