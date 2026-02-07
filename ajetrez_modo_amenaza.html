@@ -9807,20 +9807,6 @@ button[id*="clock"]{
 }
 </style>
 
-
-<!-- === GLOBAL BUTTON OFFSET PATCH === -->
-<style id="globalButtonUp">
-  .btn,
-  #btnMegaMenu,
-  #btnMenuMain,
-  .shift-ctrl,
-  .mode-group,
-  .right-ctrls {
-    transform: translateY(calc(var(--square) * -1));
-  }
-</style>
-<!-- === END GLOBAL BUTTON OFFSET PATCH === -->
-
 </head><body>
 <!-- REMOVED_DUPLICATE_BUTTON onclick="openAmenazaRules_OLD()">Reglas</button><!-- checked -->
 <div class="frame" data-fullscreen-root="" id="fsRoot">
@@ -23433,6 +23419,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- === END FIX === -->
+
+
+<script>
+/* === SAFE RULES BUTTON REMOVAL (NON-DESTRUCTIVE) === */
+(function(){
+  function removeRulesButton(){
+    document.querySelectorAll('button, a, .pill').forEach(el=>{
+      const t = (el.textContent || '').trim().toLowerCase();
+      if(t === 'reglas' || t === 'reglas modo amenaza'){
+        el.style.display = 'none';
+      }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', removeRulesButton);
+  new MutationObserver(removeRulesButton).observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+})();
+</script>
 
 </body>
 
