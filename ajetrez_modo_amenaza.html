@@ -23420,26 +23420,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <!-- === END FIX === -->
 
-
-<script>
-/* === SAFE RULES BUTTON REMOVAL (NON-DESTRUCTIVE) === */
-(function(){
-  function removeRulesButton(){
-    document.querySelectorAll('button, a, .pill').forEach(el=>{
-      const t = (el.textContent || '').trim().toLowerCase();
-      if(t === 'reglas' || t === 'reglas modo amenaza'){
-        el.style.display = 'none';
-      }
-    });
-  }
-  document.addEventListener('DOMContentLoaded', removeRulesButton);
-  new MutationObserver(removeRulesButton).observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-})();
-</script>
-
 </body>
 
 <!-- AJETREZ: Overlay de reproducción (bloqueo del tablero) v2 -->

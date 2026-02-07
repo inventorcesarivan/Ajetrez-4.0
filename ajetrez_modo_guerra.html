@@ -9609,17 +9609,6 @@ button[id*="clock"]{
 }
 </style>
 
-
-<style id="menu-bottom-left-of-reset">
-/* Place MENU button next to REINICIAR (left side), all views */
-#menuBtn, #btnMenu, .btn-menu {
-  position: fixed !important;
-  bottom: 16px !important;
-  right: 120px !important; /* left of reset */
-  z-index: 9999 !important;
-}
-</style>
-
 </head><body><div class="frame" data-fullscreen-root="" id="fsRoot">
 <div class="frame-inner"><div class="shell"><div aria-label="Barra superior" class="bar" id="topBar">
 <button aria-controls="megaPanel" aria-expanded="false" class="btn" id="btnMegaMenu" type="button" style="position:absolute; right:10px; top:6px; z-index:50;">Menú</button><div class="mode-group" id="modeGroup"><button aria-expanded="false" aria-haspopup="true" class="btn" id="btnMode" type="button">Modo de juego</button><span aria-live="polite" class="mode-indicator" id="modeIndicator">Player vs player (local)</span></div><div aria-live="polite" class="bot-hud" id="botHUD" role="status"><div class="bot-hud-inner"><span id="botHUDText"></span></div></div><div aria-label="Elegir modo de juego" class="dropdown" id="modeDropdown" role="menu"><button class="btn dd-item" data-label="Versus Bot" data-mode="bot" style="position:static;" type="button">Player Vs Bot</button><button class="btn dd-item" data-label="Player vs player (local)" data-mode="pvp-local" style="position:static;" type="button">Player vs player (local)</button>
@@ -23282,46 +23271,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- === END FIX === -->
-
-
-<script>
-/* === SAFE RULES BUTTON REMOVAL (NON-DESTRUCTIVE) === */
-(function(){
-  function hideRulesButton(){
-    document.querySelectorAll('button, a, .pill').forEach(el=>{
-      const t = (el.textContent || '').trim().toLowerCase();
-      if(t === 'reglas' || t.includes('reglas')){
-        el.style.display = 'none';
-      }
-    });
-  }
-  document.addEventListener('DOMContentLoaded', hideRulesButton);
-  new MutationObserver(hideRulesButton).observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-})();
-</script>
-
-
-<script>
-/* Ensure MENU button is positioned next to REINICIAR after dynamic renders */
-(function(){
-  function placeMenu(){
-    const menu = document.querySelector('#menuBtn, #btnMenu, .btn-menu');
-    const reset = document.querySelector('#btnReiniciar, #reiniciarBtn, .btn-reiniciar');
-    if(menu && reset){
-      const r = reset.getBoundingClientRect();
-      menu.style.position = 'fixed';
-      menu.style.bottom = (window.innerHeight - r.bottom) + 'px';
-      menu.style.right = (window.innerWidth - r.left + 8) + 'px';
-    }
-  }
-  document.addEventListener('DOMContentLoaded', placeMenu);
-  new MutationObserver(placeMenu).observe(document.body,{childList:true,subtree:true});
-  window.addEventListener('resize', placeMenu);
-})();
-</script>
 
 </body>
 
